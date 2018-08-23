@@ -16,7 +16,7 @@ Esse README sera atualizado...
 ### Instruções:
 Para organizarmos o trabalho trabalharemos no projeto em branches
 separadas que serão testadas antes de commitarmos ao git. Quando 
-a tarefa estiver concluida e aprovadas daremos o merge da branch
+a tarefa estiver concluida e aprovada daremos o merge da branch
 para o master. Lembrando que para que o trabalho flua sem problemas
 é necessario mantermos as nossa braches atualizadas!
 
@@ -33,7 +33,7 @@ A ordem para modificar/subir os arquivos é:
 1. `git pull` para puxarmos as atualizações do repositorio.
 2. `git status` para vermos o status do branch (arquivos que foram ou a serem modificados/deletados/adicionados). E **confirmar qual a branch onde estamos trabalhando**.
 3. `git add [nome do arquivo]` para adicionar os arquivos a serem commitados.
-..* Alternativamente podemos usar o `git add .` para addicionarmos todos os arquivos da lista ao commit **(cuidado!)**.
+  * Alternativamente podemos usar o `git add .` para addicionarmos todos os arquivos da lista ao commit **(cuidado!)**.
 4. `git commit -m "[mensagem]"` para commitar e adicionar a mensagem referente ao commit.
-..* Caso vc esqueça de colocar `-m` o git vai abrir o Vim e vai virar uma bagunça, aperte `esc` e digite `:q!`, o programa sera encerrado e vc pode repetir o passo 4 (mas nao custa nada dar um `git status` só pra confirmar onde o processo parou).
+  * Caso vc esqueça de colocar `-m` o git vai abrir o Vim e vai virar uma bagunça, aperte `esc` e digite `:q!`, o programa sera encerrado e vc pode repetir o passo 4 (mas nao custa nada dar um `git status` só pra confirmar onde o processo parou).
 5. `git push` para enviar os arquivos addicionados e commitados à sua branch!
