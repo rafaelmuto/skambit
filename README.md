@@ -1,4 +1,4 @@
-# Projeto_int
+﻿# Projeto_int
 Projeto Integrador Digital House -T05
 
 ### Descrição:
@@ -21,6 +21,15 @@ Uma vez que o repositorio esteja clonado na sua maquina o comando para iniciar a
 
 1. `git checkout -b [branch_nome]` para criar a nova branch e mudar a branch ativa para ela.
 2. `git push origin [branch_nome]` para pushar a branch para o repositorio.
+
+#### Para clonar o repositorio:
+
+GitHub dentro de /Projeto_int :
+
+No GitHub:
+1. Clicar em Clone or download e copiar a chave SSH.
+No Git Bash:
+2. `git clone chave SSH´ . 
 
 ### GitHub Help:
 
