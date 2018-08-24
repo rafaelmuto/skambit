@@ -25,10 +25,12 @@ Uma vez que o repositorio esteja clonado na sua maquina o comando para iniciar a
 #### Para clonar o repositorio:
 
 No GitHub:
+
 1. Clicar em Clone or download e copiar a chave SSH.
 
 No Git Bash:
-2. `git clone [chave SSH]´ . 
+
+2. `git clone [chave SSH]´. 
 
 ### GitHub Help:
 
