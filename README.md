@@ -2,8 +2,7 @@
 Projeto Integrador Digital House -T05
 
 ### Descrição:
-Este é repositorio do projeto integrador do curso de Fullstack
-da Digital House - Villa Olimpia. Os integrantes do grupo são:
+Este é repositorio do projeto integrador do curso de Fullstack da Digital House - Villa Olimpia. Os integrantes do grupo são:
 
 - Aline Silva
 - Rafael Muto
@@ -14,11 +13,7 @@ da Digital House - Villa Olimpia. Os integrantes do grupo são:
 Esse README sera atualizado...
 
 ### Instruções:
-Para organizarmos o trabalho trabalharemos no projeto em branches
-separadas que serão testadas antes de commitarmos ao git. Quando 
-a tarefa estiver concluida e aprovada daremos o merge da branch
-para o master. Lembrando que para que o trabalho flua sem problemas
-é necessario mantermos as nossa braches atualizadas!
+Trabalharemos no projeto em branches separadas que serão testadas antes de commitarmos ao git. Quando a tarefa estiver concluida e aprovada daremos o merge da branch para o master. Lembrando que para que o trabalho flua sem problemas é necessario mantermos as nossa braches atualizadas!
 
 #### Iniciar a sua Branch:
 Para deixar tudo organizado vamos utilizar a seguinte nomeclatura para os nomes das branches; *branch_nome*.
