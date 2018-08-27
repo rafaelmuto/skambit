@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #ecf0f1;
+}
+
+header {
+  height: 60px;
+  width: 100%;
+  background-color: black;
+  color: #ecf0f1;
+}
+
+.main_container {
+  width: 1450px;
+  height: 500px;
+  margin: 0 auto;
+  border: 1px dotted;
+}
+
+footer {
+  background-color: black;
+  color: #ecf0f1;
+  height: 50px;
+  width: 1450px;
+  margin: 0 auto;
+  vertical-align: bottom;
+}
