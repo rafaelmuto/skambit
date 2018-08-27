@@ -26,11 +26,11 @@ Uma vez que o repositorio esteja clonado na sua maquina o comando para iniciar a
 
 No GitHub:
 
-1. Clicar em Clone or download e copiar a chave SSH.
+1. Clicar em Clone or download e copiar a URL do repositório.
 
 No Git Bash:
 
-2. `git clone [chave SSH]´. 
+2. `git clone [URL do repositorio]`. 
 
 ### GitHub Help:
 
