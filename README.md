@@ -27,16 +27,13 @@ Uma vez que o repositorio esteja clonado na sua maquina o comando para iniciar a
 No GitHub:
 
 1. Clicar em Clone or download e copiar a URL do repositório.
-
-No Git Bash:
-
-2. `git clone [URL do repositorio]`. 
+2. No Bash/Command line: `git clone [URL do repositorio]`.
 
 ### GitHub Help:
 
 A ordem para modificar/subir os arquivos é:
 1. `git pull` para puxarmos as atualizações do repositorio.
-2. `git status` para vermos o status do branch (arquivos que foram ou a serem modificados/deletados/adicionados). E **confirmar qual a branch onde estamos trabalhando**.
+2. `git status` para vermos o status do branch (arquivos que foram ou a serem modificados/deletados/adicionados). E **confirmar qual a branch onde esta trabalhando**.
 3. `git add [nome do arquivo]` para adicionar os arquivos a serem commitados.
   * Alternativamente podemos usar o `git add .` para addicionarmos todos os arquivos da lista ao commit **(cuidado!)**.
 4. `git commit -m "[mensagem]"` para commitar e adicionar a mensagem referente ao commit.
