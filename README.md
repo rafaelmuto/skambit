@@ -31,19 +31,26 @@ Uma vez que o repositorio esteja clonado na sua maquina o comando para iniciar a
 
 ### GitHub Help:
 
-A ordem para modificar/subir os arquivos é:
-1. `git pull origin master` para puxarmos as atualizações do repositorio.
+#### Trabalhar com a sua Branch:
+
+A ordem para modificar/subir os seus arquivos é:
+1. `git pull origin master` para puxarmos as atualizações do repositorio remoto.
 2. `git status` para vermos o status do branch (arquivos que foram ou a serem modificados/deletados/adicionados). E **confirmar qual a branch onde esta trabalhando**.
 3. `git add [nome do arquivo]` para adicionar os arquivos a serem commitados.
   * Alternativamente podemos usar o `git add .` para addicionarmos todos os arquivos da lista ao commit **(cuidado!)**.
 4. `git commit -m "[mensagem]"` para commitar e adicionar a mensagem referente ao commit.
   * Caso vc esqueça de colocar `-m` o git vai abrir o Vim e vai virar uma bagunça, aperte `esc` e digite `:q!`, o programa sera encerrado e vc pode repetir o passo 4 (mas nao custa nada dar um `git status` só pra confirmar onde o processo parou).
-5. `git push origin [branch_nome]` para enviar os arquivos adicionados e commitados à sua branch!
+5. `git push origin [branch_nome]` para enviar os arquivos adicionados e commitados à sua branch remota!
 
-#### Para atualizar a Branch Master >> Pull Request:
+#### Para enviar seus commits para Branch Master: 
 
-No GitHub:
+**Niguém deve commitar na branch Master**
 
-1. Clicar em Compare & pull request.
-2. Em frente sua foto alterar o texto padrão, para um texto que resuma as alterações dos seus commits na sua branch. Se quiser detalhar escreva um comentário no campo abaixo.
-3. Clicar em Create pull request.
+Realizar esse processo só quando a funcionalidade estiver completa:
+1. `git checkout master` para mudar para branch master.
+2. `git pull origin master` para atualizar sua branch master local com os commits da remota.
+3. `git checkout [branch_nome]` para mudar para sua branch.
+4. `git merge master` para trazer os commits novos da master para sua branch local. Pode ocorrer conflitos nesse momento, caso aconteça será necessário analisar um a um.
+5. `git push origin [branch_nome]` para atualizar sua branch remota.
+6. No GitHub, criar um pull request da sua branch para a branch master.
+7. Outro membro do grupo deve aceitar o pull request.
