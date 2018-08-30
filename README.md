@@ -39,3 +39,11 @@ A ordem para modificar/subir os arquivos é:
 4. `git commit -m "[mensagem]"` para commitar e adicionar a mensagem referente ao commit.
   * Caso vc esqueça de colocar `-m` o git vai abrir o Vim e vai virar uma bagunça, aperte `esc` e digite `:q!`, o programa sera encerrado e vc pode repetir o passo 4 (mas nao custa nada dar um `git status` só pra confirmar onde o processo parou).
 5. `git push origin [branch_nome]` para enviar os arquivos adicionados e commitados à sua branch!
+
+#### Para atualizar a Branch Master >> Pull Request:
+
+No GitHub:
+
+1. Clicar em Compare & pull request.
+2. Em frente sua foto alterar o texto padrão, para um texto que resuma as alterações dos seus commits na sua branch. Se quiser detalhar escreva um comentário no campo abaixo.
+3. Clicar em Create pull request.
