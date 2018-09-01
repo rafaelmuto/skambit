@@ -53,6 +53,52 @@ header {
   ;
 }
 
+.card__1 {
+  grid-area: card1;
+  background-color: violet;
+}
+
+.card__2 {
+  grid-area: card2;
+  background-color: burlywood;
+}
+
+.card__3 {
+  grid-area: card3;
+  background-color: cadetblue;
+}
+
+.card__4 {
+  grid-area: card4;
+  background-color: cornflowerblue;
+}
+
+.card__feature {
+  grid-area: feature;
+  background-color: cyan;
+}
+
+.card__5 {
+  grid-area: card5;
+  background-color: violet;
+}
+
+.card__6 {
+  grid-area: card6;
+  background-color: burlywood;
+}
+
+.card__7 {
+  grid-area: card7;
+  background-color: cadetblue;
+}
+
+.card__8 {
+  grid-area: card8;
+  display: none;
+  background-color: cadetblue;
+}
+
 /* Footer */
 
 footer {
@@ -62,4 +108,46 @@ footer {
   height: 5vh;
   margin: 0 auto;
   vertical-align: bottom;
+}
+
+/* Breakpoints */
+
+@media screen and (max-width: 820px){
+
+  .main-card {
+    grid-template-rows: 20vh 20vh 40vh 20vh 20vh; 
+    grid-template-areas: 
+      "card1 card2" 
+      "card3 card4"
+      "feature feature"
+      "card5 card6"
+      "card7 card8"
+    ;
+  }
+
+  .card__8 {
+    grid-area: card8;
+    display: block;
+    background-color: cornflowerblue;
+  }
+
+}
+
+
+@media screen and (max-width: 620px){
+
+  .main-card {
+    grid-template-rows: 20vh 20vh 20vh 20vh 40vh 20vh 20vh 20vh 20vh; 
+    grid-template-areas: 
+      "card1" "card2" "card3" 
+      "card4" "feature" "card5"
+      "card6" "card7" "card8"
+    ;
+  }
+
+  .card__8 {
+    grid-area: card8;
+    display: block;
+    background-color: cornflowerblue;
+  }
 }
