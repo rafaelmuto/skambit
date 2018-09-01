@@ -1,3 +1,5 @@
+/* Geral */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,27 +9,57 @@
 
 body {
   background-color: #ecf0f1;
+  height: 100%;
+  margin: 0 auto;
+  font-size: 12px
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+/* Header */
+
 header {
-  height: 60px;
+  height: 10vh; /* % da altura da viewport */
   width: 100%;
   background-color: black;
   color: #ecf0f1;
 }
 
-.main_container {
-  width: 1450px;
-  height: 500px;
-  margin: 0 auto;
-  border: 1px dotted;
+/* Section Cards */
+
+.main-card {
+  margin: 0.5em auto;
+  max-width: 80%;
+  display: grid;
+  grid-gap: 1.0vh;
+  grid-template-rows: 20vh 40vh 20vh; 
+  grid-template-areas: 
+    "card1 card2 card3"
+    "card4 feature feature"
+    "card5 card6 card7"
+  ;
 }
 
+/* Footer */
+
 footer {
+  max-width: 80%;
   background-color: black;
   color: #ecf0f1;
-  height: 50px;
-  width: 1450px;
+  height: 5vh;
   margin: 0 auto;
   vertical-align: bottom;
 }
