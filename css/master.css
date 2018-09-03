@@ -1,3 +1,8 @@
+:root {
+  --cor_principal: black;
+  --cor_fundo: #ecf0f1;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,28 +11,125 @@
 }
 
 body {
-  background-color: #ecf0f1;
+  background-color: var(--cor_fundo);
 }
 
 header {
   height: 60px;
   width: 100%;
-  background-color: black;
-  color: #ecf0f1;
+  background-color: var(--cor_principal);
+  color: var(--cor_fundo);
+  /* overflow: hidden; */
+  position: fixed;
+}
+
+.header_container {
+  width: 1450px;
+  height: 60px;
+  margin: 0 auto;
+}
+
+.header_logo {
+  font-size: 4.5em;
+  line-height: 1em;
+  font-weight: 700;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.header_form {
+  display: inline-block;
+  /* vertical-align: middle; */
+  /* margin-top: -48px; */
+  margin-top: 10px;
+  vertical-align: top;
+}
+
+.header_busca {
+  background-color: var(--cor_fundo);
+  border: 0;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 20px;
+  width: 600px;
+}
+
+.header_busca_btn {
+  margin-left: -40px;
+  vertical-align: middle;
+  color: black;
+  font-size: 20px;
+  border: 0;
+  background-color: var(--cor_fundo);
+  cursor: pointer;
+}
+
+nav {
+  display: inline-block;
+  line-height: 1em;
+  font-size: 1.5em;
+  vertical-align: top;
+  /* text-transform: uppercase; */
+  font-weight: 100;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 20px;
+}
+
+.header_user {
+  display: inline-block;
+  vertical-align: super;
 }
 
 .main_container {
   width: 1450px;
-  height: 500px;
+  height: 1500px;
+  padding-top: 60px;
   margin: 0 auto;
   border: 1px dotted;
 }
 
 footer {
-  background-color: black;
-  color: #ecf0f1;
+  background-color: var(--cor_principal);
+  padding-top: 8px;
+  color: var(--cor_fundo);
   height: 50px;
   width: 1450px;
   margin: 0 auto;
-  vertical-align: bottom;
+}
+
+.footer_logo {
+  border-right: 2px solid white;
+  line-height: 1em;
+  margin-left: 30px;
+  height: 40px;
+  padding-right: 10px;
+  vertical-align: middle;
+  display: inline-block;
+  font-size: 2.5em;
+}
+
+.footer_msg {
+  display: inline-block;
+  vertical-align: middle;
+  border-right: 2px solid white;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  height: 40px;
+  width: 50%;
+  font-size: .7em;
+}
+
+.footer_icons {
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 10px;
 }
