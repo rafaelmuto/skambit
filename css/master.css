@@ -23,32 +23,30 @@ header {
   border: 1px dotted;
 }
 
-.container_cadastro_headline{
+.headline{
   margin: 0 auto;
   width: 30%;
   height: 10%;
   background-color: black;
 }
 
-.cadastro_headline{
-
-}
-
-.container_cadastro_headline a{
+.headline a{
+  position: absolute;
+  margin-top: 7px; /* Atenção */
   margin-left: 10px; /* Atenção */
   color: white;
   font-size: 32px;
   font-weight: bold;
 }
 
-.container_cadastro_body {
+.cont_cadastro_body {
   margin: 0 auto;
   width: 30%;
   height: 70%;
   background-color: white;
 }
 
-img{
+.photo_select{
   width: 25%;
 }
 
