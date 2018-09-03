@@ -47,6 +47,7 @@ header {
 }
 
 .photo_select{
+  display: flex;
   width: 25%;
 }
 
