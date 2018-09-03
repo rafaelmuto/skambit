@@ -26,14 +26,14 @@ body {
   margin: 0 auto;
 }
 
-/* Header */
 
+/* Header */
 header {
   height: 60px;
   width: 100%;
   background-color: var(--cor_principal);
   color: var(--cor_fundo);
-  /* overflow: hidden; */
+  overflow: hidden;
   position: fixed;
   mix-blend-mode: multiply;
 }
