@@ -1,6 +1,10 @@
 :root {
   --cor_principal: black;
   --cor_fundo: #ecf0f1;
+  /* --cor_fundo: #e74c3c; */
+  /* --cor_fundo: #f1c40f; */
+  /* --cor_fundo: #3498db; */
+  /* --cor_fundo: #2ecc71; */
   /* desktop - 4 colunas */
   --larguraG: 1460px;
   /* tables - 3 colunas */
@@ -53,8 +57,6 @@ header {
 }
 
 .header_form {
-  /* margin-top: 10px; */
-  /* vertical-align: top; */
   justify-self: stretch;
   align-self: center;
 }
@@ -87,21 +89,24 @@ nav a {
   align-self: center;
 }
 
-.header_user {
+.header_hamburger {
+  display: none;
+}
+
+/* .header_user {
   display: inline-block;
   vertical-align: super;
   justify-self: center;
   align-self: center;
-}
+} */
 
 /* Section Cards */
 
 .main {
   margin: 0 auto;
-  padding-top: 80px;
-  padding-bottom: 20px;
+  padding-top: 70px;
+  padding-bottom: 10px;
   max-width: var(--larguraG);
-  /* border: 1px dotted; */
 }
 
 .main_grid {
@@ -136,7 +141,7 @@ footer {
 }
 
 .footer_logo {
-  border-right: 2px solid white;
+  border-right: 2px solid var(--cor_fundo);
   line-height: 1em;
   height: 40px;
   font-size: 2.5em;
@@ -144,7 +149,8 @@ footer {
 }
 
 .footer_msg {
-  border-right: 2px solid white;
+  border-right: 2px solid var(--cor_fundo);
+  font-weight: 100;
   height: 40px;
   padding-top: 5px;
   font-size: .7em;
