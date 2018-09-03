@@ -34,7 +34,7 @@ header {
   color: var(--cor_fundo);
   overflow: hidden;
   position: fixed;
-  mix-blend-mode: multiply;
+  /*mix-blend-mode: multiply;*/
 }
 
 .header_container {
@@ -98,6 +98,7 @@ nav a {
   justify-self: center;
   align-self: center;
 } */
+
 /* Section Cards */
 .main {
   margin: 0 auto;
@@ -123,10 +124,11 @@ nav a {
   height: 450px;
 }
 
+/*Cadastro*/
 .headline{
   margin: 0 auto;
-  width: 30%;
-  height: 10%;
+  width: 500px;
+  height: 50px;
   background-color: black;
 }
 
@@ -141,16 +143,97 @@ nav a {
 
 .cont_cadastro_body {
   margin: 0 auto;
-  width: 30%;
-  height: 70%;
+  width: 500px;
+  height: 720px;
   background-color: white;
 }
 
-.photo_select{
-  display: flex;
-  width: 25%;
+.photo{
+  text-align: center;
 }
 
+/*Formulario*/
+.form_cadastro {
+  display: block;
+  position: relative;
+  width: 400px;
+  height: 150px;
+  background: #fff;
+  margin: 50px auto;
+  padding: 30px;
+}
+
+.cad_form_label {
+  display: block;
+  position: relative;
+  top: -20px;
+  left: 0;
+  color: #000;
+  font-family: 'Helvetica';
+  font-size: 16px;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.cad_form_input {
+  display: block;
+  position: relative;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+  font-family: 'Helvetica';
+  font-weight: bold;
+  font-size: 16px;
+  z-index: 2;
+}
+
+.cad_form_input:focus,
+.cad_form_input:valid {
+  outline: none;
+  border-bottom: 1px solid #00aced;
+}
+
+.cad_form_input:focus + .cad_form_label,
+.cad_form_input:valid + .cad_form_label {
+  top: -40px;
+  font-size: 11px;
+  color: #00aced;
+}
+
+.divisor {
+  position: relative;
+  height: 20px;
+  width: auto;
+  background: none;
+}
+
+div .button{
+  text-align: center;
+}
+
+.reg_button{
+  width: 80px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  border: 0;
+}
+
+.textarea{
+  width: 340px;
+  height: 100px;
+  resize: none;
+  border: 0;
+}
+
+#chars{
+  font-size: 10px;
+  color: grey;
+  float: right;
+}
+
+/*Footer*/
 footer {
   background-color: var(--cor_principal);
   color: var(--cor_fundo);
