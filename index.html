@@ -3,22 +3,66 @@
 
   <head>
     <meta charset="utf-8">
-    <title>home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="./css/master.css">
+    <link rel="stylesheet" href="./css/media.css">
+    <title>home</title>
   </head>
 
   <body>
+
+    <!-- ==== HEADER ==== -->
     <header>
-      HEADER
+      <nav class="header_container">
+        <div class="header_logo">
+          <p>Skambit</p>
+        </div>
+        <form class="header_form" action="index.html" method="get">
+          <input class="header_busca" type="search" placeholder="buscar..." name="" value="">
+          <!-- <button class="header_busca_btn" type="submit"><i class="material-icons md-36">search</i></button> -->
+        </form>
+        <a href="#">home</a>
+        <a href="#">categorias</a>
+        <a href="#">faqs</a>
+        <a href="#">login</a>
+        <i class="material-icons header_user" style="font-size: 40px; justify-self: center;
+        align-self: center; ">account_circle</i>
+        <i class="material-icons header_hamburger" style="font-size: 40px; justify-self: center;
+        align-self: center; ">menu</i>
+      </nav>
     </header>
 
-    <div class="main_container">
-      MAIN_CONTAINER
+    <!-- ==== MAIN ==== -->
+    <div class="main">
+      <section class="main_grid">
+        <article class="main_banner"></article>
+        <article class="main_card"></article>
+        <article class="main_card"></article>
+        <article class="main_card"></article>
+        <article class="main_card"></article>
+        <article class="main_card"></article>
+        <article class="main_card"></article>
+        <article class="main_card"></article>
+      </section>
     </div>
 
+
+    <!-- ==== FOOTER ==== -->
     <footer>
-      FOOTER
+      <div class="footer_logo">
+        <p>Skambit</p>
+      </div>
+      <div class="footer_msg">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+      <div class="footer_icons">
+        <i class="material-icons" style="font-size:40px;">add_circle_outline</i>
+        <i class="material-icons" style="font-size:40px;">add_circle_outline</i>
+        <i class="material-icons" style="font-size:40px;">add_circle_outline</i>
+      </div>
+
     </footer>
 
   </body>
