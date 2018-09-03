@@ -1,0 +1,24 @@
+/* @media (max-width:var(--larguraG)) {
+  .header_container {
+    max-width: var(--laguraG);
+  }
+} */
+
+@media (max-width:1090px) {
+  :root {
+    --cor_fundo: #f1c40f;
+  }
+  .header_container {
+    max-width: var(--laguraM);
+  }
+  .header_busca {}
+}
+
+@media (max-width:720px) {
+  :root {
+    --cor_fundo: #e74c3c;
+  }
+  .header_container {
+    max-width: var(--larguraP);
+  }
+}
