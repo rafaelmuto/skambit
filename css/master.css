@@ -32,9 +32,9 @@ header {
   width: 100%;
   background-color: var(--cor_principal);
   color: var(--cor_fundo);
-  overflow: hidden;
+  /* overflow: hidden; */
   position: fixed;
-  mix-blend-mode: multiply;
+  /* mix-blend-mode: multiply; */
 }
 
 .header_container {
@@ -43,7 +43,7 @@ header {
   margin: 0 auto;
   display: grid;
   grid-gap: 15px;
-  grid-template-columns: 278px auto 100px 100px 100px 100px 60px;
+  grid-template-columns: 278px auto 100px 100px 100px 60px;
   grid-template-rows: 60px;
 }
 
@@ -58,6 +58,7 @@ header {
 .header_form {
   justify-self: stretch;
   align-self: center;
+  position: relative;
 }
 
 .header_busca {
@@ -70,16 +71,17 @@ header {
 }
 
 .header_busca_btn {
-  margin-left: -40px;
-  vertical-align: middle;
-  color: black;
+  color: var(--cor_principal);
   font-size: 20px;
   border: 0;
   background-color: var(--cor_fundo);
-  cursor: pointer;
+  /* cursor: pointer; */
+  position: absolute;
+  top: 25%;
+  right: 2%;
 }
 
-nav a {
+.header_container a {
   text-decoration: none;
   color: var(--cor_fundo);
   font-weight: 100;
@@ -92,12 +94,58 @@ nav a {
   display: none;
 }
 
-/* .header_user {
-  display: inline-block;
-  vertical-align: super;
+.header_user {
   justify-self: center;
   align-self: center;
-} */
+}
+
+.drop_container {
+  display: none;
+  height: 250px;
+  width: 300px;
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  top: 65px;
+  background-color: var(--cor_principal);
+  border-radius: 10px;
+}
+
+.drop_menu {
+  color: var(--cor_fundo);
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 60px 50px 50px 50px;
+  grid-gap: 10px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown:hover .drop_container {
+  display: block;
+}
+
+.drop_menu_text {
+  font-size: .75em;
+  font-weight: 700;
+  color: var(--cor_fundo);
+  align-self: center;
+  justify-self: center;
+}
+
+.drop_menu_item {
+  background-color: var(--cor_fundo);
+  border: 0;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 20px;
+  width: 90%;
+  align-self: center;
+  justify-self: center;
+}
+
 /* Section Cards */
 .main {
   margin: 0 auto;
