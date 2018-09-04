@@ -15,29 +15,44 @@
 
     <!-- ==== HEADER ==== -->
     <header>
-      <nav class="header_container">
+      <div class="header_container">
         <div class="header_logo">
           <p>Skambit</p>
         </div>
         <form class="header_form" action="index.html" method="get">
-          <input class="header_busca" type="search" placeholder="buscar..." name="" value="">
-          <!-- <button class="header_busca_btn" type="submit"><i class="material-icons md-36">search</i></button> -->
+          <input class="header_busca" type="search" placeholder="buscar..." name="busca" value="">
+          <button class="header_busca_btn" type="submit"><i class="material-icons md-36">search</i></button>
         </form>
         <a href="#">home</a>
         <a href="#">categorias</a>
         <a href="#">faqs</a>
-        <a href="#">login</a>
-        <i class="material-icons header_user" style="font-size: 40px; justify-self: center;
-        align-self: center; ">account_circle</i>
-        <i class="material-icons header_hamburger" style="font-size: 40px; justify-self: center;
-        align-self: center; ">menu</i>
-      </nav>
+        <i class="material-icons header_user dropdown" style="font-size: 60px; justify-self: center; align-self: center; ">account_circle
+          <!-- DROP MENU Login -->
+          <div class="drop_container"><form class="drop_menu" action="index.html" method="post">
+            <p class="drop_menu_text">login</p>
+            <input class="drop_menu_item" type="text" name="user" value="" placeholder="usuario">
+            <input class="drop_menu_item" type="password" name="passw" value="" placeholder="senha">
+            <button class="drop_menu_item" type="submit" name="button">Entrar</button>
+            <button class="drop_menu_item" type="button" name="button" style="background-color: #2ecc71; color: white;">Cadastro</button>
+          </form></div></i>
+        <!-- HAMBURGER MENU -->
+        <i class="material-icons header_hamburger" style="font-size: 40px; justify-self: center; align-self: center; ">menu</i>
+
+      </div>
     </header>
 
     <!-- ==== MAIN ==== -->
     <div class="main">
       <section class="main_grid">
         <article class="main_banner"></article>
+        <article class="main_card"></article>
+        <article class="main_card"></article>
+        <article class="main_card"></article>
+        <article class="main_card"></article>
+        <article class="main_card"></article>
+        <article class="main_card"></article>
+        <article class="main_card"></article>
+        <article class="main_card"></article>
         <article class="main_card"></article>
         <article class="main_card"></article>
         <article class="main_card"></article>
@@ -62,9 +77,7 @@
         <i class="material-icons" style="font-size:40px;">add_circle_outline</i>
         <i class="material-icons" style="font-size:40px;">add_circle_outline</i>
       </div>
-
     </footer>
-
   </body>
 
 </html>
