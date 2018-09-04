@@ -22,133 +22,6 @@
   font-family: 'Roboto', sans-serif;
 }
 
-body {
-  background-color: var(--cor_fundo);
-  height: 100%;
-  margin: 0 auto;
-}
-
-/* Header */
-header {
-  height: 60px;
-  width: 100%;
-  background-color: var(--cor_principal);
-  color: var(--cor_fundo);
-  /* overflow: hidden; */
-  position: fixed;
-  /* mix-blend-mode: multiply; */
-  z-index: 100;
-}
-
-.header_container {
-  max-width: var(--larguraG);
-  height: 60px;
-  margin: 0 auto;
-  display: grid;
-  grid-gap: 15px;
-  grid-template-columns: 278px auto 100px 100px 100px 60px;
-  grid-template-rows: 60px;
-}
-
-.header_logo {
-  font-size: 4.5em;
-  line-height: 1em;
-  font-weight: 700;
-  margin-right: 10px;
-  align-self: baseline;
-}
-
-.header_form {
-  justify-self: stretch;
-  align-self: center;
-  position: relative;
-}
-
-.header_busca {
-  background-color: var(--cor_fundo);
-  border: 0;
-  border-radius: 5px;
-  padding: 10px;
-  font-size: 20px;
-  width: 100%;
-}
-
-.header_busca_btn {
-  color: var(--cor_principal);
-  font-size: 20px;
-  border: 0;
-  background-color: var(--cor_fundo);
-  /* cursor: pointer; */
-  position: absolute;
-  top: 25%;
-  right: 2%;
-}
-
-.header_container a {
-  text-decoration: none;
-  color: var(--cor_fundo);
-  font-weight: 100;
-  font-size: 20px;
-  justify-self: center;
-  align-self: center;
-}
-
-.header_hamburger {
-  display: none;
-}
-
-.header_user {
-  justify-self: center;
-  align-self: center;
-}
-
-.drop_container {
-  display: none;
-  height: 320px;
-  width: 300px;
-  position: absolute;
-  z-index: 10;
-  right: 0;
-  top: 60px;
-  background-color: var(--cor_principal);
-  border-radius: 10px;
-}
-
-.drop_menu {
-  color: var(--cor_fundo);
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 60px 50px 50px 50px 50px;
-  grid-gap: 10px;
-}
-
-.dropdown {
-  position: relative;
-}
-
-.dropdown:hover .drop_container {
-  display: block;
-}
-
-.drop_menu_text {
-  font-size: .75em;
-  font-weight: 700;
-  color: var(--cor_fundo);
-  align-self: center;
-  justify-self: center;
-}
-
-.drop_menu_item {
-  background-color: var(--cor_fundo);
-  border: 0;
-  border-radius: 5px;
-  padding: 10px;
-  font-size: 20px;
-  width: 90%;
-  align-self: center;
-  justify-self: center;
-}
-
 /* Section Cards */
 .main {
   margin: 0 auto;
@@ -173,6 +46,12 @@ header {
   background-color: #7f8c8d;
   grid-column: span 4;
   height: var(--card_H);
+}
+
+body {
+  background-color: var(--cor_fundo);
+  height: 100%;
+  margin: 0 auto;
 }
 
 /* Footer */
