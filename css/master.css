@@ -11,6 +11,8 @@
   --larguraM: 1090px;
   /* mobiles - 2 colunas */
   --larguraP: 720px;
+  --card_H: 450px;
+  --card_W: 350px;
 }
 
 * {
@@ -101,12 +103,12 @@ header {
 
 .drop_container {
   display: none;
-  height: 250px;
+  height: 320px;
   width: 300px;
   position: absolute;
   z-index: 10;
   right: 0;
-  top: 65px;
+  top: 60px;
   background-color: var(--cor_principal);
   border-radius: 10px;
 }
@@ -115,7 +117,7 @@ header {
   color: var(--cor_fundo);
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 60px 50px 50px 50px;
+  grid-template-rows: 60px 50px 50px 50px 50px;
   grid-gap: 10px;
 }
 
@@ -162,13 +164,14 @@ header {
 
 .main_card {
   background-color: #bdc3c7;
-  height: 450px;
+  width: var(--card_W);
+  height: var(--card_H);
 }
 
 .main_banner {
   background-color: #7f8c8d;
   grid-column: span 4;
-  height: 450px;
+  height: var(--card_H);
 }
 
 /* Footer */
