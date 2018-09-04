@@ -11,6 +11,8 @@
   --larguraM: 1090px;
   /* mobiles - 2 colunas */
   --larguraP: 720px;
+  --card_H: 450px;
+  --card_W: 350px;
 }
 
 * {
@@ -32,9 +34,10 @@ header {
   width: 100%;
   background-color: var(--cor_principal);
   color: var(--cor_fundo);
-  overflow: hidden;
+  /* overflow: hidden; */
   position: fixed;
-  /*mix-blend-mode: multiply;*/
+  /* mix-blend-mode: multiply; */
+  z-index: 100;
 }
 
 .header_container {
@@ -43,7 +46,7 @@ header {
   margin: 0 auto;
   display: grid;
   grid-gap: 15px;
-  grid-template-columns: 278px auto 100px 100px 100px 100px 60px;
+  grid-template-columns: 278px auto 100px 100px 100px 60px;
   grid-template-rows: 60px;
 }
 
@@ -58,6 +61,7 @@ header {
 .header_form {
   justify-self: stretch;
   align-self: center;
+  position: relative;
 }
 
 .header_busca {
@@ -70,16 +74,17 @@ header {
 }
 
 .header_busca_btn {
-  margin-left: -40px;
-  vertical-align: middle;
-  color: black;
+  color: var(--cor_principal);
   font-size: 20px;
   border: 0;
   background-color: var(--cor_fundo);
-  cursor: pointer;
+  /* cursor: pointer; */
+  position: absolute;
+  top: 25%;
+  right: 2%;
 }
 
-nav a {
+.header_container a {
   text-decoration: none;
   color: var(--cor_fundo);
   font-weight: 100;
@@ -92,12 +97,57 @@ nav a {
   display: none;
 }
 
-/* .header_user {
-  display: inline-block;
-  vertical-align: super;
+.header_user {
   justify-self: center;
   align-self: center;
-} */
+}
+
+.drop_container {
+  display: none;
+  height: 320px;
+  width: 300px;
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  top: 60px;
+  background-color: var(--cor_principal);
+  border-radius: 10px;
+}
+
+.drop_menu {
+  color: var(--cor_fundo);
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 60px 50px 50px 50px 50px;
+  grid-gap: 10px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown:hover .drop_container {
+  display: block;
+}
+
+.drop_menu_text {
+  font-size: .75em;
+  font-weight: 700;
+  color: var(--cor_fundo);
+  align-self: center;
+  justify-self: center;
+}
+
+.drop_menu_item {
+  background-color: var(--cor_fundo);
+  border: 0;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 20px;
+  width: 90%;
+  align-self: center;
+  justify-self: center;
+}
 
 /* Section Cards */
 .main {
@@ -115,13 +165,14 @@ nav a {
 
 .main_card {
   background-color: #bdc3c7;
-  height: 450px;
+  width: var(--card_W);
+  height: var(--card_H);
 }
 
 .main_banner {
   background-color: #7f8c8d;
   grid-column: span 4;
-  height: 450px;
+  height: var(--card_H);
 }
 
 /*Cadastro*/
@@ -144,7 +195,7 @@ nav a {
 .cont_cadastro_body {
   margin: 0 auto;
   width: 500px;
-  height: 720px;
+  height: 790px;
   background-color: white;
 }
 
@@ -169,7 +220,7 @@ nav a {
   top: -20px;
   left: 0;
   color: #000;
-  font-family: 'Helvetica';
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   z-index: 1;
   transition: all 0.3s ease;
@@ -182,20 +233,20 @@ nav a {
   border: none;
   border-bottom: 1px solid #ddd;
   width: 100%;
-  font-family: 'Helvetica';
+  font-family: 'Roboto', sans-serif;
   font-weight: bold;
   font-size: 16px;
   z-index: 2;
 }
 
-.cad_form_input:focus,
-.cad_form_input:valid {
+input.cad_form_input:focus,
+input.cad_form_input:valid {
   outline: none;
   border-bottom: 1px solid #00aced;
 }
 
-.cad_form_input:focus + .cad_form_label,
-.cad_form_input:valid + .cad_form_label {
+input.cad_form_input:focus+label.cad_form_label,
+input.cad_form_input:valid+label.cad_form_label {
   top: -40px;
   font-size: 11px;
   color: #00aced;
@@ -224,7 +275,8 @@ div .button{
   width: 340px;
   height: 100px;
   resize: none;
-  border: 0;
+  border: none;
+  border-bottom: 1px solid #ddd;
 }
 
 #chars{
