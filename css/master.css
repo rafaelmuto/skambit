@@ -37,6 +37,7 @@ header {
   /* overflow: hidden; */
   position: fixed;
   /* mix-blend-mode: multiply; */
+  z-index: 100;
 }
 
 .header_container {
