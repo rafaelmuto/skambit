@@ -49,17 +49,19 @@
 }
 
 /*Cadastro/Formulario*/
-.headline{
+.headline {
   margin: 0 auto;
   width: 500px;
   height: 50px;
   background-color: black;
 }
 
-.headline a{
+.headline a {
   position: absolute;
-  margin-top: 7px; /* Atenção */
-  margin-left: 10px; /* Atenção */
+  margin-top: 7px;
+  /* Atenção */
+  margin-left: 10px;
+  /* Atenção */
   color: white;
   font-size: 32px;
   font-weight: bold;
@@ -72,7 +74,7 @@
   background-color: white;
 }
 
-.photo{
+.photo {
   text-align: center;
 }
 
@@ -131,19 +133,19 @@ input.cad_form_input:valid+label.cad_form_label {
   background: none;
 }
 
-div .button{
+div .button {
   text-align: center;
 }
 
-.reg_button{
+.reg_button {
   width: 80px;
   height: 40px;
-  background-color: black;
-  color: white;
+  background-color: var(--cor_principal);
+  color: var(--cor_fundo);
   border: 0;
 }
 
-.textarea{
+.textarea {
   width: 340px;
   height: 100px;
   resize: none;
@@ -151,24 +153,26 @@ div .button{
   border-bottom: 1px solid #ddd;
 }
 
-#chars{
+#chars {
   font-size: 10px;
   color: grey;
   float: right;
 }
 
 /*FAQ*/
-.headline_faq{
+.headline_faq {
   margin: 0 auto;
   width: 500px;
   height: 50px;
   background-color: black;
 }
 
-.headline_faq a{
+.headline_faq a {
   position: absolute;
-  margin-top: 7px; /* Atenção */
-  margin-left: 10px; /* Atenção */
+  margin-top: 7px;
+  /* Atenção */
+  margin-left: 10px;
+  /* Atenção */
   color: white;
   font-size: 32px;
   font-weight: bold;
@@ -183,20 +187,15 @@ div .button{
 
 .lbl-toggle {
   display: block;
-
   font-weight: bold;
   font-family: monospace;
   font-size: 1.2rem;
   text-transform: uppercase;
   text-align: center;
-
   padding: 1rem;
-
   color: #A77B0E;
   background: #FAE042;
-
   cursor: pointer;
-
   border-radius: 7px;
   transition: all 0.25s ease-out;
 }
@@ -212,22 +211,18 @@ input[type='checkbox'] {
 .lbl-toggle::before {
   content: ' ';
   display: inline-block;
-
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
   border-left: 5px solid currentColor;
-
   vertical-align: middle;
   margin-right: .7rem;
   transform: translateY(-2px);
-
   transition: transform .2s ease-out;
 }
 
 .collapsible-content .content-inner {
   background: rgba(250, 224, 66, .2);
   border-bottom: 1px solid rgba(250, 224, 66, .45);
-
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   padding: .5rem 1rem;
@@ -236,19 +231,29 @@ input[type='checkbox'] {
 .collapsible-content {
   max-height: 0px;
   overflow: hidden;
-
   transition: max-height .25s ease-in-out;
 }
 
-.toggle:checked + .lbl-toggle + .collapsible-content {
+<<<<<<< current
+.toggle:checked+.lbl-toggle+.collapsible-content {
   max-height: 400px;
+=======
+.main-card {
+  border: 1px dotted;
+  margin: 0.5em auto;
+  max-width: 1450px;
+  display: grid;
+  grid-gap: 1.0vh;
+  grid-template-rows: 20vh 40vh 20vh;
+  grid-template-areas: "card1 card2 card3" "card4 feature feature" "card5 card6 card7";
+>>>>>>> before discard
 }
 
-.toggle:checked + .lbl-toggle::before {
+.toggle:checked+.lbl-toggle::before {
   transform: rotate(90deg) translateX(-3px);
 }
 
-.toggle:checked + .lbl-toggle {
+.toggle:checked+.lbl-toggle {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
