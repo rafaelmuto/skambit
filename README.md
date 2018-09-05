@@ -7,7 +7,7 @@ Este é repositorio do projeto integrador do curso de Fullstack da Digital House
 - Aline Silva
 - Rafael Muto
 - Thiago Pereira
-- Tonico Dias
+- ~~Tonico Dias~~
 - Tulio Almeida
 
 Esse README sera atualizado...
