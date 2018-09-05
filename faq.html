@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./css/master.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/media.css">
+    <title>FAQ - Perguntas e Respostas</title>
+  </head>
+
+  <body>
+
+    <!-- ==== HEADER ==== -->
+    <header>
+      <div class="header_container">
+        <div class="header_logo">
+          <p>Skambit</p>
+        </div>
+        <form class="header_form" action="index.html" method="get">
+          <input class="header_busca" type="search" placeholder="buscar..." name="busca" value="">
+          <button class="header_busca_btn" type="submit"><i class="material-icons md-36">search</i></button>
+        </form>
+        <a class="header_link" href="#">home</a>
+        <a class="header_link" href="#">categorias</a>
+        <a class="header_link" href="#">faqs</a>
+        <!-- DROP MENU Login -->
+        <i class="material-icons header_user dropdown" style="font-size: 60px; justify-self: center; align-self: center; ">account_circle
+          <div class="drop_container"><form class="drop_menu" action="index.html" method="post">
+            <p class="drop_menu_text">login</p>
+            <input class="drop_menu_item" type="text" name="user" value="" placeholder="usuario">
+            <input class="drop_menu_item" type="password" name="passw" value="" placeholder="senha">
+            <button class="drop_menu_item" type="submit" name="button">Entrar</button>
+            <button class="drop_menu_item" type="button" name="button" style="background-color: #2ecc71; color: white;">Cadastro</button>
+          </form></div></i>
+        <!-- HAMBURGER MENU -->
+        <i class="material-icons header_hamburger buger" style="font-size: 60px; justify-self: center; align-self: center; ">menu
+        <div class="burger_container">
+          <div class="burger_grid">
+            <a class="burger_menu_item"href="#">home</a>
+            <a class="burger_menu_item" href="#">categorias</a>
+            <a class="burger_menu_item" href="#">faqs</a>
+            <a class="burger_menu_item" href="#">login</a>
+          </div>
+        </div></i>
+      </div>
+
+    </header>
+
+
+    <div class="main">
+      <div class="container_faq">
+        <div class="headline_faq">
+          <a>FAQ - Perguntas e Respostas</a>
+        </div>
+          <div class="cont_faq_body">
+            <div class="wrap-collabsible">
+              <input id="collapsible" class="toggle" type="checkbox" >
+              <label for="collapsible" class="lbl-toggle">O que é Skambit ?</label>
+              <div class="collapsible-content">
+                <div class="content-inner">
+                  <p>
+                    Skambit é um marketplace de troca de mercadorias.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="wrap-collabsible">
+              <input id="collapsible2" class="toggle" type="checkbox" >
+              <label for="collapsible2" class="lbl-toggle">Posso trocar qualquer tipo de produto ?</label>
+              <div class="collapsible-content">
+                <div class="content-inner">
+                  <p>
+                    Sim, no Skambit você pode trocar qualquer tipo de produto.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="wrap-collabsible">
+              <input id="collapsible3" class="toggle" type="checkbox" >
+              <label for="collapsible3" class="lbl-toggle">Como vou receber o que foi trocado ?</label>
+              <div class="collapsible-content">
+                <div class="content-inner">
+                  <p>
+                    Você pode combinar isto diretamente com quem você irá fazer a troca. O Skambit somente coloca vocês em contato.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="wrap-collabsible">
+              <input id="collapsible4" class="toggle" type="checkbox" >
+              <label for="collapsible4" class="lbl-toggle">Os dados do cadastro serão armazenados de forma segura ?</label>
+              <div class="collapsible-content">
+                <div class="content-inner">
+                  <p>
+                    Sim, aqui no Skambit você pode ficar tranquilo. Nossa equipe de profissionais cuidam da segurança dos seus dados.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="wrap-collabsible">
+              <input id="collapsible5" class="toggle" type="checkbox" >
+              <label for="collapsible5" class="lbl-toggle">Existe troca de serviços ?</label>
+              <div class="collapsible-content">
+                <div class="content-inner">
+                  <p>
+                    Ainda não, mas é uma das funcionalidades que iremos implantar no futuro.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        </div>
+
+    <footer>
+      <div class="footer_logo">
+        <p>Skambit</p>
+      </div>
+      <div class="footer_msg">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+      <div class="footer_icons">
+        <i class="material-icons" style="font-size:40px;">add_circle_outline</i>
+        <i class="material-icons" style="font-size:40px;">add_circle_outline</i>
+        <i class="material-icons" style="font-size:40px;">add_circle_outline</i>
+      </div>
+    </footer>
+  </body>
+</html>

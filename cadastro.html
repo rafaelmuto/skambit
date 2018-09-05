@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./css/master.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/media.css">
+    <title>Cadastro</title>
+  </head>
+
+  <body>
+
+    <!-- ==== HEADER ==== -->
+    <header>
+      <div class="header_container">
+        <div class="header_logo">
+          <p>Skambit</p>
+        </div>
+        <form class="header_form" action="index.html" method="get">
+          <input class="header_busca" type="search" placeholder="buscar..." name="busca" value="">
+          <button class="header_busca_btn" type="submit"><i class="material-icons md-36">search</i></button>
+        </form>
+        <a class="header_link" href="#">home</a>
+        <a class="header_link" href="#">categorias</a>
+        <a class="header_link" href="#">faqs</a>
+        <!-- DROP MENU Login -->
+        <i class="material-icons header_user dropdown" style="font-size: 60px; justify-self: center; align-self: center; ">account_circle
+          <div class="drop_container"><form class="drop_menu" action="index.html" method="post">
+            <p class="drop_menu_text">login</p>
+            <input class="drop_menu_item" type="text" name="user" value="" placeholder="usuario">
+            <input class="drop_menu_item" type="password" name="passw" value="" placeholder="senha">
+            <button class="drop_menu_item" type="submit" name="button">Entrar</button>
+            <button class="drop_menu_item" type="button" name="button" style="background-color: #2ecc71; color: white;">Cadastro</button>
+          </form></div></i>
+        <!-- HAMBURGER MENU -->
+        <i class="material-icons header_hamburger buger" style="font-size: 60px; justify-self: center; align-self: center; ">menu
+        <div class="burger_container">
+          <div class="burger_grid">
+            <a class="burger_menu_item"href="#">home</a>
+            <a class="burger_menu_item" href="#">categorias</a>
+            <a class="burger_menu_item" href="#">faqs</a>
+            <a class="burger_menu_item" href="#">login</a>
+          </div>
+        </div></i>
+      </div>
+
+    </header>
+
+
+    <div class="main">
+        <div class="container_cadastro">
+        <div class="headline">
+          <a>Cadastro</a>
+        </div>
+        <div class="cont_cadastro_body">
+          <div class="photo">
+          <i class="material-icons" id="photo_select" style="font-size: 150px; color: grey;">account_circle</i>
+          </div>
+          <form class="form_cadastro" method="post">
+            <input class="cad_form_input" type="text" name="firstname" value="" required autocomplete="off">
+            <label class="cad_form_label" for="yourname">Nome</label>
+
+            <div class="divisor"></div>
+
+            <input class="cad_form_input" type="text" name="surname" value="" required autocomplete="off">
+            <label class="cad_form_label" for="yourname">Sobrenome</label>
+
+            <div class="divisor"></div>
+
+            <input class="cad_form_input" type="email" name="email" value="" required autocomplete="off">
+            <label class="cad_form_label" for="email">E-mail</label>
+
+            <div class="divisor"></div>
+
+            <input class="cad_form_input" type="text" name="cep" value="" required autocomplete="off">
+            <label class="cad_form_label" for="cep">CEP</label>
+
+            <div class="divisor"></div>
+
+            <input class="cad_form_input" type="password" name="password" value="" required autocomplete="off">
+            <label class="cad_form_label" for="password">Senha</label>
+
+            <div class="divisor"></div>
+
+            <input class="cad_form_input" type="password" name="conf_password" value="" required autocomplete="off">
+            <label class="cad_form_label" for="conf_password">Confirmação de senha</label>
+
+            <div class="divisor"></div>
+
+            <div class="cont_textarea">
+              <label class="cad_form_label" for='textarea'>Interesses</label>
+              <textarea class="textarea" maxlength="250">
+              </textarea>
+              <span id="chars">250 / 250</span>
+            <div class="divisor"></div>
+
+            <div class="button">
+             <input class="reg_button" alt="Cadastrar "type='submit' name='Submit' value='Cadastrar'/>
+             <input class="reg_button" type='button' value="Voltar"/><a href="index.html" target="_blank"></a>
+
+            </div>
+            </div>
+            </div>
+            </form>
+        </div>
+    </div>
+    <footer>
+      <div class="footer_logo">
+        <p>Skambit</p>
+      </div>
+      <div class="footer_msg">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+      <div class="footer_icons">
+        <i class="material-icons" style="font-size:40px;">add_circle_outline</i>
+        <i class="material-icons" style="font-size:40px;">add_circle_outline</i>
+        <i class="material-icons" style="font-size:40px;">add_circle_outline</i>
+      </div>
+    </footer>
+  </body>
+</html>
