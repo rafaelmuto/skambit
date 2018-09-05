@@ -11,6 +11,7 @@
   --larguraM: 1090px;
   /* mobiles - 2 colunas */
   --larguraP: 720px;
+  --larguraPP: 520px;
   --card_H: 450px;
   --card_W: 350px;
 }
@@ -26,6 +27,16 @@ body {
   background-color: var(--cor_fundo);
   height: 100%;
   margin: 0 auto;
+  font-size: 16px; 
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
 }
 
 /* Header */
@@ -163,16 +174,28 @@ header {
   grid-template-columns: 350px 350px 350px 350px;
 }
 
+.main_banner {
+  background-color: #7f8c8d;
+  grid-column: span 4;
+  height: var(--card_H);
+}
+
 .main_card {
   background-color: #bdc3c7;
   width: var(--card_W);
   height: var(--card_H);
 }
 
-.main_banner {
-  background-color: #7f8c8d;
-  grid-column: span 4;
-  height: var(--card_H);
+.main_card--img {
+  width: var(--card_W);
+  height: 400px;
+}
+
+.main_card--info {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
 }
 
 /* Footer */
