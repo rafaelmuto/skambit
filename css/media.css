@@ -28,7 +28,7 @@
     grid-template-columns: 278px auto 60px;
   }
 
-  header a {
+  .header_link {
     display: none;
   }
 
@@ -37,6 +37,11 @@
   }
 
   .header_hamburger {
+    display: block;
+    position: relative;
+  }
+
+  .header_hamburger:hover .burger_container {
     display: block;
   }
 

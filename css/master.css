@@ -5,6 +5,11 @@
   /* --cor_fundo: #f1c40f; */
   /* --cor_fundo: #3498db; */
   /* --cor_fundo: #2ecc71; */
+  --cor_sub: #95a5a6;
+  /* --cor_sub: #c0392b; */
+  /* --cor_sub: #f39c12; */
+  /* --cor_sub: #2980b9; */
+  /* --cor_sub: #27ae60; */
   /* desktop - 4 colunas */
   --larguraG: 1460px;
   /* tables - 3 colunas */
@@ -234,4 +239,8 @@ footer {
 
 .footer_icons i {
   display: inline-block;
+.main_banner {
+  background-color: #7f8c8d;
+  grid-column: span 4;
+  height: var(--card_H);
 }
