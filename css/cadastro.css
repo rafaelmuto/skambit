@@ -7,14 +7,16 @@
 }
 
 .headline a {
-  position: absolute;
-  margin-top: 7px;
+  /* position: absolute; */
+  /* margin-top: 7px; */
   /* Atenção */
-  margin-left: 10px;
+  /* margin-left: 10px; */
   /* Atenção */
   color: white;
-  font-size: 32px;
+  font-size: 2.5em;
   font-weight: bold;
+  line-height: 2em;
+  /* align-self: baseline; */
 }
 
 .cont_cadastro_body {

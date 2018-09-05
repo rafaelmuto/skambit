@@ -42,7 +42,6 @@
   color: #A77B0E;
   background: #FAE042;
   cursor: pointer;
-  border-radius: 7px;
   transition: all 0.25s ease-out;
 }
 
@@ -66,14 +65,13 @@ input[type='checkbox'] {
   transition: transform .2s ease-out;
 }
 
-.collapsible-content .content-inner {
-  background: rgba(250, 224, 66, .2);
-  border-bottom: 1px solid rgba(250, 224, 66, .45);
-  border-bottom-left-radius: 7px;
-  border-bottom-right-radius: 7px;
-  padding: .5rem 1rem;
-}
-
+/* .collapsible-content .content-inner { */
+/* background: rgba(250, 224, 66, .2); */
+/* border-bottom: 1px solid rgba(250, 224, 66, .45); */
+/* border-bottom-left-radius: 7px; */
+/* border-bottom-right-radius: 7px; */
+/* padding: .5rem 1rem; */
+/* } */
 .collapsible-content {
   max-height: 0px;
   overflow: hidden;
