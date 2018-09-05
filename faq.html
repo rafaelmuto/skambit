@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/master.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/media.css">
-    <title>Cadastro</title>
+    <title>FAQ - Perguntas e Respostas</title>
   </head>
 
   <body>
@@ -52,62 +52,71 @@
 
 
     <div class="main">
-        <div class="container_cadastro">
-        <div class="headline">
-          <a>Cadastro</a>
+      <div class="container_faq">
+        <div class="headline_faq">
+          <a>FAQ - Perguntas e Respostas</a>
         </div>
-        <div class="cont_cadastro_body">
-          <div class="photo">
-          <i class="material-icons" id="photo_select" style="font-size: 150px; color: grey;">account_circle</i>
+          <div class="cont_faq_body">
+            <div class="wrap-collabsible">
+              <input id="collapsible" class="toggle" type="checkbox" >
+              <label for="collapsible" class="lbl-toggle">O que é Skambit ?</label>
+              <div class="collapsible-content">
+                <div class="content-inner">
+                  <p>
+                    Skambit é um marketplace de troca de mercadorias.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="wrap-collabsible">
+              <input id="collapsible2" class="toggle" type="checkbox" >
+              <label for="collapsible2" class="lbl-toggle">Posso trocar qualquer tipo de produto ?</label>
+              <div class="collapsible-content">
+                <div class="content-inner">
+                  <p>
+                    Sim, no Skambit você pode trocar qualquer tipo de produto.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="wrap-collabsible">
+              <input id="collapsible3" class="toggle" type="checkbox" >
+              <label for="collapsible3" class="lbl-toggle">Como vou receber o que foi trocado ?</label>
+              <div class="collapsible-content">
+                <div class="content-inner">
+                  <p>
+                    Você pode combinar isto diretamente com quem você irá fazer a troca. O Skambit somente coloca vocês em contato.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="wrap-collabsible">
+              <input id="collapsible4" class="toggle" type="checkbox" >
+              <label for="collapsible4" class="lbl-toggle">Os dados do cadastro serão armazenados de forma segura ?</label>
+              <div class="collapsible-content">
+                <div class="content-inner">
+                  <p>
+                    Sim, aqui no Skambit você pode ficar tranquilo. Nossa equipe de profissionais cuidam da segurança dos seus dados.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="wrap-collabsible">
+              <input id="collapsible5" class="toggle" type="checkbox" >
+              <label for="collapsible5" class="lbl-toggle">Existe troca de serviços ?</label>
+              <div class="collapsible-content">
+                <div class="content-inner">
+                  <p>
+                    Ainda não, mas é uma das funcionalidades que iremos implantar no futuro.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-          <form class="form_cadastro" method="post">
-            <input class="cad_form_input" type="text" name="firstname" value="" required autocomplete="off">
-            <label class="cad_form_label" for="yourname">Nome</label>
-
-            <div class="divisor"></div>
-
-            <input class="cad_form_input" type="text" name="surname" value="" required autocomplete="off">
-            <label class="cad_form_label" for="yourname">Sobrenome</label>
-
-            <div class="divisor"></div>
-
-            <input class="cad_form_input" type="email" name="email" value="" required autocomplete="off">
-            <label class="cad_form_label" for="email">E-mail</label>
-
-            <div class="divisor"></div>
-
-            <input class="cad_form_input" type="text" name="cep" value="" required autocomplete="off">
-            <label class="cad_form_label" for="cep">CEP</label>
-
-            <div class="divisor"></div>
-
-            <input class="cad_form_input" type="password" name="password" value="" required autocomplete="off">
-            <label class="cad_form_label" for="password">Senha</label>
-
-            <div class="divisor"></div>
-
-            <input class="cad_form_input" type="password" name="conf_password" value="" required autocomplete="off">
-            <label class="cad_form_label" for="conf_password">Confirmação de senha</label>
-
-            <div class="divisor"></div>
-
-            <div class="cont_textarea">
-              <label class="cad_form_label" for='textarea'>Interesses</label>
-              <textarea class="textarea" maxlength="250">
-              </textarea>
-              <span id="chars">250 / 250</span>
-            <div class="divisor"></div>
-
-            <div class="button">
-             <input class="reg_button" alt="Cadastrar "type='submit' name='Submit' value='Cadastrar'/>
-             <input class="reg_button" type='button' value="Voltar"/><a href="index.html" target="_blank"></a>
-
-            </div>
-            </div>
-            </div>
-            </form>
         </div>
-    </div>
+
+        </div>
+
     <footer>
       <div class="footer_logo">
         <p>Skambit</p>
