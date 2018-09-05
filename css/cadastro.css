@@ -1,0 +1,110 @@
+/*Cadastro/Formulario*/
+.headline {
+  margin: 0 auto;
+  width: 500px;
+  height: 50px;
+  background-color: var(--cor_principal);
+}
+
+.headline a {
+  position: absolute;
+  margin-top: 7px;
+  /* Atenção */
+  margin-left: 10px;
+  /* Atenção */
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.cont_cadastro_body {
+  margin: 0 auto;
+  width: 500px;
+  height: 790px;
+  background-color: white;
+}
+
+.photo {
+  text-align: center;
+}
+
+.form_cadastro {
+  display: block;
+  position: relative;
+  width: 400px;
+  height: 150px;
+  background: #fff;
+  margin: 50px auto;
+  padding: 30px;
+}
+
+.cad_form_label {
+  display: block;
+  position: relative;
+  top: -20px;
+  left: 0;
+  color: #000;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.cad_form_input {
+  display: block;
+  position: relative;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  z-index: 2;
+}
+
+input.cad_form_input:focus,
+input.cad_form_input:valid {
+  outline: none;
+  border-bottom: 1px solid var(--cor_sub);
+}
+
+input.cad_form_input:focus+label.cad_form_label,
+input.cad_form_input:valid+label.cad_form_label {
+  top: -40px;
+  font-size: 11px;
+  color: var(--cor_sub);
+}
+
+.divisor {
+  position: relative;
+  height: 20px;
+  width: auto;
+  background: none;
+}
+
+div .button {
+  text-align: center;
+}
+
+.reg_button {
+  width: 80px;
+  height: 40px;
+  background-color: var(--cor_principal);
+  color: var(--cor_fundo);
+  border: 0;
+}
+
+.textarea {
+  width: 340px;
+  height: 100px;
+  resize: none;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+#chars {
+  font-size: 10px;
+  color: var(--cor_sub);
+  float: right;
+}
