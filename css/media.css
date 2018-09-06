@@ -5,18 +5,6 @@
     grid-template-columns: 278px auto 60px 100px 50px 60px;
   }
 
-  .main {
-    max-width: var(--larguraM);
-  }
-
-  .main_grid {
-    grid-template-columns: 350px 350px 350px;
-  }
-
-  .main_banner {
-    grid-column: span 3;
-  }
-
   footer {
     max-width: var(--larguraM);
   }
@@ -45,14 +33,6 @@
     display: block;
   }
 
-  .main {
-    max-width: var(--larguraP);
-  }
-
-  .main_grid {
-    grid-template-columns: 350px 350px;
-  }
-
   .main_banner {
     display: none;
   }
@@ -68,25 +48,6 @@
     max-width: var(--larguraPP);
     grid-template-columns: 250px auto 60px;
   }
-  .main_grid {
-    grid-template-columns: 275px 275px;
-    justify-content: stretch;
-  }
-
-  .main {
-    max-width: var(--larguraPP);
-  }
-
-  .main_card {
-    background-color: #bdc3c7;
-    width: 220px;
-    height: 220px;
-  }
-
-  .main_card--img {
-    width: 220px;
-    height: 190px;
-  }
 
 }
 
@@ -95,9 +56,4 @@
     max-width: 350px;
     grid-template-columns: 100px auto 30px;
   }
-  .main_grid {
-    grid-template-columns: 300px;
-    justify-content: right;
-  }
-
 }
