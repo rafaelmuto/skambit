@@ -33,6 +33,7 @@ body {
   height: 100%;
   margin: 0 auto;
   font-size: 16px; 
+  padding: 60px 0 0;
 }
 
 img {
@@ -47,20 +48,19 @@ a {
 
 /* Section Cards */
 
+.main_banner {
+  height: 400px;
+  background: url(../imagens/bg.jpg) center no-repeat;
+  background-size: cover;
+}
+
 .main_grid {
   display: grid;
   grid-gap: 30px;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   max-width: 90vw;
   margin: 0 auto 30px;
-}
-
-.main_banner {
-  height: 400px;
-  margin-bottom: 30px;
-  padding: 30px;
-  background: url(../imagens/bg.jpg) center no-repeat;
-  background-size: cover;
+  padding: 20px 0 0;
 }
 
 .main_card {
