@@ -6,6 +6,8 @@ header {
   color: var(--cor_fundo);
   /* overflow: hidden; */
   position: fixed;
+  top: 0;
+  left: 0;
   /* mix-blend-mode: multiply; */
   z-index: 100;
 }
