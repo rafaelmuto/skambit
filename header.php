@@ -18,7 +18,7 @@
         <input class="drop_menu_item" type="password" name="passw" value="" placeholder="senha">
         <button class="drop_menu_item" type="submit" name="button">Entrar</button>
         <!-- <button class="drop_menu_item" type="button" name="button" style="background-color: #2ecc71; color: white;">Cadastro</button> -->
-        <a class="drop_menu_item" href="cadastro.html" style="background-color: #2ecc71; color: white;"> cadastro </a>
+        <a class="drop_menu_item" href="cadastro.php" style="background-color: #2ecc71; color: white;"> cadastro </a>
       </form></div></i>
     <!-- HAMBURGER MENU -->
     <i class="material-icons header_hamburger buger" style="font-size: 60px; justify-self: center; align-self: center; ">menu
