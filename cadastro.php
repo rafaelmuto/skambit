@@ -17,41 +17,7 @@
   <body>
 
     <!-- ==== HEADER ==== -->
-    <header>
-      <div class="header_container">
-        <div class="header_logo">
-          <p>Skambit</p>
-        </div>
-        <form class="header_form" action="index.html" method="get">
-          <input class="header_busca" type="search" placeholder="buscar..." name="busca" value="">
-          <button class="header_busca_btn" type="submit"><i class="material-icons md-36">search</i></button>
-        </form>
-        <a class="header_link" href="index.html">home</a>
-        <a class="header_link" href="#">categorias</a>
-        <a class="header_link" href="faq.html">faqs</a>
-        <!-- DROP MENU Login -->
-        <i class="material-icons header_user dropdown" style="font-size: 60px; justify-self: center; align-self: center; ">account_circle
-          <div class="drop_container"><form class="drop_menu" action="index.html" method="post">
-            <p class="drop_menu_text">login</p>
-            <input class="drop_menu_item" type="text" name="user" value="" placeholder="usuario">
-            <input class="drop_menu_item" type="password" name="passw" value="" placeholder="senha">
-            <button class="drop_menu_item" type="submit" name="button">Entrar</button>
-            <!-- <button class="drop_menu_item" type="button" name="button" style="background-color: #2ecc71; color: white;">Cadastro</button> -->
-            <a class="drop_menu_item" href="cadastro.html" style="background-color: #2ecc71; color: white;"> cadastro </a>
-          </form></div></i>
-        <!-- HAMBURGER MENU -->
-        <i class="material-icons header_hamburger buger" style="font-size: 60px; justify-self: center; align-self: center; ">menu
-        <div class="burger_container">
-          <div class="burger_grid">
-            <a class="burger_menu_item"href="index.html">home</a>
-            <a class="burger_menu_item" href="#">categorias</a>
-            <a class="burger_menu_item" href="faq.html">faqs</a>
-            <a class="burger_menu_item" href="#">login</a>
-          </div>
-        </div></i>
-      </div>
-
-    </header>
+    <?php include("header.php") ?>
 
 
     <div class="main">
@@ -98,8 +64,6 @@
               <label class="cad_form_label" for='textarea'>Interesses</label>
               <textarea class="textarea" maxlength="250">
 
-
-
               </textarea>
               <span id="chars">250 / 250</span>
               <div class="divisor"></div>
@@ -114,19 +78,9 @@
         </form>
       </div>
     </div>
-    <footer>
-      <div class="footer_logo">
-        <p>Skambit</p>
-      </div>
-      <div class="footer_msg">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      </div>
-      <div class="footer_icons">
-        <i class="material-icons" style="font-size:40px;">add_circle_outline</i>
-        <i class="material-icons" style="font-size:40px;">add_circle_outline</i>
-        <i class="material-icons" style="font-size:40px;">add_circle_outline</i>
-      </div>
-    </footer>
+
+    <!-- ==== FOOTER ==== -->
+    <?php include("footer.php") ?>
   </body>
 
 </html>
