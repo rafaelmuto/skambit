@@ -27,7 +27,7 @@
 .cont_faq_body {
   margin: 0 auto;
   width: 500px;
-  height: 520px;
+  height: 400px;
   background-color: white;
 }
 
@@ -65,13 +65,14 @@ input[type='checkbox'] {
   transition: transform .2s ease-out;
 }
 
-/* .collapsible-content .content-inner { */
-/* background: rgba(250, 224, 66, .2); */
-/* border-bottom: 1px solid rgba(250, 224, 66, .45); */
-/* border-bottom-left-radius: 7px; */
-/* border-bottom-right-radius: 7px; */
-/* padding: .5rem 1rem; */
-/* } */
+.collapsible-content .content-inner {
+background: rgba(250, 224, 66, .2);
+border-bottom: 1px solid rgba(250, 224, 66, .45);
+border-bottom-left-radius: 7px;
+border-bottom-right-radius: 7px;
+padding: .5rem 1rem;
+}
+
 .collapsible-content {
   max-height: 0px;
   overflow: hidden;
