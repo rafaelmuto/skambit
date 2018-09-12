@@ -13,7 +13,7 @@ header {
 }
 
 .header_container {
-  max-width: var(--larguraG);
+  max-width: 90vw;
   height: 60px;
   margin: 0 auto;
   display: grid;
@@ -119,6 +119,11 @@ header {
   width: 90%;
   align-self: center;
   justify-self: center;
+}
+
+.drop_menu_item__cadastro {
+  text-align: center;
+  text-decoration: none;
 }
 
 .burger_container {
