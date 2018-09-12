@@ -6,6 +6,10 @@
   max-width: var(--larguraG);
 }
 
+.container_faq{
+  margin-bottom: 50px;
+}
+
 .headline_faq {
   margin: 0 auto;
   width: 500px;
@@ -27,26 +31,32 @@
 .cont_faq_body {
   margin: 0 auto;
   width: 500px;
-  height: 520px;
-  background-color: white;
+  height: auto;
 }
 
 .lbl-toggle {
   display: block;
   font-weight: bold;
-  font-family: monospace;
-  font-size: 1.2rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
   text-transform: uppercase;
   text-align: center;
   padding: 1rem;
-  color: #A77B0E;
-  background: #FAE042;
+  color: white;
+  background: #606060;
   cursor: pointer;
   transition: all 0.25s ease-out;
 }
 
+.content-inner p{
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
+  color: #303030;
+}
+
 .lbl-toggle:hover {
-  color: #7C5A0B;
+  color: #a8a8a8;
 }
 
 input[type='checkbox'] {
@@ -65,13 +75,14 @@ input[type='checkbox'] {
   transition: transform .2s ease-out;
 }
 
-/* .collapsible-content .content-inner { */
-/* background: rgba(250, 224, 66, .2); */
-/* border-bottom: 1px solid rgba(250, 224, 66, .45); */
-/* border-bottom-left-radius: 7px; */
-/* border-bottom-right-radius: 7px; */
-/* padding: .5rem 1rem; */
-/* } */
+.collapsible-content .content-inner {
+background: #9e9e9e;
+border-bottom: 1px solid #9e9e9e;
+border-bottom-left-radius: 7px;
+border-bottom-right-radius: 7px;
+padding: .5rem 1rem;
+}
+
 .collapsible-content {
   max-height: 0px;
   overflow: hidden;

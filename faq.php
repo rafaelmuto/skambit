@@ -81,6 +81,17 @@
               </div>
             </div>
           </div>
+          <div class="wrap-collabsible">
+            <input id="collapsible6" class="toggle" type="checkbox" >
+            <label for="collapsible6" class="lbl-toggle">Os produtos trocados possuem garantia ?</label>
+            <div class="collapsible-content">
+              <div class="content-inner">
+                <p>
+                  Os produtos são de responsabilidade do usuario, o Skambit somente coloca os usuarios em contato.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 

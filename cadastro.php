@@ -19,9 +19,8 @@
     <!-- ==== HEADER ==== -->
     <?php include("header.php") ?>
 
-
     <div class="main">
-      <div class="container_cadastro">
+          <div class="container_cadastro">
         <div class="headline">
           <a>Cadastro</a>
         </div>
