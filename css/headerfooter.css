@@ -196,7 +196,7 @@ footer {
     display: block;
     position: fixed;
     background-color: var(--cor_principal);
-    color: white;
+    color: var(--cor_fundo);
     width: 100%;
     bottom: 0;
     height: 50px;
