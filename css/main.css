@@ -10,15 +10,6 @@
   /* --cor_sub: #f39c12; */
   /* --cor_sub: #2980b9; */
   /* --cor_sub: #27ae60; */
-  /* desktop - 4 colunas */
-  --larguraG: 1460px;
-  /* tables - 3 colunas */
-  --larguraM: 1090px;
-  /* mobiles - 2 colunas */
-  --larguraP: 720px;
-  --larguraPP: 520px;
-  --card_H: 450px;
-  --card_W: 350px;
 }
 
 * {

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="./css/master.css">
+    <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/headerfooter.css">
     <title>home</title>
   </head>
@@ -176,14 +176,8 @@
             <a href="#"><i class="material-icons">thumb_up</i></a>
           </div>
         </article>
-        <article class="main_card"></article>
-        <article class="main_card"></article>
-        <article class="main_card"></article>
-        <article class="main_card"></article>
-        <article class="main_card"></article>
-        <article class="main_card"></article>
-        <article class="main_card"></article>
-        <article class="main_card"></article>
+        <article class="main_card">teste</article>
+
       </section>
     </div>
 

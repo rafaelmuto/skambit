@@ -4,11 +4,9 @@ header {
   width: 100%;
   background-color: var(--cor_principal);
   color: var(--cor_fundo);
-  /* overflow: hidden; */
   position: fixed;
   top: 0;
   left: 0;
-  /* mix-blend-mode: multiply; */
   z-index: 100;
 }
 
@@ -161,7 +159,7 @@ footer {
   background-color: var(--cor_principal);
   color: var(--cor_fundo);
   height: 50px;
-  max-width: var(--larguraG);
+  max-width: 90vw;
   margin: 0 auto;
   padding-left: 30px;
   display: grid;
@@ -200,10 +198,6 @@ footer {
     grid-gap: 5px;
     grid-template-columns: 278px auto 70px 100px 60px 70px;
   }
-
-  footer {
-    max-width: var(--larguraM);
-  }
 }
 
 @media (max-width:1090px) {
@@ -234,10 +228,5 @@ footer {
 
   .main_banner {
     display: none;
-  }
-
-  footer {
-    max-width: var(--larguraP);
-    padding-left: 10px;
   }
 }
