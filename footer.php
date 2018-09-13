@@ -11,3 +11,10 @@
     <i class="material-icons" style="font-size:40px;">add_circle_outline</i>
   </div>
 </footer>
+
+<div class="footer_nav">
+  <a class="footer_nav--logo" href="index.php">Skambit</a>
+  <a href="#">categorias</a>
+  <a href="faq.php">faqs</a>
+  <a href="login.php">login</a>
+</div>

@@ -176,7 +176,7 @@
             <a href="#"><i class="material-icons">thumb_up</i></a>
           </div>
         </article>
-        <article class="main_card">teste</article>
+        <!-- <article class="main_card">teste</article> -->
 
       </section>
     </div>
