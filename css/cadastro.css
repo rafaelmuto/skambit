@@ -103,9 +103,3 @@ div .button {
   border: none;
   border-bottom: 1px solid #ddd;
 }
-
-#chars {
-  font-size: 10px;
-  color: var(--cor_sub);
-  float: right;
-}

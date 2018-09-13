@@ -6,10 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="./css/master.css">
-    <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/footer.css">
-    <link rel="stylesheet" href="./css/media.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/headerfooter.css">
     <link rel="stylesheet" href="./css/cadastro.css">
     <title>Cadastro</title>
   </head>
@@ -25,6 +23,7 @@
           <a>Cadastro</a>
         </div>
         <div class="cont_cadastro_body">
+          <div class="divisor"></div>
           <div class="photo">
             <i class="material-icons" id="photo_select" style="font-size: 150px; color: grey;">account_circle</i>
           </div>
@@ -58,14 +57,6 @@
             <label class="cad_form_label" for="conf_password">Confirmação de senha</label>
 
             <div class="divisor"></div>
-
-            <div class="cont_textarea">
-              <label class="cad_form_label" for='textarea'>Interesses</label>
-              <textarea class="textarea" maxlength="250">
-
-              </textarea>
-              <span id="chars">250 / 250</span>
-              <div class="divisor"></div>
 
               <div class="button">
                 <input class="reg_button" alt="Cadastrar "type='submit' name='Submit' value='Cadastrar'/>
