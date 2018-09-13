@@ -22,7 +22,7 @@
       </form></div></i>
 
     <!-- HAMBURGER MENU -->
-    <i class="material-icons header_hamburger buger" style="font-size: 60px; justify-self: center; align-self: center; ">menu
+    <!-- <i class="material-icons header_hamburger buger" style="font-size: 60px; justify-self: center; align-self: center; ">menu
     <div class="burger_container">
       <div class="burger_grid">
         <a class="burger_menu_item"href="index.php">home</a>
@@ -30,6 +30,6 @@
         <a class="burger_menu_item" href="faq.php">faqs</a>
         <a class="burger_menu_item" href="#">login</a>
       </div>
-    </div></i>
+    </div></i> -->
   </div>
 </header>
