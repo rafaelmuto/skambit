@@ -19,24 +19,24 @@
     <!-- ==== MAIN ==== -->
     <div class="main">
       <section class="main_banner"></section>
-      <section class="main_grid">
-        <article class="main_card">
+      <ul class="main_grid">
+        <li class="main_card">
+          <a href="produto.php">
           <figure>
             <img class="main_card--img hover-opacity" src="./imagens/produto1.jpg" alt="bolsa">
-
           </figure>
           <div class="main_card--info">
             <div>
               <p>Nome do Produto</p>
               <p class="price">R$ 10,00</p>
             </div>
-            <a href="#"><i class="material-icons">thumb_up</i></a>
+            </a>
+            <a href="produto.php"><i class="material-icons">thumb_up</i></a>
           </div>
-        </article>
-        <article class="main_card">
+        </li>
+        <li class="main_card">
           <figure>
             <img class="main_card--img hover-opacity" src="./imagens/produto2.jpg" alt="sapatilha">
-
           </figure>
           <div class="main_card--info">
             <div>
@@ -45,11 +45,10 @@
             </div>
             <a href="#"><i class="material-icons">thumb_up</i></a>
           </div>
-        </article>
-        <article class="main_card">
+        </li>
+        <li class="main_card">
           <figure>
             <img class="main_card--img hover-opacity" src="./imagens/produto3.jpg" alt="sapatilha">
-
           </figure>
           <div class="main_card--info">
             <div>
@@ -58,11 +57,10 @@
             </div>
             <a href="#"><i class="material-icons">thumb_up</i></a>
           </div>
-        </article>
-        <article class="main_card">
+        </li>
+        <li class="main_card">
           <figure>
             <img class="main_card--img hover-opacity" src="./imagens/produto4.jpg" alt="sapatilha">
-
           </figure>
           <div class="main_card--info">
             <div>
@@ -71,11 +69,10 @@
             </div>
             <a href="#"><i class="material-icons">thumb_up</i></a>
           </div>
-        </article>
-        <article class="main_card">
+        </li>
+        <li class="main_card">
           <figure>
             <img class="main_card--img hover-opacity" src="./imagens/produto5.jpg" alt="sapatilha">
-
           </figure>
           <div class="main_card--info">
             <div>
@@ -84,11 +81,10 @@
             </div>
             <a href="#"><i class="material-icons">thumb_up</i></a>
           </div>
-        </article>
-        <article class="main_card">
+        </li>
+        <li class="main_card">
           <figure>
             <img class="main_card--img hover-opacity" src="./imagens/produto6.jpg" alt="sapatilha">
-
           </figure>
           <div class="main_card--info">
             <div>
@@ -97,11 +93,10 @@
             </div>
             <a href="#"><i class="material-icons">thumb_up</i></a>
           </div>
-        </article>
-        <article class="main_card">
+        </li>
+        <li class="main_card">
           <figure>
             <img class="main_card--img hover-opacity" src="./imagens/produto7.jpg" alt="sapatilha">
-
           </figure>
           <div class="main_card--info">
             <div>
@@ -110,11 +105,10 @@
             </div>
             <a href="#"><i class="material-icons">thumb_up</i></a>
           </div>
-        </article>
-        <article class="main_card">
+        </li>
+        <li class="main_card">
           <figure>
             <img class="main_card--img hover-opacity" src="./imagens/produto8.jpg" alt="sapatilha">
-
           </figure>
           <div class="main_card--info">
             <div>
@@ -123,11 +117,10 @@
             </div>
             <a href="#"><i class="material-icons">thumb_up</i></a>
           </div>
-        </article>
-        <article class="main_card">
+        </li>
+        <li class="main_card">
           <figure>
             <img class="main_card--img hover-opacity" src="./imagens/produto9.jpg" alt="sapatilha">
-
           </figure>
           <div class="main_card--info">
             <div>
@@ -136,11 +129,10 @@
             </div>
             <a href="#"><i class="material-icons">thumb_up</i></a>
           </div>
-        </article>
-        <article class="main_card">
+        </li>
+        <li class="main_card">
           <figure>
             <img class="main_card--img hover-opacity" src="./imagens/produto10.jpg" alt="sapatilha">
-
           </figure>
           <div class="main_card--info">
             <div>
@@ -149,11 +141,10 @@
             </div>
             <a href="#"><i class="material-icons">thumb_up</i></a>
           </div>
-        </article>
-        <article class="main_card">
+        </li>
+        <li class="main_card">
           <figure>
             <img class="main_card--img hover-opacity" src="./imagens/produto11.jpg" alt="sapatilha">
-
           </figure>
           <div class="main_card--info">
             <div>
@@ -162,11 +153,10 @@
             </div>
             <a href="#"><i class="material-icons">thumb_up</i></a>
           </div>
-        </article>
-        <article class="main_card">
+        </li>
+        <li class="main_card">
           <figure>
             <img class="main_card--img hover-opacity" src="./imagens/produto12.jpg" alt="sapatilha">
-
           </figure>
           <div class="main_card--info">
             <div>
@@ -175,10 +165,8 @@
             </div>
             <a href="#"><i class="material-icons">thumb_up</i></a>
           </div>
-        </article>
-        <!-- <article class="main_card">teste</article> -->
-
-      </section>
+        </li>
+      </ul>
     </div>
 
     <!-- ==== FOOTER ==== -->
