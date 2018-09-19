@@ -1,4 +1,4 @@
-/* HEADER */
+/* ====  HEADER  ===== */
 header {
   height: 60px;
   width: 100%;
@@ -63,10 +63,6 @@ header {
   align-self: center;
 }
 
-.header_hamburger {
-  display: none;
-}
-
 .header_user {
   justify-self: center;
   align-self: center;
@@ -83,7 +79,7 @@ header {
 .drop_container {
   display: none;
   position: absolute;
-  height: 320px;
+  height: auto;
   width: 300px;
   z-index: 10;
   right: 0;
@@ -94,6 +90,7 @@ header {
 
 .drop_menu {
   color: var(--cor_fundo);
+  margin-bottom: 10px;
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 60px 50px 50px 50px 50px;
@@ -124,7 +121,15 @@ header {
   text-decoration: none;
 }
 
-/*   FOOTER   */
+.drop_menu_log {
+  color: var(--cor_fundo);
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-gap: 10px;
+}
+
+/* =====  FOOTER  ======= */
 footer {
   background-color: var(--cor_principal);
   color: var(--cor_fundo);
@@ -166,7 +171,7 @@ footer {
   display: none;
 }
 
-/* MEDIA QUERIES */
+/* ==== MEDIA QUERIES ===== */
 @media (max-width:1460px) {
   .header_container {
     grid-gap: 5px;

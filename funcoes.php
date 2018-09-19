@@ -46,12 +46,13 @@ switch ($_REQUEST["acao"]) {
   case 'login':
     unset($_REQUEST["acao"]);
     if(login($_POST["login"], $_POST["password"])){
-      echo "LOGIN COM SUCESSO!";
-      //header("Location:index.php");
+      // echo "LOGIN COM SUCESSO!";
+      // header("Location:login.php");
+      header("Location:index.php");
     }
     else{
-      echo "LOGIN ERROR";
-      //header("Location:erro.php");
+      // echo "LOGIN ERROR";
+      header("Location:erro.php");
     }
     break;
 
@@ -82,8 +83,3 @@ switch ($_REQUEST["acao"]) {
     break;
 }
  ?>
-
-// estrutura do JSON:
-// usuarios =>
-//           [0]: "login", "senha", "email", "avatar"
-//           [1]: "login", "senha", "email", "avatar" ...
