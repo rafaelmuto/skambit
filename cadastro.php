@@ -27,14 +27,9 @@
           <div class="photo">
             <i class="material-icons" id="photo_select" style="font-size: 150px; color: grey;">account_circle</i>
           </div>
-          <form class="form_cadastro" method="post">
-            <input class="cad_form_input" type="text" name="firstname" value="" required autocomplete="off">
-            <label class="cad_form_label" for="yourname">Nome</label>
-
-            <div class="divisor"></div>
-
-            <input class="cad_form_input" type="text" name="surname" value="" required autocomplete="off">
-            <label class="cad_form_label" for="yourname">Sobrenome</label>
+          <form class="form_cadastro" action="funcoes.php" method="post">
+            <input class="cad_form_input" type="text" name="login" value="" required autocomplete="off">
+            <label class="cad_form_label" for="usuario">Usuario</label>
 
             <div class="divisor"></div>
 
@@ -59,8 +54,7 @@
             <div class="divisor"></div>
 
               <div class="button">
-                <input class="reg_button" alt="Cadastrar "type='submit' name='Submit' value='Cadastrar'/>
-                <input class="reg_button" type='button' value="Voltar"/><a href="index.html" target="_blank"></a>
+                <input class="reg_button" alt="Cadastrar "type='submit' name='acao' value='cadastro'/>
 
               </div>
             </div>

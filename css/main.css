@@ -46,7 +46,7 @@ a {
 
 .main_grid {
   display: grid;
-  grid-gap: 30px;
+  grid-gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   max-width: 90vw;
   margin: 0 auto 30px;
@@ -55,6 +55,7 @@ a {
 
 .main_card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: white;
 }
 
 .main_card:hover .hover-opacity {
