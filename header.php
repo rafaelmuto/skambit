@@ -1,4 +1,4 @@
-<header>
+<header class="efx_drop-shadow">
   <?php session_start(); ?>
   <div class="header_container">
     <div class="header_logo">
@@ -15,7 +15,7 @@
     <!-- DROP MENU Login -->
     <i class="material-icons header_user dropdown" style="font-size: 60px; justify-self: center; align-self: center; ">account_circle
         <?php if(!isset($_SESSION["login"])): ?>
-          <div class="drop_container">
+          <div class="drop_container efx_drop-shadow">
             <form class="drop_menu" action="funcoes.php" method="post">
                 <p class="drop_menu_text">login</p>
                 <input class="drop_menu_item" type="text" name="login" value="" placeholder="usuario">
@@ -25,7 +25,7 @@
               </form>
           </div>
         <?php else: ?>
-          <div class="drop_container">
+          <div class="drop_container efx_drop-shadow">
             <form class="drop_menu_log" action="funcoes.php" method="post">
               <p class="drop_menu_text"><?php echo $_SESSION["login"] ?></p>
               <button class="drop_menu_item" type="submit" name="acao" value="logout" style="background-color: #e74c3c; color: white;">Logout</button>
