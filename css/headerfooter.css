@@ -1,3 +1,7 @@
+.efx_drop-shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
 /* ====  HEADER  ===== */
 header {
   height: 60px;
@@ -37,8 +41,9 @@ header {
 .header_busca {
   background-color: var(--cor_fundo);
   border: 0;
-  border-radius: 5px;
+  border-radius: 25px;
   padding: 10px;
+  padding-left: 20px;
   font-size: 20px;
   width: 100%;
 }

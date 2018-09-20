@@ -1,6 +1,9 @@
 <?php
 $jsondb = "jsondb.json";
 session_start();
+if(!is_dir("avatares/")){
+  mkdir("avatares/");
+}
 
 function login($login, $senha){
   global $jsondb;
@@ -13,7 +16,7 @@ function login($login, $senha){
   foreach ($db["user_list"] as $id => $item) {
     if($login == $item["login"] && password_verify($senha,$item["password"])){
       $_SESSION["login"] = $item["login"];
-      //$_SESSION["avatar"] = $item["avatar"];
+      $_SESSION["avatar"] = $item["avatar"];
       return TRUE;
     }
   }
@@ -33,6 +36,14 @@ function cadastro($cadastro){
     if($item["login"] == $cadastro["login"]){
       return ["error" => TRUE, "msg" => "usuario já cadatrado"];
     }
+  }
+  if($_FILES["avatar"]["error"]==UPLOAD_ERR_OK){
+    $timestamp = date("YmdHis");
+    $file_ext = explode(".", strtolower($_FILES["avatar"]["name"]));
+    $file_name = $timestamp. "_" .$cadastro["login"] .".". $file_ext[1];
+    $file = $_FILES["avatar"]["tmp_name"];
+    move_uploaded_file($file, "avatares/".$file_name);
+    $cadastro["avatar"] = "avatares/".$file_name;
   }
   unset($cadastro["conf_password"]);
   $cadastro["password"] = password_hash($cadastro["password"], PASSWORD_DEFAULT);

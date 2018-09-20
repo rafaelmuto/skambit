@@ -19,13 +19,13 @@
 
     <!-- ==== CADASTRO ==== -->
 
-          <div class="container_cadastro">
+          <div class="container_cadastro efx_drop-shadow">
 
               <div class="headline">
                 <p>Cadastro</p>
               </div>
 
-              <form class="form_grid" action="funcoes.php" method="post">
+              <form class="form_grid" action="funcoes.php" method="post" enctype="multipart/form-data">
                 <div class="form_grid_item">
                   <input class="cad_form_input" type="text" name="login" value="" required autocomplete="off">
                   <label class="cad_form_label" for="usuario">Usuario</label>
@@ -45,6 +45,10 @@
                 <div class="form_grid_item">
                   <input class="cad_form_input" type="password" name="conf_password" value="" required autocomplete="off">
                   <label class="cad_form_label" for="conf_password">Confirmação de senha</label>
+                </div>
+                <div class="form_grid_item">
+                  <input class="cad_form_input" type="file" name="avatar" value="">
+                  <label for="avatar" class="cad_form_label">Avatar</label>
                 </div>
                 <div class="form_grid_item">
                   <input class="reg_button" alt="Cadastrar "type='submit' name='acao' value='cadastro'/>
