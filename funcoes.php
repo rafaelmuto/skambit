@@ -52,45 +52,36 @@ function cadastro($cadastro){
   return ["error" => FALSE, "msg" => "usuario cadastrado com sucesso"];
 }
 
-//var_dump($_REQUEST);
 switch ($_REQUEST["acao"]) {
   case 'login':
     unset($_REQUEST["acao"]);
     if(login($_POST["login"], $_POST["password"])){
-      // echo "LOGIN COM SUCESSO!";
-      // header("Location:login.php");
-      header("Location:index.php");
+      header("Location:index.php?msg=login_ok");
     }
     else{
-      // echo "LOGIN ERROR";
-      header("Location:erro.php");
+      header("Location:index.php?msg=login_erro");
     }
     break;
 
   case 'cadastro':
     unset($_POST["acao"]);
     $cad = cadastro($_POST);
-    //var_dump($_POST);
-    //var_dump($cad);
     if($cad["error"]==FALSE){
-      //echo "CADASTRO REALIZADO!!!!!";
-      header("Location:index.php");
+      login($_POST["login"], $_POST["password"]);
+      header("Location:index.php?msg=cadastro_ok");
     }
     else{
-      // echo "CADASTRO ERRRO!!!!!";
-      header("Location:cadastro.php");
+      header("Location:cadastro.php?msg=cadastro_erro");
     }
     break;
 
   case 'logout':
     session_destroy();
-    header("Location:index.php");
+    header("Location:index.php?msg=logout_ok");
     break;
 
-
   default:
-    // code...
-    // print error msg to console
+    header("Location:index.php?msg=switch_error");
     break;
 }
  ?>

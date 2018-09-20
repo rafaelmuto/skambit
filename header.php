@@ -27,7 +27,8 @@
         <?php else: ?>
           <div class="drop_container efx_drop-shadow">
             <form class="drop_menu_log" action="funcoes.php" method="post">
-              <p class="drop_menu_text"><?php echo $_SESSION["login"] ?></p>
+              <img class="drop_menu_log_avatar" src="<?php echo $_SESSION["avatar"] ?>" alt="avatar do usuario">
+              <p class="drop_menu_text_log"><?php echo $_SESSION["login"] ?></p>
               <button class="drop_menu_item" type="submit" name="acao" value="logout" style="background-color: #e74c3c; color: white;">Logout</button>
             </form>
           </div>

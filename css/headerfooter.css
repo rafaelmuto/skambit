@@ -128,10 +128,25 @@ header {
 
 .drop_menu_log {
   color: var(--cor_fundo);
+  margin-top: 10px;
   margin-bottom: 10px;
   display: grid;
   grid-template-columns: 100%;
   grid-gap: 10px;
+}
+
+.drop_menu_log_avatar {
+  height: 270px;
+  width: 90%;
+  justify-self: center;
+}
+
+.drop_menu_text_log {
+  font-size: .3em;
+  font-weight: 400;
+  color: var(--cor_fundo);
+  align-self: center;
+  justify-self: center;
 }
 
 /* =====  FOOTER  ======= */
@@ -212,7 +227,7 @@ footer {
     height: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-auto-columns:
+    font-weight: 100;
   }
 
   .footer_nav a {
