@@ -17,51 +17,43 @@
     <!-- ==== HEADER ==== -->
     <?php include("header.php") ?>
 
-    <div class="main">
+    <!-- ==== CADASTRO ==== -->
+
           <div class="container_cadastro">
-        <div class="headline">
-          <a>Cadastro</a>
-        </div>
-        <div class="cont_cadastro_body">
-          <div class="divisor"></div>
-          <div class="photo">
-            <i class="material-icons" id="photo_select" style="font-size: 150px; color: grey;">account_circle</i>
-          </div>
-          <form class="form_cadastro" action="funcoes.php" method="post">
-            <input class="cad_form_input" type="text" name="login" value="" required autocomplete="off">
-            <label class="cad_form_label" for="usuario">Usuario</label>
 
-            <div class="divisor"></div>
-
-            <input class="cad_form_input" type="email" name="email" value="" required autocomplete="off">
-            <label class="cad_form_label" for="email">E-mail</label>
-
-            <div class="divisor"></div>
-
-            <input class="cad_form_input" type="text" name="cep" value="" required autocomplete="off">
-            <label class="cad_form_label" for="cep">CEP</label>
-
-            <div class="divisor"></div>
-
-            <input class="cad_form_input" type="password" name="password" value="" required autocomplete="off">
-            <label class="cad_form_label" for="password">Senha</label>
-
-            <div class="divisor"></div>
-
-            <input class="cad_form_input" type="password" name="conf_password" value="" required autocomplete="off">
-            <label class="cad_form_label" for="conf_password">Confirmação de senha</label>
-
-            <div class="divisor"></div>
-
-              <div class="button">
-                <input class="reg_button" alt="Cadastrar "type='submit' name='acao' value='cadastro'/>
-
+              <div class="headline">
+                <p>Cadastro</p>
               </div>
-            </div>
-        </div>
-        </form>
-      </div>
-    </div>
+
+              <form class="form_grid" action="funcoes.php" method="post">
+                <div class="form_grid_item">
+                  <input class="cad_form_input" type="text" name="login" value="" required autocomplete="off">
+                  <label class="cad_form_label" for="usuario">Usuario</label>
+                </div>
+                <div class="form_grid_item">
+                  <input class="cad_form_input" type="email" name="email" value="" required autocomplete="off">
+                  <label class="cad_form_label" for="email">E-mail</label>
+                </div>
+                <div class="form_grid_item">
+                  <input class="cad_form_input" type="text" name="cep" value="" required autocomplete="off">
+                  <label class="cad_form_label" for="cep">CEP</label>
+                </div>
+                <div class="form_grid_item">
+                  <input class="cad_form_input" type="password" name="password" value="" required autocomplete="off">
+                  <label class="cad_form_label" for="password">Senha</label>
+                </div>
+                <div class="form_grid_item">
+                  <input class="cad_form_input" type="password" name="conf_password" value="" required autocomplete="off">
+                  <label class="cad_form_label" for="conf_password">Confirmação de senha</label>
+                </div>
+                <div class="form_grid_item">
+                  <input class="reg_button" alt="Cadastrar "type='submit' name='acao' value='cadastro'/>
+                </div>
+              </form>
+
+          </div>
+
+
 
     <!-- ==== FOOTER ==== -->
     <?php include("footer.php") ?>
