@@ -1,9 +1,14 @@
 <?php
-$jsondb = "jsondb.json";
+$jsondb = "jsondb.json"; // --- nome do arquivo JSON
 session_start();
+
+// --- verifica e cria a pasta para armazenar os avatares
 if(!is_dir("avatares/")){
   mkdir("avatares/");
 }
+
+
+// ==== FUNCAO DE LOGIN ====
 
 function login($login, $senha){
   global $jsondb;
@@ -23,20 +28,24 @@ function login($login, $senha){
   return FALSE;
 }
 
+// ==== FUNCAO DE CADASTRO ====
+
 function cadastro($cadastro){
   global $jsondb;
+  // --- checagem basica das senhas
   if($cadastro["password"] != $cadastro["conf_password"]){
     return ["error" => TRUE, "msg" => "senhas não conferem"];
   }
+  // --- checagem do arquivo JSON
   if(file_exists($jsondb)) $db = json_decode(file_get_contents($jsondb),TRUE);
   else $db = ["user_list" => []];
-
-  //var_dump($db);
+  // --- checa se o nome do usuario ja esta cadastrado
   foreach($db["user_list"] as $id => $item) {
     if($item["login"] == $cadastro["login"]){
       return ["error" => TRUE, "msg" => "usuario já cadatrado"];
     }
   }
+  // --- essa parte da funcao cuida do upload e manuseio das imagens de avatar
   if($_FILES["avatar"]["error"]==UPLOAD_ERR_OK){
     $timestamp = date("YmdHis");
     $file_ext = explode(".", strtolower($_FILES["avatar"]["name"]));
@@ -45,12 +54,16 @@ function cadastro($cadastro){
     move_uploaded_file($file, "avatares/".$file_name);
     $cadastro["avatar"] = "avatares/".$file_name;
   }
+  // --- essa parte trata a array e passa os dados para o JSON
   unset($cadastro["conf_password"]);
   $cadastro["password"] = password_hash($cadastro["password"], PASSWORD_DEFAULT);
   $db["user_list"][] = $cadastro;
   file_put_contents($jsondb, json_encode($db));
   return ["error" => FALSE, "msg" => "usuario cadastrado com sucesso"];
 }
+
+
+// ==== SWITCH ROUTING ====
 
 switch ($_REQUEST["acao"]) {
   case 'login':

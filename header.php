@@ -9,7 +9,7 @@
       <button class="header_busca_btn" type="submit"><i class="material-icons md-36">search</i></button>
     </form>
     <a class="header_link" href="index.php">home</a>
-    <a class="header_link" href="#">categorias</a>
+    <a class="header_link" href="index.php?categorias">categorias</a>
     <a class="header_link" href="faq.php">faqs</a>
 
     <!-- DROP MENU Login -->

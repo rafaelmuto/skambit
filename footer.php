@@ -1,4 +1,4 @@
-<footer>
+<footer class="efx_drop-shadow">
   <div class="footer_logo">
     <p>Skambit</p>
   </div>
