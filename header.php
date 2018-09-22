@@ -13,7 +13,8 @@
     <a class="header_link" href="faq.php">faqs</a>
 
     <!-- DROP MENU Login -->
-    <i class="material-icons header_user dropdown" style="font-size: 60px; justify-self: center; align-self: center; ">account_circle
+    <div class="header_user dropdown"><img class="header_avatar_img" src="<?php echo (isset($_SESSION["avatar"])? $_SESSION["avatar"] : "none.png") ?>">
+
         <?php if(!isset($_SESSION["login"])): ?>
           <div class="drop_container efx_drop-shadow">
             <form class="drop_menu" action="funcoes.php" method="post">
@@ -21,7 +22,7 @@
                 <input class="drop_menu_item" type="text" name="login" value="" placeholder="usuario">
                 <input class="drop_menu_item" type="password" name="password" value="" placeholder="senha">
                 <button class="drop_menu_item" type="submit" name="acao" value="login">Entrar</button>
-                <a class="drop_menu_item drop_menu_item__cadastro" href="cadastro.php" style="background-color: #2ecc71; color: white;"> cadastro </a>
+                <a class="drop_menu_item" href="cadastro.php" style="background-color: #2ecc71; color: white;"> cadastro </a>
               </form>
           </div>
         <?php else: ?>
@@ -29,10 +30,11 @@
             <form class="drop_menu_log" action="funcoes.php" method="post">
               <img class="drop_menu_log_avatar" src="<?php echo $_SESSION["avatar"] ?>" alt="avatar do usuario">
               <p class="drop_menu_text_log"><?php echo $_SESSION["login"] ?></p>
+              <a class="drop_menu_item" href="cadastro.php"> pagina do usuario </a>
               <button class="drop_menu_item" type="submit" name="acao" value="logout" style="background-color: #e74c3c; color: white;">Logout</button>
             </form>
           </div>
         <?php endif; ?>
-    </i>
+     </div>
   </div>
 </header>

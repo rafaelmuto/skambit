@@ -1,3 +1,26 @@
+/* ==== CODIGOS BASE ==== */
+:root {
+  --cor_principal: black;
+  --cor_fundo: #ecf0f1;
+  --cor_sub: #95a5a6;
+  --cor_base: white;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: var(--cor_fundo);
+  height: 100%;
+  margin: 0 auto;
+  font-size: 16px;
+  padding: 60px 0 0;
+}
+
 .efx_drop-shadow {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
@@ -71,6 +94,11 @@ header {
 .header_user {
   justify-self: center;
   align-self: center;
+  height: 60px;
+}
+
+.header_avatar_img {
+  height: 60px;
 }
 
 .dropdown {
@@ -87,7 +115,7 @@ header {
   height: auto;
   width: 300px;
   z-index: 10;
-  right: 0;
+  right: 5%;
   top: 60px;
   background-color: var(--cor_principal);
   border-radius: 10px;
@@ -103,7 +131,7 @@ header {
 }
 
 .drop_menu_text {
-  font-size: .75em;
+  font-size: 3em;
   font-weight: 700;
   color: var(--cor_fundo);
   align-self: center;
@@ -112,6 +140,7 @@ header {
 
 .drop_menu_item {
   background-color: var(--cor_fundo);
+  color: var(--cor_principal);
   border: 0;
   border-radius: 5px;
   padding: 10px;
@@ -119,9 +148,6 @@ header {
   width: 90%;
   align-self: center;
   justify-self: center;
-}
-
-.drop_menu_item__cadastro {
   text-align: center;
   text-decoration: none;
 }
@@ -142,7 +168,7 @@ header {
 }
 
 .drop_menu_text_log {
-  font-size: .3em;
+  font-size: 1.5em;
   font-weight: 400;
   color: var(--cor_fundo);
   align-self: center;

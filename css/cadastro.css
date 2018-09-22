@@ -10,7 +10,7 @@
 
 .headline {
   background-color: var(--cor_principal);
-  color: white;
+  color: var(--cor_base);
   width: 500px;
   height: 0.84em;
   font-size: 3.5em;
@@ -30,7 +30,7 @@
   grid-gap: 15px;
   padding-top: 30px;
   padding-bottom: 30px;
-  background: white;
+  background: var(--cor_base);
 }
 
 .form_grid_item {
