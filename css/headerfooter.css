@@ -1,8 +1,8 @@
 /* ==== CODIGOS BASE ==== */
 :root {
   --cor_principal: black;
-  --cor_fundo: #ecf0f1;
   --cor_sub: #95a5a6;
+  --cor_fundo: #ecf0f1;
   --cor_base: white;
 }
 
@@ -16,9 +16,8 @@
 body {
   background-color: var(--cor_fundo);
   height: 100%;
-  margin: 0 auto;
   font-size: 16px;
-  padding: 60px 0 0;
+  padding-top: 60px;
 }
 
 .material-icons {
