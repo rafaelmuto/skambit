@@ -1,13 +1,3 @@
-img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-a {
-  color: inherit;
-}
-
 /* Section Cards */
 .main_banner {
   height: 400px;
@@ -26,6 +16,12 @@ a {
 
 .main_card {
   background-color: var(--cor_base);
+}
+
+.main_card--img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
 .main_card:hover .hover-opacity {
