@@ -1,5 +1,4 @@
 <header class="efx_drop-shadow">
-  <?php session_start(); ?>
   <div class="header_container">
     <div class="header_logo">
       <p>Skambit</p>
@@ -12,9 +11,8 @@
     <a class="header_link" href="index.php?categorias">categorias</a>
     <a class="header_link" href="faq.php">faqs</a>
 
-    <!-- DROP MENU Login -->
-    <div class="header_user dropdown"><img class="header_avatar_img" src="<?php echo (isset($_SESSION["avatar"])? $_SESSION["avatar"] : "none.png") ?>">
-
+    <!-- DROP MENU  -->
+    <div class="header_user dropdown"><img class="header_avatar_img" src="<?php echo (isset($_SESSION["avatar"])?$_SESSION["avatar"]:"none.png")?>">
         <?php if(!isset($_SESSION["login"])): ?>
           <div class="drop_container efx_drop-shadow">
             <form class="drop_menu" action="funcoes.php" method="post">
@@ -28,9 +26,9 @@
         <?php else: ?>
           <div class="drop_container efx_drop-shadow">
             <form class="drop_menu_log" action="funcoes.php" method="post">
-              <img class="drop_menu_log_avatar" src="<?php echo $_SESSION["avatar"] ?>" alt="avatar do usuario">
-              <p class="drop_menu_text_log"><?php echo $_SESSION["login"] ?></p>
-              <a class="drop_menu_item" href="cadastro.php"> pagina do usuario </a>
+              <img class="drop_menu_log_avatar" src="<?php echo $_SESSION["avatar"]?>" alt="avatar do usuario">
+              <p class="drop_menu_text_log"><?php echo $_SESSION["login"]?></p>
+              <a class="drop_menu_item" href="userpage.php"> pagina do usuario </a>
               <button class="drop_menu_item" type="submit" name="acao" value="logout" style="background-color: #e74c3c; color: white;">Logout</button>
             </form>
           </div>
