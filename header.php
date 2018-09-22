@@ -1,5 +1,4 @@
 <header class="efx_drop-shadow">
-  <?php session_start(); ?>
   <div class="header_container">
     <div class="header_logo">
       <p>Skambit</p>
@@ -29,7 +28,7 @@
             <form class="drop_menu_log" action="funcoes.php" method="post">
               <img class="drop_menu_log_avatar" src="<?php echo $_SESSION["avatar"]?>" alt="avatar do usuario">
               <p class="drop_menu_text_log"><?php echo $_SESSION["login"]?></p>
-              <a class="drop_menu_item" href="cadastro.php"> pagina do usuario </a>
+              <a class="drop_menu_item" href="userpage.php"> pagina do usuario </a>
               <button class="drop_menu_item" type="submit" name="acao" value="logout" style="background-color: #e74c3c; color: white;">Logout</button>
             </form>
           </div>
