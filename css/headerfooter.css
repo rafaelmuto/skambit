@@ -1,3 +1,25 @@
+/* ==== CODIGOS BASE ==== */
+:root {
+  --cor_principal: black;
+  --cor_fundo: #ecf0f1;
+  --cor_sub: #95a5a6;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: var(--cor_fundo);
+  height: 100%;
+  margin: 0 auto;
+  font-size: 16px;
+  padding: 60px 0 0;
+}
+
 .efx_drop-shadow {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
