@@ -25,7 +25,7 @@ a {
 }
 
 .main_card {
-  background-color: white;
+  background-color: var(--cor_base);
 }
 
 .main_card:hover .hover-opacity {
