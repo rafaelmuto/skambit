@@ -1,50 +1,51 @@
-/*Cadastro/Formulario*/
-.headline {
-  margin: 0 auto;
-  width: 500px;
-  height: 50px;
-  background-color: var(--cor_principal);
-}
-
-.headline a {
-  margin-left: 10px;
-  color: white;
-  font-size: 2.5em;
-  font-weight: bold;
-}
-
+/* ==== CONTEINER GRID ==== */
 .container_cadastro {
+  margin: 0 auto;
   margin-top: 50px;
   margin-bottom: 50px;
-}
-
-.cont_cadastro_body {
-  margin: 0 auto;
   width: 500px;
-  height: 790px;
-  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
-.photo {
-  text-align: center;
+.headline {
+  background-color: var(--cor_principal);
+  color: var(--cor_base);
+  width: 500px;
+  height: 0.84em;
+  font-size: 3.5em;
+  line-height: 1em;
+  font-weight: 700;
+  padding-left: 5px;
 }
 
-.form_cadastro {
-  display: block;
-  position: relative;
-  width: 400px;
-  height: 150px;
-  background: #fff;
-  margin: 50px auto;
-  padding: 30px;
+.headline p {
+  align-self: baseline;
 }
 
+/* ==== FORM GRID ==== */
+.form_grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 15px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background: var(--cor_base);
+}
+
+.form_grid_item {
+  align-self: center;
+  justify-self: center;
+  width: 90%;
+}
+
+/* ==== FORM EFFECT ==== */
 .cad_form_label {
   display: block;
   position: relative;
   top: -20px;
   left: 0;
-  color: #000;
+  color: var(--cor_principal);
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   z-index: 1;
@@ -56,7 +57,7 @@
   position: relative;
   background: none;
   border: none;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--cor_sub);
   width: 100%;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
@@ -77,29 +78,14 @@ input.cad_form_input:valid+label.cad_form_label {
   color: var(--cor_sub);
 }
 
-.divisor {
-  position: relative;
-  height: 20px;
-  width: auto;
-  background: none;
-}
-
-div .button {
-  text-align: center;
-}
-
 .reg_button {
-  width: 80px;
-  height: 40px;
+  border: 0;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 20px;
+  width: auto;
+  height: auto;
   background-color: var(--cor_principal);
   color: var(--cor_fundo);
-  border: 0;
-}
-
-.textarea {
-  width: 340px;
-  height: 100px;
-  resize: none;
-  border: none;
-  border-bottom: 1px solid #ddd;
+  text-align: center;
 }

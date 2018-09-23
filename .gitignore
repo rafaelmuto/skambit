@@ -1,3 +1,8 @@
+jsondb.json
+.json
+avatares/
+avatares/.*
+avatares/*
 
 # Created by https://www.gitignore.io/api/macos
 
