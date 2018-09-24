@@ -257,7 +257,6 @@ footer {
     display: block;
     position: fixed;
     background-color: var(--cor_principal);
-    color: var(--cor_fundo);
     width: 100%;
     bottom: 0;
     height: 50px;
@@ -266,7 +265,8 @@ footer {
     font-weight: 100;
   }
 
-  .footer_nav a {
+  .footer_nav--item {
+    color: var(--cor_fundo);
     text-decoration: none;
     text-transform: uppercase;
     justify-self: center;
@@ -274,6 +274,7 @@ footer {
   }
 
   .footer_nav--logo {
+    color: var(--cor_fundo);
     font-size: 3.5em;
     line-height: 1em;
     font-weight: 700;

@@ -14,7 +14,7 @@
 
 <div class="footer_nav">
   <a class="footer_nav--logo" href="index.php">Skambit</a>
-  <a href="#">categorias</a>
-  <a href="faq.php">faqs</a>
-  <a href="login.php">login</a>
+  <a class="footer_nav--item" href="#">categorias</a>
+  <a class="footer_nav--item" href="faq.php">faqs</a>
+  <a class="footer_nav--item" href="login.php">login</a>
 </div>
