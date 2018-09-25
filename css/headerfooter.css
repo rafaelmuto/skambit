@@ -24,8 +24,12 @@ body {
   color: var(--cor_sub);
 }
 
-.efx_drop-shadow {
+.efx_drop_shadow {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.efx_border_radius {
+  border-radius: 10px;
 }
 
 /* ====  HEADER  ===== */

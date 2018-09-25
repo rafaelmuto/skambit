@@ -19,10 +19,10 @@
 
     <!-- ==== MAIN ==== -->
     <div class="main">
-      <section class="main_banner efx_drop-shadow"></section>
+      <section class="main_banner efx_drop_shadow"></section>
       <section class="main_grid">
 
-        <article class="main_card efx_drop-shadow">
+        <article class="main_card efx_drop_shadow efx_border_radius">
           <figure>
             <img class="main_card--img hover-opacity" src="./imagens/produto1.jpg" alt="bolsa">
           </figure>
@@ -35,7 +35,7 @@
           </div>
         </article>
 
-        <article class="main_card efx_drop-shadow">
+        <article class="main_card efx_drop_shadow">
           <figure>
             <img class="main_card--img hover-opacity" src="./imagens/produto2.jpg" alt="sapatilha">
 
@@ -49,7 +49,7 @@
           </div>
         </article>
 
-        <article class="main_card efx_drop-shadow">
+        <article class="main_card efx_drop_shadow">
           <figure>
             <img class="main_card--img hover-opacity" src="./imagens/produto3.jpg" alt="sapatilha">
           </figure>
@@ -62,7 +62,7 @@
           </div>
         </article>
 
-        <article class="main_card efx_drop-shadow">
+        <article class="main_card efx_drop_shadow">
           <figure>
             <img class="main_card--img hover-opacity" src="./imagens/produto4.jpg" alt="sapatilha">
           </figure>
@@ -75,7 +75,7 @@
           </div>
         </article>
 
-        <article class="main_card efx_drop-shadow">
+        <article class="main_card efx_drop_shadow">
           <figure>
             <img class="main_card--img hover-opacity" src="./imagens/produto5.jpg" alt="sapatilha">
           </figure>
@@ -88,7 +88,7 @@
           </div>
         </article>
 
-        <article class="main_card efx_drop-shadow">
+        <article class="main_card efx_drop_shadow">
           <figure>
             <img class="main_card--img hover-opacity" src="./imagens/produto6.jpg" alt="sapatilha">
           </figure>
@@ -101,7 +101,7 @@
           </div>
         </article>
 
-        <article class="main_card efx_drop-shadow">
+        <article class="main_card efx_drop_shadow">
           <figure>
             <img class="main_card--img hover-opacity" src="./imagens/produto7.jpg" alt="sapatilha">
           </figure>
@@ -114,7 +114,7 @@
           </div>
         </article>
 
-        <article class="main_card efx_drop-shadow">
+        <article class="main_card efx_drop_shadow">
           <figure>
             <img class="main_card--img hover-opacity" src="./imagens/produto8.jpg" alt="sapatilha">
           </figure>
@@ -127,7 +127,7 @@
           </div>
         </article>
 
-        <article class="main_card efx_drop-shadow">
+        <article class="main_card efx_drop_shadow">
           <figure>
             <img class="main_card--img hover-opacity" src="./imagens/produto9.jpg" alt="sapatilha">
           </figure>
@@ -140,7 +140,7 @@
           </div>
         </article>
 
-        <article class="main_card efx_drop-shadow">
+        <article class="main_card efx_drop_shadow">
           <figure>
             <img class="main_card--img hover-opacity" src="./imagens/produto10.jpg" alt="sapatilha">
           </figure>
@@ -153,7 +153,7 @@
           </div>
         </article>
 
-        <article class="main_card efx_drop-shadow">
+        <article class="main_card efx_drop_shadow">
           <figure>
             <img class="main_card--img hover-opacity" src="./imagens/produto11.jpg" alt="sapatilha">
           </figure>
@@ -166,7 +166,7 @@
           </div>
         </article>
 
-        <article class="main_card efx_drop-shadow">
+        <article class="main_card efx_drop_shadow">
           <figure>
             <img class="main_card--img hover-opacity" src="./imagens/produto12.jpg" alt="sapatilha">
           </figure>
