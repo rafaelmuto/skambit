@@ -44,3 +44,16 @@
 .user_info_avatar {
   max-width: 200px;
 }
+
+.form_grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 5px;
+}
+
+.form_grid_item {
+  align-self: center;
+  justify-self: center;
+  width: 90%;
+}
