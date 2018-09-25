@@ -21,6 +21,17 @@
   position: relative;
 }
 
+.main_card_info {
+  font-size: 1.5em;
+  font-weight: 700;
+  /* text-transform: uppercase; */
+  text-shadow: 0px 0px 3px var(--cor_sub);
+  color: var(--cor_fundo);
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
 .like_btn {
   background: var(--cor_fundo);
   border-radius: 50%;
