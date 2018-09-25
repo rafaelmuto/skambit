@@ -8,7 +8,7 @@ Este é repositorio do projeto integrador do curso de Fullstack da Digital House
 - Rafael Muto
 - Thiago Pereira
 - ~~Tonico Dias~~
-- Tulio Almeida
+- ~Tulio Almeida~
 
 Esse README sera atualizado...
 
