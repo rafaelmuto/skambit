@@ -41,7 +41,6 @@
             <p>nome do produto</p>
             <p>R$ 100,00</p>
           </div>
-          <a class="like_btn" href="#"><i class="like_btn_icon material-icons">thumb_up</i></a>
         </article>
 
         <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url(./imagens/produto2.jpg);">
@@ -49,7 +48,6 @@
             <p>nome do produto</p>
             <p>R$ 100,00</p>
           </div>
-          <a class="like_btn" href="#"><i class="like_btn_icon material-icons">thumb_up</i></a>
         </article>
 
         <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url(./imagens/produto3.jpg);">
@@ -57,7 +55,6 @@
             <p>nome do produto</p>
             <p>R$ 100,00</p>
           </div>
-          <a class="like_btn" href="#"><i class="like_btn_icon material-icons">thumb_up</i></a>
         </article>
 
         <article class="main_card main_card_blank efx_border_radius">
