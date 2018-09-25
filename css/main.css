@@ -8,7 +8,7 @@
 .main_grid {
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, .25fr));
   max-width: 90vw;
   margin: 0 auto 30px;
   padding: 20px 0 0;
@@ -16,6 +16,20 @@
 
 .main_card {
   background-color: var(--cor_base);
+  min-height: 20vh;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.main_card_blank {
+  border: 3px dashed var(--cor_sub);
+  display: grid;
+}
+
+.main_card_blank .material-icons {
+  justify-self: center;
+  align-self: center;
+  font-size: 70px;
 }
 
 .main_card--img {
