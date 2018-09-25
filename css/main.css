@@ -56,7 +56,7 @@
   display: grid;
 }
 
-.main_card_blank a {
+.main_card_blank>a {
   justify-self: center;
   align-self: center;
 }
