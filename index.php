@@ -22,6 +22,10 @@
       <section class="main_banner efx_drop_shadow"></section>
       <section class="main_grid">
 
+        <article class="main_card efx_drop_shadow efx_border_radius" style="background: url(./imagens/produto1.jpg);">
+            teste
+        </article>
+
         <article class="main_card efx_drop_shadow efx_border_radius">
           <figure>
             <img class="main_card--img hover-opacity" src="./imagens/produto1.jpg" alt="bolsa">
@@ -178,7 +182,11 @@
             <a href="#"><i class="material-icons">thumb_up</i></a>
           </div>
         </article>
-        <!-- <article class="main_card">teste</article> -->
+
+
+      <article class="main_card_blank efx_border_radius">
+          <i class="material-icons">add_circle_outline</i>  
+      </article>
 
       </section>
     </div>

@@ -19,13 +19,13 @@
 
     <!-- ==== CADASTRO ==== -->
 
-          <div class="container_cadastro efx_drop_shadow">
+          <div class="container_cadastro efx_drop_shadow efx_border_radius">
 
-              <div class="headline">
+              <div class="headline efx_border_radius--top">
                 <p>Cadastro</p>
               </div>
 
-              <form class="form_grid" action="funcoes.php" method="post" enctype="multipart/form-data">
+              <form class="form_grid efx_border_radius--bot" action="funcoes.php" method="post" enctype="multipart/form-data">
                 <div class="form_grid_item">
                   <input class="cad_form_input" type="text" name="login" value="" required autocomplete="off">
                   <label class="cad_form_label" for="usuario">Usuario</label>

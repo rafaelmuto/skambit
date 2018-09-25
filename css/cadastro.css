@@ -28,7 +28,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 15px;
-  padding-top: 30px;
+  padding-top: 50px;
   padding-bottom: 30px;
   background: var(--cor_base);
 }

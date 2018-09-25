@@ -32,6 +32,14 @@ body {
   border-radius: 10px;
 }
 
+.efx_border_radius--top {
+  border-radius: 10px 10px 0 0;
+}
+
+.efx_border_radius--bot {
+  border-radius: 0 010px 10px;
+}
+
 /* ====  HEADER  ===== */
 header {
   height: 60px;
@@ -131,7 +139,6 @@ header {
   right: 5%;
   top: 60px;
   background-color: var(--cor_principal);
-  border-radius: 10px;
 }
 
 .drop_menu {
@@ -178,7 +185,6 @@ header {
   height: 270px;
   width: 90%;
   justify-self: center;
-  border-radius: 10px;
 }
 
 .drop_menu_text_log {
