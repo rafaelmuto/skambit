@@ -8,17 +8,36 @@
 .main_grid {
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, .25fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   max-width: 90vw;
   margin: 0 auto 30px;
   padding: 20px 0 0;
 }
 
 .main_card {
-  background-color: var(--cor_base);
-  min-height: 20vh;
+  min-height: 30vh;
   background-size: cover !important;
   background-position: center !important;
+  position: relative;
+}
+
+.like_btn {
+  background: var(--cor_fundo);
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  display: grid;
+  text-decoration: none;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.like_btn_icon {
+  color: var(--cor_sub);
+  font-size: 30px;
+  justify-self: center;
+  align-self: center;
 }
 
 .main_card_blank {
@@ -26,34 +45,21 @@
   display: grid;
 }
 
-.main_card_blank .material-icons {
+.main_card_blank a {
   justify-self: center;
   align-self: center;
+}
+
+.main_card_blank .material-icons {
   font-size: 70px;
 }
 
-.main_card--img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.main_card:hover .hover-opacity {
+.main_card:hover {
   opacity: 0.8;
 }
 
-.price {
-  font-weight: 700;
-}
-
-.main_card--info {
-  display: flex;
-  justify-content: space-between;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-  padding: 12px;
-}
-
-.main_card--info:hover {
-  opacity: 0.7;
+@media (max-width:900px) {
+  .main_card {
+    min-height: 40vh;
+  }
 }
