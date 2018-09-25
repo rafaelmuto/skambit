@@ -19,7 +19,7 @@
 
     <!-- ==== CADASTRO ==== -->
 
-          <div class="container_cadastro efx_drop-shadow">
+          <div class="container_cadastro efx_drop_shadow">
 
               <div class="headline">
                 <p>Cadastro</p>

@@ -1,4 +1,4 @@
-<header class="efx_drop-shadow">
+<header class="efx_drop_shadow">
   <div class="header_container">
     <div class="header_logo">
       <p>Skambit</p>
@@ -14,7 +14,7 @@
     <!-- DROP MENU  -->
     <div class="header_user dropdown"><img class="header_avatar_img" src="<?php echo (isset($_SESSION["avatar"])?$_SESSION["avatar"]:"none.png")?>">
         <?php if(!isset($_SESSION["login"])): ?>
-          <div class="drop_container efx_drop-shadow">
+          <div class="drop_container efx_drop_shadow">
             <form class="drop_menu" action="funcoes.php" method="post">
                 <p class="drop_menu_text">login</p>
                 <input class="drop_menu_item" type="text" name="login" value="" placeholder="usuario">
@@ -24,7 +24,7 @@
               </form>
           </div>
         <?php else: ?>
-          <div class="drop_container efx_drop-shadow">
+          <div class="drop_container efx_drop_shadow">
             <form class="drop_menu_log" action="funcoes.php" method="post">
               <img class="drop_menu_log_avatar" src="<?php echo $_SESSION["avatar"]?>" alt="avatar do usuario">
               <p class="drop_menu_text_log"><?php echo $_SESSION["login"]?></p>
