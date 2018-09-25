@@ -19,7 +19,7 @@
   padding-left: 5px;
 }
 
-.headline p {
+.headline>p {
   align-self: baseline;
 }
 
