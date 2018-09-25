@@ -20,9 +20,11 @@
     <!-- ==== MAIN FAQS ==== -->
     <div class="main">
       <div class="container_faq">
+
         <div class="headline_faq">
           <a>FAQ - Perguntas e Respostas</a>
         </div>
+
         <div class="cont_faq_body">
           <div class="wrap-collabsible">
             <input id="collapsible" class="toggle" type="checkbox" >
@@ -91,6 +93,7 @@
             </div>
           </div>
         </div>
+
       </div>
 
     </div>
