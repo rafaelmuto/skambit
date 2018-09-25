@@ -19,7 +19,7 @@
 
     <!-- ==== CADASTRO ==== -->
 
-          <div class="container_cadastro efx_drop_shadow">
+          <div class="container_cadastro efx_drop_shadow efx_border_radius">
 
               <div class="headline">
                 <p>Cadastro</p>

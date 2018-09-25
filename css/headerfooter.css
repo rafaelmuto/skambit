@@ -131,7 +131,6 @@ header {
   right: 5%;
   top: 60px;
   background-color: var(--cor_principal);
-  border-radius: 10px;
 }
 
 .drop_menu {
@@ -178,7 +177,6 @@ header {
   height: 270px;
   width: 90%;
   justify-self: center;
-  border-radius: 10px;
 }
 
 .drop_menu_text_log {
