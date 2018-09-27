@@ -9,29 +9,15 @@
     </form>
     <a class="header_link" href="index.php">home</a>
     <a class="header_link" href="faq.php">faqs</a>
-
+    <div class="header_link">
+      <input type="checkbox" id="login_window" style="display:none;" />
+      <label for="login_window"> <?php echo (isset($_SESSION["login"])?$_SESSION["login"]:"login") ?></label>
+      <?php include("login_window.php") ?>
+    </div>
     <!-- DROP MENU  -->
-    <div class="header_user dropdown"><img class="header_avatar_img" src="<?php echo (isset($_SESSION["avatar"])?$_SESSION["avatar"]:"none.png")?>">
-        <?php if(!isset($_SESSION["login"])): ?>
-          <div class="drop_container efx_drop_shadow efx_border_radius">
-            <form class="drop_menu" action="funcoes.php" method="post">
-                <p class="drop_menu_text">login</p>
-                <input class="drop_menu_item" type="text" name="login" value="" placeholder="usuario">
-                <input class="drop_menu_item" type="password" name="password" value="" placeholder="senha">
-                <button class="drop_menu_item" type="submit" name="acao" value="login">Entrar</button>
-                <a class="drop_menu_item" href="cadastro.php" style="background-color: #2ecc71; color: white;"> cadastro </a>
-              </form>
-          </div>
-        <?php else: ?>
-          <div class="drop_container efx_drop_shadow efx_border_radius">
-            <form class="drop_menu_log" action="funcoes.php" method="post">
-              <img class="drop_menu_log_avatar efx_border_radius" src="<?php echo $_SESSION["avatar"]?>" alt="avatar do usuario">
-              <p class="drop_menu_text_log"><?php echo $_SESSION["login"]?></p>
-              <a class="drop_menu_item" href="userpage.php"> pagina do usuario </a>
-              <button class="drop_menu_item" type="submit" name="acao" value="logout" style="background-color: #e74c3c; color: white;">Logout</button>
-            </form>
-          </div>
-        <?php endif; ?>
+    <div class="header_user dropdown"><img class="header_avatar_img" src="<?php echo (isset($_SESSION["avatar"])?$_SESSION["avatar"]:"avatares/none.png" )?>">
+      <?php include("login_window.php") ?>
      </div>
+
   </div>
 </header>
