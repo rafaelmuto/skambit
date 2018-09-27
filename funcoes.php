@@ -60,6 +60,9 @@ function cadastro($cadastro){
     move_uploaded_file($file, "avatares/".$file_name);
     $cadastro["avatar"] = "avatares/".$file_name;
   }
+  else{
+    $cadastro["avatar"] = "avatares/none.png";
+  }
   // --- essa parte trata a array e passa os dados para o JSON
   unset($cadastro["conf_password"]);
   $cadastro["password"] = password_hash($cadastro["password"], PASSWORD_DEFAULT);
