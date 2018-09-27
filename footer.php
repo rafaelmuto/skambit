@@ -7,9 +7,12 @@
   </div>
 
 </footer>
-
 <div class="footer_nav">
   <a class="footer_nav--logo" href="index.php">Skambit</a>
   <a class="footer_nav--item" href="faq.php">faqs</a>
-  <a class="footer_nav--item" href="login.php">login</a>
+  <div class="footer_nav--item">
+    <input type="checkbox" id="login_window__mobile" style="display:none;" />
+    <label for="login_window__mobile"> <?php echo (isset($_SESSION["login"])?$_SESSION["login"]:"login") ?></label>
+    <?php include("login_window.php") ?>
+  </div>
 </div>
