@@ -22,7 +22,7 @@
       <section class="main_banner"></section>
       <ul class="main_grid">
         <li class="main_card">
-          <a href="produto.php">
+          <a href="product.php">
           <figure>
             <img class="main_card--img hover-opacity" src="./imagens/produto1.jpg" alt="bolsa">
           </figure>
@@ -32,7 +32,7 @@
               <p class="price">R$ 10,00</p>
             </div>
             </a>
-            <a href="produto.php"><i class="material-icons">thumb_up</i></a>
+            <a href="product.php"><i class="material-icons">thumb_up</i></a>
           </div>
         </li>
         <li class="main_card">
