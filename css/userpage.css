@@ -1,0 +1,72 @@
+.userpage_container {
+  background-color: var(--cor_base);
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  width: 70vw;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+}
+
+.userpage_container>div {
+  margin: 0 20px;
+}
+
+.headline {
+  background-color: var(--cor_principal);
+  color: var(--cor_base);
+  margin: 0 !important;
+  width: auto;
+  height: 0.84em;
+  font-size: 3.5em;
+  line-height: 1em;
+  font-weight: 700;
+  padding-left: 5px;
+}
+
+.headline_sub {
+  color: var(--cor_principal);
+  height: 0.9em;
+  font-size: 2em;
+  line-height: 1em;
+  font-weight: 700;
+  padding-left: 5px;
+  border-bottom: 3px solid black;
+}
+
+.user_info {
+  display: grid;
+  grid-template-columns: 200px auto;
+}
+
+.user_info_avatar {
+  max-width: 200px;
+}
+
+.form_grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 5px;
+}
+
+.form_grid_item {
+  align-self: center;
+  justify-self: center;
+  width: 90%;
+}
+
+.user_form_label {
+  color: var(--cor_sub);
+  font-weight: 100;
+  font-size: .9em;
+}
+
+.user_form_input {
+  border: 0;
+  border-bottom: 1px solid var(--cor_sub);
+  width: 100%;
+  font-size: 1.2em;
+}

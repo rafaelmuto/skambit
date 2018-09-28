@@ -24,8 +24,20 @@ body {
   color: var(--cor_sub);
 }
 
-.efx_drop-shadow {
+.efx_drop_shadow {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.efx_border_radius {
+  border-radius: 10px;
+}
+
+.efx_border_radius--top {
+  border-radius: 10px 10px 0 0;
+}
+
+.efx_border_radius--bot {
+  border-radius: 0 010px 10px;
 }
 
 /* ====  HEADER  ===== */
@@ -94,6 +106,11 @@ header {
   align-self: center;
 }
 
+input[type="checkbox"]:checked~.drop_container {
+  pointer-events: auto;
+  display: block;
+}
+
 .header_user {
   justify-self: center;
   align-self: center;
@@ -111,7 +128,7 @@ header {
 }
 
 .dropdown {
-  position: relative;
+  /* position: relative; */
 }
 
 .dropdown:hover .drop_container {
@@ -127,7 +144,7 @@ header {
   right: 5%;
   top: 60px;
   background-color: var(--cor_principal);
-  border-radius: 10px;
+  font-size: 20px;
 }
 
 .drop_menu {
@@ -140,7 +157,7 @@ header {
 }
 
 .drop_menu_text {
-  font-size: 3em;
+  font-size: 2em;
   font-weight: 700;
   color: var(--cor_fundo);
   align-self: center;
@@ -154,6 +171,7 @@ header {
   border-radius: 5px;
   padding: 10px;
   font-size: 20px;
+  font-weight: 400;
   width: 90%;
   align-self: center;
   justify-self: center;
@@ -174,7 +192,6 @@ header {
   height: 270px;
   width: 90%;
   justify-self: center;
-  border-radius: 10px;
 }
 
 .drop_menu_text_log {
@@ -195,7 +212,7 @@ footer {
   padding-left: 30px;
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: 160px 50% 150px;
+  grid-template-columns: 160px 50%;
 }
 
 .footer_logo {
@@ -207,7 +224,6 @@ footer {
 }
 
 .footer_msg {
-  border-right: 2px solid var(--cor_fundo);
   font-weight: 100;
   height: 40px;
   padding-top: 5px;
@@ -215,23 +231,23 @@ footer {
   align-self: center;
 }
 
-.footer_icons {
-  align-self: center;
-}
-
-.footer_icons i {
-  display: inline-block;
-}
-
 .footer_nav {
   display: none;
+}
+
+.login_mobile {
+  margin: 50px auto;
+  height: auto;
+  width: 300px;
+  padding-bottom: 10px;
+  background-color: var(--cor_principal);
 }
 
 /* ==== MEDIA QUERIES ===== */
 @media (max-width:1460px) {
   .header_container {
     grid-gap: 5px;
-    grid-template-columns: 278px auto 70px 100px 60px 70px;
+    grid-template-columns: 278px auto 70px 60px 100px 60px;
   }
 }
 
@@ -257,16 +273,16 @@ footer {
     display: block;
     position: fixed;
     background-color: var(--cor_principal);
-    color: var(--cor_fundo);
     width: 100%;
     bottom: 0;
     height: 50px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     font-weight: 100;
   }
 
-  .footer_nav a {
+  .footer_nav--item {
+    color: var(--cor_fundo);
     text-decoration: none;
     text-transform: uppercase;
     justify-self: center;
@@ -274,11 +290,26 @@ footer {
   }
 
   .footer_nav--logo {
+    color: var(--cor_fundo);
     font-size: 3.5em;
     line-height: 1em;
     font-weight: 700;
     margin-right: 10px;
     align-self: baseline;
     text-transform: none !important;
+  }
+
+  .drop_container {
+    display: none;
+    position: absolute;
+    height: auto;
+    width: 300px;
+    z-index: 10;
+    margin: 0 auto;
+    top: -70vh;
+    left: 0;
+    background-color: var(--cor_principal);
+    font-size: 20px;
+    text-transform: none;
   }
 }

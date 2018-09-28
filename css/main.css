@@ -63,40 +63,69 @@ img {
 .main_grid {
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   max-width: 90vw;
   margin: 0 auto 30px;
   padding: 20px 0 0;
 }
 
 .main_card {
-  background-color: var(--cor_base);
+  min-height: 30vh;
+  background-size: cover !important;
+  background-position: center !important;
+  position: relative;
 }
 
-.main_card--img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+.main_card_info {
+  font-size: 1.5em;
+  font-weight: 700;
+  /* text-transform: uppercase; */
+  text-shadow: 0px 0px 3px var(--cor_sub);
+  color: var(--cor_fundo);
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
 }
 
-.main_card:hover .hover-opacity {
+.like_btn {
+  background: var(--cor_fundo);
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  display: grid;
+  text-decoration: none;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.like_btn_icon {
+  color: var(--cor_sub);
+  font-size: 30px;
+  justify-self: center;
+  align-self: center;
+}
+
+.main_card_blank {
+  border: 3px dashed var(--cor_sub);
+  display: grid;
+}
+
+.main_card_blank>a {
+  justify-self: center;
+  align-self: center;
+}
+
+.main_card_blank .material-icons {
+  font-size: 70px;
+}
+
+.main_card:hover {
   opacity: 0.8;
 }
 
-.main_card--img {
-  height: 320px;
-  object-fit: cover;
-  padding: 10px;
-}
-
-.price {
-  font-weight: 700;
-}
-
-.main_card--info {
-  display: flex;
-  justify-content: space-between;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-  padding: 12px;
+@media (max-width:900px) {
+  .main_card {
+    min-height: 40vh;
+  }
 }
