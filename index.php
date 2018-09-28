@@ -122,6 +122,7 @@
         </article>
 
       </section>
+
     <!-- ==== FOOTER ==== -->
     <?php include("footer.php") ?>
   </body>
