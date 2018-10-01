@@ -64,6 +64,7 @@
   position: absolute;
   bottom: 10px;
   right: 10px;
+  box-shadow: 0px 0px 3px var(--cor_sub);
   z-index: 99;
 }
 
