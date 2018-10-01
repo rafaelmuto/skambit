@@ -119,6 +119,10 @@ input[type="checkbox"]:checked~.drop_container {
   display: grid;
 }
 
+.header_user>label {
+  display: grid;
+}
+
 .header_avatar_img {
   height: 50px;
   width: 50px;
