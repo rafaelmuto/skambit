@@ -4,7 +4,7 @@ Projeto Integrador Digital House -T05
 ### Descrição:
 Este é repositorio do projeto integrador do curso de Fullstack da Digital House - Villa Olimpia. Os integrantes do grupo são:
 
-- Aline Silva
+- ~Aline Silva~
 - Rafael Muto
 - Thiago Pereira
 - ~~Tonico Dias~~

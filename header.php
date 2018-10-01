@@ -15,7 +15,7 @@
       <?php include("login_window.php") ?>
     </div>
     <!-- DROP MENU  -->
-    <div class="header_user dropdown"><img class="header_avatar_img" src="<?php echo (isset($_SESSION["avatar"])?$_SESSION["avatar"]:"avatares/none.png" )?>">
+    <div class="header_user dropdown"><label for="login_window"><img class="header_avatar_img" src="<?php echo (isset($_SESSION["avatar"])?$_SESSION["avatar"]:"avatares/none.png" )?>"></label>
       <?php include("login_window.php") ?>
      </div>
 
