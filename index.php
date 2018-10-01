@@ -21,13 +21,16 @@
       <section class="main_banner efx_drop_shadow"></section>
       <section class="main_grid">
 
-        <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url(./imagens/produto1.jpg);">
-          <div class="main_card_info">
-            <p>nome do produto</p>
-            <p>R$ 100,00</p>
+
+          <div class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url(./imagens/produto1.jpg);">
+            <div class="main_card_info">
+              <p>nome do produto</p>
+              <p>R$ 100,00</p>
+            </div>
+            <a class="like_btn" href="#"><i class="like_btn_icon material-icons">thumb_up</i></a>
+            <a class="main_card_link" href="produto.php"></a>
           </div>
-          <a class="like_btn" href="#"><i class="like_btn_icon material-icons">thumb_up</i></a>
-        </article>
+
 
         <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url(./imagens/produto2.jpg);">
           <div class="main_card_info">
