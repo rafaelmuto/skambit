@@ -28,8 +28,19 @@
               <form class="form_grid efx_border_radius--bot" action="funcoes.php" method="post" enctype="multipart/form-data">
                 <div class="form_grid_item">
                   <input class="cad_form_input" type="text" name="login" value="" required autocomplete="off">
-                  <label class="cad_form_label" for="usuario">Usuario</label>
+                  <label class="cad_form_label" for="usuario">Login</label>
                 </div>
+
+                <div class="form_grid_item">
+                  <input class="cad_form_input" type="text" name="nome" value="" required autocomplete="off">
+                  <label class="cad_form_label" for="nome">Nome</label>
+                </div>
+
+                <div class="form_grid_item">
+                  <input class="cad_form_input" type="text" name="sobrenome" value="" required autocomplete="off">
+                  <label class="cad_form_label" for="sobrenome">Sobrenome</label>
+                </div>
+
                 <div class="form_grid_item">
                   <input class="cad_form_input" type="email" name="email" value="" required autocomplete="off">
                   <label class="cad_form_label" for="email">E-mail</label>
