@@ -3,7 +3,6 @@
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 20px;
-  padding-bottom: 10px;
   width: 70vw;
   display: grid;
   grid-template-columns: 1fr;
@@ -82,4 +81,9 @@
 .main_card>label{
   justify-self: center;
   align-self: center;
+}
+
+.main_card>p{
+  margin: 0 auto;
+  color: var(cor_sub);
 }

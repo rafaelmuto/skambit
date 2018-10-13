@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/headerfooter.css">
     <link rel="stylesheet" href="./css/cadproduto.css">
     <link rel="stylesheet" href="./css/main.css">
+    <script src="./javascript/html5.image.preview.js"></script>
     <title>Cadastro de produtos</title>
   </head>
 
@@ -26,7 +27,8 @@
       <div class="product_info">
 
         <div class="main_card main_card_blank efx_border_radius">
-            <label for='pseudo_btn'><i class="material-icons">add_circle_outline</i></label>
+          <input type="file" name="imagefile" onchange="previewImage(this,[256],4);" />
+            <div class="imagePreview"></div>
         </div>
 
           <form class="form_grid" action="" method="post" enctype="multipart/form-data">
@@ -47,33 +49,12 @@
               <input class="reg_button" alt="Cadastrar "type='submit' name='acao' value='Cadastrar'/>
             </div>
 
-            <div class="form_grid_item">
-              <input id="pseudo_btn" type='file' name='carregar_foto' style="display: none"/>
-            </div>
+            <!--<div class="form_grid_item">
+              <input id="pseudo_btn" type='file' name='imagefile' onchange="previewImage(this,[256],4)" style="display: none"/>
+            </div> -->
           </form>
 
           </div>
-
-      <div class="headline_sub">
-        Produtos cadastrados
-      </div>
-
-      <div class="main_grid">
-        <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url(./imagens/produto1.jpg);">
-          <div class="main_card_info">
-            <p>nome do produto</p>
-            <p>R$ 100,00</p>
-          </div>
-        </article>
-
-        <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url(./imagens/produto2.jpg);">
-          <div class="main_card_info">
-            <p>nome do produto</p>
-            <p>R$ 100,00</p>
-          </div>
-        </article>
-
-      </div>
 
     <!-- ==== FOOTER ==== -->
     <?php include("footer.php") ?>
