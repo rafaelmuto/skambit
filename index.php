@@ -20,97 +20,16 @@
     <!-- ==== MAIN ==== -->
       <section class="main_banner efx_drop_shadow"></section>
       <section class="main_grid">
-
-
-          <div class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url(./imagens/produto1.jpg);">
-            <div class="main_card_info">
-              <p>nome do produto</p>
-              <p>R$ 100,00</p>
-            </div>
-            <a class="like_btn" href="#"><i class="like_btn_icon material-icons">thumb_up</i></a>
-            <a class="main_card_link" href="produto.php"></a>
-          </div>
-
-
-        <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url(./imagens/produto2.jpg);">
-          <div class="main_card_info">
-            <p>nome do produto</p>
-            <p>R$ 100,00</p>
-          </div>
-          <a class="like_btn" href="#"><i class="like_btn_icon material-icons">thumb_up</i></a>
-        </article>
-
-        <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url(./imagens/produto3.jpg);">
-          <div class="main_card_info">
-            <p>nome do produto</p>
-            <p>R$ 100,00</p>
-          </div>
-          <a class="like_btn" href="#"><i class="like_btn_icon material-icons">thumb_up</i></a>
-        </article>
-
-        <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url(./imagens/produto4.jpg);">
-          <div class="main_card_info">
-            <p>nome do produto</p>
-            <p>R$ 100,00</p>
-          </div>
-          <a class="like_btn" href="#"><i class="like_btn_icon material-icons">thumb_up</i></a>
-        </article>
-
-        <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url(./imagens/produto5.jpg);">
-          <div class="main_card_info">
-            <p>nome do produto</p>
-            <p>R$ 100,00</p>
-          </div>
-          <a class="like_btn" href="#"><i class="like_btn_icon material-icons">thumb_up</i></a>
-        </article>
-
-        <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url(./imagens/produto6.jpg);">
-          <div class="main_card_info">
-            <p>nome do produto</p>
-            <p>R$ 100,00</p>
-          </div>
-          <a class="like_btn" href="#"><i class="like_btn_icon material-icons">thumb_up</i></a>
-        </article>
-
-        <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url(./imagens/produto7.jpg);">
-          <div class="main_card_info">
-            <p>nome do produto</p>
-            <p>R$ 100,00</p>
-          </div>
-          <a class="like_btn" href="#"><i class="like_btn_icon material-icons">thumb_up</i></a>
-        </article>
-
-        <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url(./imagens/produto8.jpg);">
-          <div class="main_card_info">
-            <p>nome do produto</p>
-            <p>R$ 100,00</p>
-          </div>
-          <a class="like_btn" href="#"><i class="like_btn_icon material-icons">thumb_up</i></a>
-        </article>
-
-        <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url(./imagens/produto9.jpg);">
-          <div class="main_card_info">
-            <p>nome do produto</p>
-            <p>R$ 100,00</p>
-          </div>
-          <a class="like_btn" href="#"><i class="like_btn_icon material-icons">thumb_up</i></a>
-        </article>
-
-        <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url(./imagens/produto10.jpg);">
-          <div class="main_card_info">
-            <p>nome do produto</p>
-            <p>R$ 100,00</p>
-          </div>
-          <a class="like_btn" href="#"><i class="like_btn_icon material-icons">thumb_up</i></a>
-        </article>
-
-        <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url(./imagens/produto11.jpg);">
-          <div class="main_card_info">
-            <p>nome do produto</p>
-            <p>R$ 100,00</p>
-          </div>
-          <a class="like_btn" href="#"><i class="like_btn_icon material-icons">thumb_up</i></a>
-        </article>
+        <?php include("prodCard.class.php");
+          for($j=0;$j<5;$j++){
+            for($i=1;$i<=12;$i++){
+              $produto = new CardProd();
+              $produto->setCard("produto".$i,7*$i,"imagens/produto".$i.".jpg","descricao do produto...");
+              $produto->drawCard();
+              unset($produto);
+            }
+          }
+         ?>
 
         <!-- <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url(./imagens/produto12.jpg);">
           <div class="main_card_info">
