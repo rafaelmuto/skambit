@@ -28,17 +28,17 @@
               <form class="form_grid efx_border_radius--bot" action="funcoes.php" method="post" enctype="multipart/form-data">
                 <div class="form_grid_item">
                   <input class="cad_form_input" type="text" name="login" value="" required autocomplete="off">
-                  <label class="cad_form_label" for="usuario">Login</label>
+                  <label class="cad_form_label" for="login">Login</label>
                 </div>
 
                 <div class="form_grid_item">
-                  <input class="cad_form_input" type="text" name="nome" value="" required autocomplete="off">
-                  <label class="cad_form_label" for="nome">Nome</label>
+                  <input class="cad_form_input" type="text" name="primeiro_nome" value="" required autocomplete="off">
+                  <label class="cad_form_label" for="primeiro_nome">Nome</label>
                 </div>
 
                 <div class="form_grid_item">
-                  <input class="cad_form_input" type="text" name="sobrenome" value="" required autocomplete="off">
-                  <label class="cad_form_label" for="sobrenome">Sobrenome</label>
+                  <input class="cad_form_input" type="text" name="ultimo_nome" value="" required autocomplete="off">
+                  <label class="cad_form_label" for="ultimo_nome">Sobrenome</label>
                 </div>
 
                 <div class="form_grid_item">
@@ -50,12 +50,12 @@
                   <label class="cad_form_label" for="cep">CEP</label>
                 </div>
                 <div class="form_grid_item">
-                  <input class="cad_form_input" type="password" name="password" value="" required autocomplete="off">
-                  <label class="cad_form_label" for="password">Senha</label>
+                  <input class="cad_form_input" type="password" name="senha" value="" required autocomplete="off">
+                  <label class="cad_form_label" for="senha">Senha</label>
                 </div>
                 <div class="form_grid_item">
-                  <input class="cad_form_input" type="password" name="conf_password" value="" required autocomplete="off">
-                  <label class="cad_form_label" for="conf_password">Confirmação de senha</label>
+                  <input class="cad_form_input" type="password" name="conf_senha" value="" required autocomplete="off">
+                  <label class="cad_form_label" for="conf_senha">Confirmação de senha</label>
                 </div>
                 <div class="form_grid_item">
                   <input class="cad_form_input" type="file" name="avatar" value="">
