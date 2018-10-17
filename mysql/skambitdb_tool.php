@@ -31,6 +31,9 @@
       tr:nth-child(odd) {
         background-color: #eee;
       }
+      a{
+        color: black;
+      }
     </style>
   </head>
   <body>
@@ -58,6 +61,10 @@
         }
       ?>
     </table>
-    <!-- <?php var_dump((new cadastroUsuario)->getNomes("sdfa")); ?> -->
+
+    <?php
+        // XAMPP no macOSX:
+        exec("/Applications/XAMPP/xamppfiles/bin/mysqldump --opt --no-create-info --host=localhost --user=root --password= skambitdb > skambitdb_".date('Y-m-d-h-m-s').".sql");
+    ?>
   </body>
 </html>
