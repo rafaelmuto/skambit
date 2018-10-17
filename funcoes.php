@@ -9,32 +9,6 @@ if(!is_dir("avatares/")){
 }
 
 
-// ==== FUNCAO DE LOGIN ====
-
-function login($log){
-  $login = $log["login"];
-  $senha = $log["password"];
-  global $jsondb;
-  if(file_exists($jsondb)){
-    $db = json_decode(file_get_contents($jsondb), TRUE);
-  }
-  else{
-    $db = ["user_list" => []];
-  }
-  foreach ($db["user_list"] as $id => $item) {
-    if($login == $item["login"] && password_verify($senha,$item["password"])){
-      $_SESSION["id"] = $id;
-      $_SESSION["login"] = $item["login"];
-      $_SESSION["email"] = $item["email"];
-      $_SESSION["cep"] = $item["cep"];
-      $_SESSION["password"] = $item["password"];
-      $_SESSION["avatar"] = $item["avatar"];
-      return TRUE;
-    }
-  }
-  return FALSE;
-}
-
 
 // ==== FUNCAO DE MODIFICAÇÃO DE CADASTRO ====
 
@@ -72,8 +46,9 @@ function modcadastro($modificar){
 
 switch ($_REQUEST["acao"]) {
   case 'login':
+    include "classes/cadastroUsuario.class.php";
     unset($_REQUEST["acao"]);
-    if(login($_POST)){
+    if((new cadastroUsuario)->login($_POST)){
       header("Location:index.php?msg=login_ok");
     }
     else{
@@ -86,11 +61,11 @@ switch ($_REQUEST["acao"]) {
     unset($_POST["acao"]);
     $cad = (new cadastroUsuario)->add($_POST);
     if($cad["error"]==FALSE){
-      // login($_POST);
+      (new cadastroUsuario)->login($_POST);
       header("Location:index.php?msg=cadastro_ok");
     }
     else{
-      header("Location:cadastro.php?msg=cadastro_erro");
+      header('Location:cadastro.php?msg='.$cad["msg"]);
     }
     break;
 

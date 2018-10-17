@@ -8,8 +8,9 @@ include "Dbh.class.php";
  * - getLogins() retorna array numerada com todos os logins
  * - getNomes($nome) retorna array numerada contendo os primeiro_nome ou ultimo_nome de todos os usuarios
  * - add($cadastro) recebe $array assoc, onde as chaves tem o mesmo nome dos campos da tabela, e adiciona usuario ao cadastro e retorna array contendo msg de erro
+ * - login($array) recebe array com login e senha e retorna bool 
  */
- 
+
 class cadastroUsuario extends Dbh
 {
   protected $pdo;
@@ -48,7 +49,7 @@ class cadastroUsuario extends Dbh
     }
     unset($cadastro["conf_senha"]);
     // --- checa se o nome do usuario ja esta cadastrado !!!! mudar essa parte para checar contra o skambitdb!!!
-    $user_list = (new cadastroUsuario)->getLogins();
+    $user_list = $this->getLogins();
     foreach($user_list as $id => $item) {
       if($item == $cadastro["login"]){
         return ["error" => TRUE, "msg" => "usuario já cadatrado"];
@@ -96,10 +97,23 @@ class cadastroUsuario extends Dbh
     return ["error" => FALSE, "msg" => "usuario cadastrado com sucesso"];
   }
 
-  public function login(){
-    // busca nas listas de login e bate com a senha criptografa
-    // registra infos pertinentes na session
+  public function login($array){
+    $login = $array["login"];
+    $senha = $array["senha"];
+    $lista = $this->listar();
+    foreach ($lista as $key => $item) {
+      if($item["login"]==$login){
+        if(password_verify($senha,$item["senha"])){
+          $_SESSION["usuario_id"] = $item["usuario_id"];
+          $_SESSION["login"] = $item["login"];
+          $_SESSION["avatar"] = $item["avatar"];
+          return TRUE;
+        }
+      }
+    }
+    return FALSE;
   }
+
 
 }
 ?>

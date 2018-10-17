@@ -75,5 +75,8 @@
 
     <h1>Skambitdb/ligacao_matches</h1>
 
+    <hr>
+    <pre>
+      <?php var_dump((new cadastroUsuario)->listar()); ?>
   </body>
 </html>
