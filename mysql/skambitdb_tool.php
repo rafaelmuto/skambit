@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+    // XAMPP no macOSX:
+    // exec("/Applications/XAMPP/xamppfiles/bin/mysqldump --opt --no-create-info --host=localhost --user=root --password= skambitdb > skambitdb_".date('Y-m-d-h-m-s').".sql");
+?>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -31,8 +35,13 @@
       tr:nth-child(odd) {
         background-color: #eee;
       }
-      a{
+
+      a {
         color: black;
+      }
+
+      h1 {
+        margin: 0;
       }
     </style>
   </head>
@@ -42,7 +51,6 @@
       include '../classes/cadastroUsuario.class.php';
       $array = (new cadastroUsuario)->listar();
     ?>
-    <hr>
     <table>
       <tr>
         <?php
@@ -61,10 +69,11 @@
         }
       ?>
     </table>
+    <h1>Skambitdb/cad_produto</h1>
 
-    <?php
-        // XAMPP no macOSX:
-        exec("/Applications/XAMPP/xamppfiles/bin/mysqldump --opt --no-create-info --host=localhost --user=root --password= skambitdb > skambitdb_".date('Y-m-d-h-m-s').".sql");
-    ?>
+    <h1>Skambitdb/ligacao_likes</h1>
+
+    <h1>Skambitdb/ligacao_matches</h1>
+
   </body>
 </html>
