@@ -9,6 +9,7 @@ include "Dbh.class.php";
  * - getNomes($nome) retorna array numerada contendo os primeiro_nome ou ultimo_nome de todos os usuarios
  * - add($cadastro) recebe $array assoc, onde as chaves tem o mesmo nome dos campos da tabela, e adiciona usuario ao cadastro e retorna array contendo msg de erro
  */
+ 
 class cadastroUsuario extends Dbh
 {
   protected $pdo;
@@ -93,6 +94,11 @@ class cadastroUsuario extends Dbh
     var_dump($cadastro);
     $query->execute($cadastro);
     return ["error" => FALSE, "msg" => "usuario cadastrado com sucesso"];
+  }
+
+  public function login(){
+    // busca nas listas de login e bate com a senha criptografa
+    // registra infos pertinentes na session
   }
 
 }

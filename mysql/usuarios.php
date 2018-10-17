@@ -34,7 +34,7 @@
     </style>
   </head>
   <body>
-    <h1>Skambit: usuarios</h1>
+    <h1>Skambitdb/usuarios</h1>
     <?php
       include '../classes/cadastroUsuario.class.php';
       $array = (new cadastroUsuario)->listar();
