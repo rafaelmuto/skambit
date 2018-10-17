@@ -20,7 +20,7 @@
     <!-- ==== MAIN ==== -->
       <section class="main_banner efx_drop_shadow"></section>
       <section class="main_grid">
-        <?php include("prodCard.class.php");
+        <?php include("classes/prodCard.class.php");
           for($j=0;$j<5;$j++){
             for($i=1;$i<=12;$i++){
               $produto = new CardProd();

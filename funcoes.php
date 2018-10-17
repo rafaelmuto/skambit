@@ -1,4 +1,5 @@
 <?php
+
 $jsondb = "jsondb.json"; // --- nome do arquivo JSON
 session_start();
 
@@ -34,42 +35,6 @@ function login($log){
   return FALSE;
 }
 
-// ==== FUNCAO DE CADASTRO ====
-
-function cadastro($cadastro){
-  global $jsondb;
-  // --- checagem basica das senhas
-  if($cadastro["password"] != $cadastro["conf_password"]){
-    return ["error" => TRUE, "msg" => "senhas não conferem"];
-  }
-  // --- checagem do arquivo JSON
-  if(file_exists($jsondb)) $db = json_decode(file_get_contents($jsondb),TRUE);
-  else $db = ["user_list" => []];
-  // --- checa se o nome do usuario ja esta cadastrado
-  foreach($db["user_list"] as $id => $item) {
-    if($item["login"] == $cadastro["login"]){
-      return ["error" => TRUE, "msg" => "usuario já cadatrado"];
-    }
-  }
-  // --- essa parte da funcao cuida do upload e manuseio das imagens de avatar
-  if($_FILES["avatar"]["error"]==UPLOAD_ERR_OK){
-    $timestamp = date("YmdHis");
-    $file_ext = explode(".", strtolower($_FILES["avatar"]["name"]));
-    $file_name = $timestamp. "_" .$cadastro["login"] .".". $file_ext[1];
-    $file = $_FILES["avatar"]["tmp_name"];
-    move_uploaded_file($file, "avatares/".$file_name);
-    $cadastro["avatar"] = "avatares/".$file_name;
-  }
-  else{
-    $cadastro["avatar"] = "avatares/none.png";
-  }
-  // --- essa parte trata a array e passa os dados para o JSON
-  unset($cadastro["conf_password"]);
-  $cadastro["password"] = password_hash($cadastro["password"], PASSWORD_DEFAULT);
-  $db["user_list"][] = $cadastro;
-  file_put_contents($jsondb, json_encode($db));
-  return ["error" => FALSE, "msg" => "usuario cadastrado com sucesso"];
-}
 
 // ==== FUNCAO DE MODIFICAÇÃO DE CADASTRO ====
 
@@ -117,10 +82,11 @@ switch ($_REQUEST["acao"]) {
     break;
 
   case 'cadastro':
+    include "classes/cadastroUsuario.class.php";
     unset($_POST["acao"]);
-    $cad = cadastro($_POST);
+    $cad = (new cadastroUsuario)->add($_POST);
     if($cad["error"]==FALSE){
-      login($_POST);
+      // login($_POST);
       header("Location:index.php?msg=cadastro_ok");
     }
     else{
