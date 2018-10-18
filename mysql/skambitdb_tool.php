@@ -6,7 +6,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Skambitdb: usuarios</title>
+    <title>Skambitdb</title>
     <style media="screen">
       body {
         box-sizing: border-box;
