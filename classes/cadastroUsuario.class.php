@@ -1,5 +1,5 @@
 <?php
-include "Dbh.class.php";
+include_once "Dbh.class.php";
 
 /**
  * Classe extente de dbh e cuida do registro dos usuarios:
@@ -49,46 +49,27 @@ class cadastroUsuario extends Dbh
   public function add($cadastro){
     // --- checagem basica das senhas
     if($cadastro["senha"] != $cadastro["conf_senha"]){
-      return ["error" => TRUE, "msg" => "senhas não conferem"];
+      return ["error" => TRUE, "msg" => "senhas_nao_conferem"];
     }
     unset($cadastro["conf_senha"]);
     // --- checa se o nome do usuario ja esta cadastrado !!!! mudar essa parte para checar contra o skambitdb!!!
     $user_list = $this->getLogins();
     foreach($user_list as $id => $item) {
       if($item == $cadastro["login"]){
-        return ["error" => TRUE, "msg" => "usuario já cadatrado"];
+        return ["error" => TRUE, "msg" => "usuario_ja_cadastrado"];
       }
     }
     // --- essa parte da funcao cuida do upload e manuseio das imagens de avatar
     $cadastro["avatar"] = $this->setAvatar();
     // --- criptografa a senha
     $cadastro["senha"] = password_hash($cadastro["senha"], PASSWORD_DEFAULT);
-    $cadastro["data"] = date('Y-m-d');
     $cadastro["status_id"] = 1;
     $cadastro["rating"] = 5;
-    $query = $this->pdo->prepare('INSERT INTO usuarios( `primeiro_nome`,
-                                                        `ultimo_nome`,
-                                                        `cep`,
-                                                        `login`,
-                                                        `senha`,
-                                                        `avatar`,
-                                                        `email`,
-                                                        `data`,
-                                                        `status_id`,
-                                                        `rating`)
-                                                VALUES( :primeiro_nome,
-                                                        :ultimo_nome,
-                                                        :cep,
-                                                        :login,
-                                                        :senha,
-                                                        :avatar,
-                                                        :email,
-                                                        :data,
-                                                        :status_id,
-                                                        :rating)');
+    $query = $this->pdo->prepare('INSERT INTO usuarios( `primeiro_nome`, `ultimo_nome`, `cep`, `login`, `senha`, `avatar`, `email`, `status_id`, `rating`)
+                                                VALUES( :primeiro_nome, :ultimo_nome, :cep, :login, :senha, :avatar, :email, :status_id, :rating)');
     var_dump($cadastro);
     $query->execute($cadastro);
-    return ["error" => FALSE, "msg" => "usuario cadastrado com sucesso"];
+    return ["error" => FALSE, "msg" => "cadastro_ok"];
   }
 
   public function login($array){
@@ -115,19 +96,19 @@ class cadastroUsuario extends Dbh
   public function mod($array){
     $usuario = $this->getInfo($_SESSION["usuario_id"]);
     if(!password_verify($array["senha"],$this->getInfo($usuario["usuario_id"])["senha"])){
-      return ["error" => TRUE, "msg" => "senha errada!"];
+      return ["error" => TRUE, "msg" => "senha_errada!"];
     }
     if($array["primeiro_nome"]!=$usuario["primeiro_nome"] && $array["ultimo_nome"]!=$usuario["ultimo_nome"]  && in_array($array["primeiro_nome"],$this->getNomes('primeiro')) && in_array($array["ultimo_nome"],$this->getNomes('ultimo'))){
-      return ["error" => TRUE, "msg" => "nome ja cadastrado"];
+      return ["error" => TRUE, "msg" => "nome_ja_cadastrado"];
     }
     if($array["login"]!=$usuario["login"] && in_array($array["login"],$this->getLogins())){
-      return ["error" => TRUE, "msg" => "login ja cadastrado"];
+      return ["error" => TRUE, "msg" => "login_ja_cadastrado"];
     }
     if($array["nova_senha"]!=$array["conf_nova_senha"]){
-      return ["error" => TRUE, "msg" => "nova senha nao confere"];
+      return ["error" => TRUE, "msg" => "nova_senha_nao_confere"];
     }
     if($array["email"]!=$usuario["email"] && in_array($array["email"],$this->getEmails())){
-      return ["error" => TRUE, "msg" => "email ja cadastrado"];
+      return ["error" => TRUE, "msg" => "email_ja_cadastrado"];
     }
     if($avatar = $this->setAvatar()){
       $array["avatar"] = $avatar;
@@ -137,7 +118,6 @@ class cadastroUsuario extends Dbh
     }
     $array["usuario_id"] = $usuario["usuario_id"];
     $array["senha"] = password_hash($array["senha"], PASSWORD_DEFAULT);
-    $array["data"] = date('Y-m-d');
     $array["status_id"] = $usuario["status_id"];
     $array["rating"] = $usuario["rating"];
     unset($array["nova_senha"]);
@@ -149,12 +129,11 @@ class cadastroUsuario extends Dbh
                                                       senha = :senha,
                                                       avatar = :avatar,
                                                       email = :email,
-                                                      data = :data,
                                                       status_id = :status_id,
                                                       rating = :rating
                                                     WHERE usuario_id = :usuario_id');
     $query->execute($array);
-    return ["error" => FALSE, "msg" => "update ok"];
+    return ["error" => FALSE, "msg" => "update_ok"];
   }
 
   private function setAvatar(){

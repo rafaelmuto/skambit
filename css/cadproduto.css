@@ -6,11 +6,7 @@
   width: 70vw;
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 40px;
-}
-
-.productpage_container>div {
-  margin: 0 20px;
+  grid-gap: 10px;
 }
 
 .headline {
@@ -38,6 +34,7 @@
 .product_info {
   display: grid;
   grid-template-columns: 200px auto;
+  margin: 0 20px 20px 20px;
 }
 
 .form_grid {
@@ -78,12 +75,12 @@
   text-align: center;
 }
 
-.main_card>label{
+.main_card>label {
   justify-self: center;
   align-self: center;
 }
 
-.main_card>p{
+.main_card>p {
   margin: 0 auto;
   color: var(cor_sub);
 }

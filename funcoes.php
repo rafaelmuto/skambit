@@ -7,6 +7,9 @@ session_start();
 if(!is_dir("avatares/")){
   mkdir("avatares/");
 }
+if(!is_dir("prod_images/")){
+  mkdir("prod_images/");
+}
 
 
 // ==== SWITCH ROUTING ====
@@ -52,6 +55,13 @@ switch ($_REQUEST["acao"]) {
     else{
       header("Location:userpage.php?msg=".$mod["msg"]);
     }
+    break;
+
+    case 'cad_prod':
+      include "classes/cadastroProduto.class.php";
+      unset($_POST["acao"]);
+      $cad = (new cadastroProduto)->add($_POST);
+      header("Location:main.php?msg=".$cad["msg"]);
     break;
 
   default:
