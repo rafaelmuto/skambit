@@ -77,6 +77,5 @@
 
     <hr>
     <pre>
-      <?php var_dump((new cadastroUsuario)->getEmails()); ?>
   </body>
 </html>
