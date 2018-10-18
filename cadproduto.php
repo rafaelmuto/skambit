@@ -31,7 +31,7 @@
             <div class="imagePreview"></div>
         </div>
 
-          <form class="form_grid" action="" method="post" enctype="multipart/form-data">
+          <form class="form_grid" action="funcoes.php" method="post" enctype="multipart/form-data">
 
             <div class="form_grid_item">
               <label class="product_form_label" for="nome">Nome do produto</label>
@@ -46,7 +46,7 @@
               <input class="product_form_input" type="text" name="valor" value="">
             </div>
             <div class="form_grid_item">
-              <input class="reg_button" alt="Cadastrar "type='submit' name='acao' value='Cadastrar'/>
+              <button class="reg_button" type="submit" name="acao" value="cad_prod">Cadastrar</button>
             </div>
 
             <!--<div class="form_grid_item">

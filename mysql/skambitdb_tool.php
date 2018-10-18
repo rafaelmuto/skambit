@@ -49,18 +49,18 @@
     <h1>Skambitdb/usuarios</h1>
     <?php
       include '../classes/cadastroUsuario.class.php';
-      $array = (new cadastroUsuario)->listar();
+      $usuarios = (new cadastroUsuario)->listar();
     ?>
     <table>
       <tr>
         <?php
-          foreach ($array[0] as $key => $value) {
+          foreach ($usuarios[0] as $key => $value) {
             echo "<th>" . $key . "</th>";
           }
         ?>
       </tr>
       <?php
-        foreach ($array as $key => $item) {
+        foreach ($usuarios as $key => $item) {
           echo "<tr>";
           foreach ($item as $key => $value) {
             echo "<td>" . $value . "</td>";
@@ -69,13 +69,35 @@
         }
       ?>
     </table>
+    <br>
     <h1>Skambitdb/cad_produto</h1>
-
+    <?php
+      include "../classes/cadastroProduto.class.php";
+      $produtos = (new cadastroProduto)->listar();
+    ?>
+    <table>
+      <tr>
+        <?php
+          foreach ($produtos[0] as $key => $value) {
+            echo "<th>" . $key . "</th>";
+          }
+        ?>
+      </tr>
+      <?php
+        foreach ($produtos as $key => $item) {
+          echo "<tr>";
+          foreach ($item as $key => $value) {
+            echo "<td>" . $value . "</td>";
+          }
+          echo "</tr>";
+        }
+      ?>
+    </table>
+    <br>
     <h1>Skambitdb/ligacao_likes</h1>
-
+    <br>
     <h1>Skambitdb/ligacao_matches</h1>
-
-    <hr>
+    <br>
     <pre>
   </body>
 </html>
