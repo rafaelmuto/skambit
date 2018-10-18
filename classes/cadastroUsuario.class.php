@@ -9,6 +9,7 @@ include_once "Dbh.class.php";
  * - getNomes($nome) retorna array numerada contendo os primeiro_nome ou ultimo_nome de todos os usuarios
  * - add($cadastro) recebe $array assoc, onde as chaves tem o mesmo nome dos campos da tabela, e adiciona usuario ao cadastro e retorna array contendo msg de erro
  * - login($array) recebe array com login e senha e retorna bool
+ * - setAvatar() retorna FALSE ou o path da imagem salva
  */
 
 class cadastroUsuario extends Dbh

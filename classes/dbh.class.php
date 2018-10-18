@@ -7,6 +7,7 @@ class Dbh{
   private $dbname;
   private $charset;
   private $port;
+
   protected $pdo;
 
   public function __construct(){
