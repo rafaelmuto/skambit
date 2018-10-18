@@ -32,6 +32,14 @@
               <input class="user_form_input" type="text" name="login" value="<?php echo $_SESSION["login"] ?>">
             </div>
             <div class="form_grid_item">
+              <label class="user_form_label" for="primeiro_nome">Nome</label>
+              <input class="user_form_input" type="text" name="primeiro_nome" value="<?php echo $_SESSION["primeiro_nome"] ?>">
+            </div>
+            <div class="form_grid_item">
+              <label class="user_form_label" for="ultimo_nome">Nome</label>
+              <input class="user_form_input" type="text" name="ultimo_nome" value="<?php echo $_SESSION["ultimo_nome"] ?>">
+            </div>
+            <div class="form_grid_item">
               <label class="user_form_label" for="email">E-mail</label>
               <input class="user_form_input" type="email" name="email" value="<?php echo $_SESSION["email"] ?>">
             </div>
@@ -40,20 +48,20 @@
               <input class="user_form_input" type="text" name="cep" value="<?php echo $_SESSION["cep"] ?>">
             </div>
             <div class="form_grid_item">
-              <label class="user_form_label" for="new_password">Nova senha</label>
-              <input class="user_form_input" type="password" name="new_password" value="">
+              <label class="user_form_label" for="nova_senha">Nova senha</label>
+              <input class="user_form_input" type="password" name="nova_senha" value="">
             </div>
             <div class="form_grid_item">
-              <label class="user_form_label" for="conf_new_password">Confirmar nova senha</label>
-              <input class="user_form_input" type="password" name="conf_new_password" value="">
+              <label class="user_form_label" for="conf_nova_senha">Confirmar nova senha</label>
+              <input class="user_form_input" type="password" name="conf_nova_senha" value="">
             </div>
             <div class="form_grid_item">
               <label for="new_avatar" class="user_form_label">Avatar</label>
               <input class="user_form_input" type="file" name="new_avatar" value="">
             </div>
             <div class="form_grid_item">
-              <label class="user_form_label" for="password">Senha</label>
-              <input class="user_form_input" type="password" name="password" value="">
+              <label class="user_form_label" for="senha">Senha</label>
+              <input class="user_form_input" type="password" name="senha" value="">
             </div>
             <div class="form_grid_item">
               <input class="reg_button" alt="modificar" type='submit' name='acao' value='modificar'/>

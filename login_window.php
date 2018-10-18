@@ -3,7 +3,7 @@
     <form class="drop_menu" action="funcoes.php" method="post">
         <p class="drop_menu_text">login</p>
         <input class="drop_menu_item" type="text" name="login" value="" placeholder="usuario">
-        <input class="drop_menu_item" type="password" name="password" value="" placeholder="senha">
+        <input class="drop_menu_item" type="password" name="senha" value="" placeholder="senha">
         <button class="drop_menu_item" type="submit" name="acao" value="login">Entrar</button>
         <a class="drop_menu_item" href="cadastro.php" style="background-color: #2ecc71; color: white;"> cadastro </a>
       </form>

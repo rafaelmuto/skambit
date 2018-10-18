@@ -30,14 +30,14 @@
 .main_grid {
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   max-width: 90vw;
   margin: 0 auto 30px;
   padding: 20px 0 0;
 }
 
 .main_card {
-  min-height: 30vh;
+  min-height: 25vh;
   background-size: cover !important;
   background-position: center !important;
   position: relative;
@@ -65,7 +65,7 @@
   bottom: 10px;
   right: 10px;
   box-shadow: 0px 0px 3px var(--cor_sub);
-  z-index: 99;
+  z-index: 50;
 }
 
 .like_btn_icon {
@@ -83,7 +83,7 @@
   left: 0;
   text-decoration: none;
   opacity: 0;
-  z-index: 98;
+  z-index: 49;
 }
 
 .main_card_blank {
@@ -106,6 +106,6 @@
 
 @media (max-width:900px) {
   .main_card {
-    min-height: 40vh;
+    min-height: 25vh;
   }
 }

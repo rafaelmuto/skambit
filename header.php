@@ -3,11 +3,11 @@
     <div class="header_logo">
       <p>Skambit</p>
     </div>
-    <form class="header_form" action="index.php" method="get">
+    <form class="header_form" action="main.php" method="get">
       <input class="header_busca" type="search" placeholder="buscar..." name="busca" value="">
       <button class="header_busca_btn" type="submit"><i class="material-icons md-36">search</i></button>
     </form>
-    <a class="header_link" href="index.php">home</a>
+    <a class="header_link" href="main.php">home</a>
     <a class="header_link" href="faq.php">faqs</a>
     <div class="header_link">
       <input type="checkbox" id="login_window" style="display:none;" />
