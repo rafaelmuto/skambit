@@ -16,10 +16,10 @@ switch ($_REQUEST["acao"]) {
     include "classes/cadastroUsuario.class.php";
     unset($_REQUEST["acao"]);
     if((new cadastroUsuario)->login($_POST)){
-      header("Location:index.php?msg=login_ok");
+      header("Location:main.php?msg=login_ok");
     }
     else{
-      header("Location:index.php?msg=login_erro");
+      header("Location:main.php?msg=login_erro");
     }
     break;
 
@@ -29,7 +29,7 @@ switch ($_REQUEST["acao"]) {
     $cad = (new cadastroUsuario)->add($_POST);
     if($cad["error"]==FALSE){
       (new cadastroUsuario)->login($_POST);
-      header("Location:index.php?msg=cadastro_ok");
+      header("Location:main.php?msg=cadastro_ok");
     }
     else{
       header('Location:cadastro.php?msg='.$cad["msg"]);
@@ -38,7 +38,7 @@ switch ($_REQUEST["acao"]) {
 
   case 'logout':
     session_destroy();
-    header("Location:index.php?msg=logout_ok");
+    header("Location:main.php?msg=logout_ok");
     break;
 
   case 'modificar':
@@ -47,7 +47,7 @@ switch ($_REQUEST["acao"]) {
     $mod = (new cadastroUsuario)->mod($_POST);
     if($mod["error"]==FALSE){
       (new cadastroUsuario)->login($_POST);
-      header("Location:index.php?msg=mod_ok");
+      header("Location:main.php?msg=mod_ok");
     }
     else{
       header("Location:userpage.php?msg=".$mod["msg"]);
