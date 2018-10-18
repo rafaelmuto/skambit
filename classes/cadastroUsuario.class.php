@@ -1,5 +1,5 @@
 <?php
-include "Dbh.class.php";
+include_once "Dbh.class.php";
 
 /**
  * Classe extente de dbh e cuida do registro dos usuarios:
