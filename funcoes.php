@@ -61,6 +61,7 @@ switch ($_REQUEST["acao"]) {
       include "classes/cadastroProduto.class.php";
       unset($_POST["acao"]);
       $cad = (new cadastroProduto)->add($_POST);
+      header("Location:main.php?msg=".$cad["msg"]);
     break;
 
   default:
