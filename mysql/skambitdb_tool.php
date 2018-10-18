@@ -94,10 +94,6 @@
       ?>
     </table>
     <br>
-    <h1>Skambitdb/ligacao_likes</h1>
-    <br>
-    <h1>Skambitdb/ligacao_matches</h1>
-    <br>
     <pre>
   </body>
 </html>

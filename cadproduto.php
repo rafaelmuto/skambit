@@ -23,30 +23,29 @@
       <div class="headline efx_border_radius--top">
         <p>Cadastro de produto</p>
       </div>
-      <div class="product_info">
-        <div class="main_card main_card_blank efx_border_radius">
-          <input type="file" name="imagefile" onchange="previewImage(this,[256],4);"/>
-          <div class="imagePreview"></div>
-        </div>
-
-        <form class="form_grid" action="funcoes.php" method="post" enctype="multipart/form-data">
-          <div class="form_grid_item">
-            <label class="product_form_label" for="nome">Nome do produto</label>
-            <input class="product_form_input" type="text" name="nome" value="">
+        <form class="product_info" action="funcoes.php" method="post" enctype="multipart/form-data">
+          <div class="main_card main_card_blank efx_border_radius">
+            <input type="file" name="imagefile" onchange="previewImage(this,[256],4);"/>
+            <div class="imagePreview"></div>
           </div>
-          <div class="form_grid_item">
-            <label class="product_form_label" for="descricao">Descrição</label>
-            <input class="product_form_input" type="text" name="descricao" value="">
-          </div>
-          <div class="form_grid_item">
-            <label class="product_form_label" for="valor">Valor</label>
-            <input class="product_form_input" type="text" name="valor" value="">
-          </div>
-          <div class="form_grid_item">
-            <button class="reg_button" type="submit" name="acao" value="cad_prod">Cadastrar</button>
+          <div class="form_grid">
+            <div class="form_grid_item">
+              <label class="product_form_label" for="nome">Nome do produto</label>
+              <input class="product_form_input" type="text" name="nome" value="">
+            </div>
+            <div class="form_grid_item">
+              <label class="product_form_label" for="descricao">Descrição</label>
+              <input class="product_form_input" type="text" name="descricao" value="">
+            </div>
+            <div class="form_grid_item">
+              <label class="product_form_label" for="valor">Valor</label>
+              <input class="product_form_input" type="text" name="valor" value="">
+            </div>
+            <div class="form_grid_item">
+              <button class="reg_button" type="submit" name="acao" value="cad_prod">Cadastrar</button>
+            </div>
           </div>
         </form>
-      </div>
     </div>
     <!-- ==== FOOTER ==== -->
     <?php include("footer.php") ?>
