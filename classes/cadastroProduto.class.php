@@ -14,7 +14,6 @@ class cadastroProduto extends Dbh
 {
   protected $pdo;
 
-
   public function listar(){
     return $this->pdo->query('SELECT * FROM cad_produto')->fetchall(PDO::FETCH_ASSOC);
   }

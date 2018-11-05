@@ -17,9 +17,18 @@
     <!-- ==== HEADER ==== -->
     <?php include("header.php") ?>
 
+
     <!-- ==== PRODUTO ==== -->
     <?php
-      include "classes/cardMaker.class.php";
+      include_once "classes/cardMaker.class.php";
+      include_once "classes/like.class.php";
+
+      if(isset($_GET["like"])){
+        $produto_id = $_GET["like"];
+        $usuario_id = $_SESSION["usuario_id"];
+        (new like)->likeAdd($produto_id, $usuario_id);
+      }
+
       $produto = (new cardMaker)->pageInfo($_GET["produto_id"]);
      ?>
     <div class="prod_container efx_drop_shadow efx_border_radius">
@@ -28,12 +37,13 @@
           <p><?php echo $produto['nome'];  ?></p>
           <p>R$ <?php echo $produto['valor']; ?></p>
         </div>
-        <a class="like_btn" href="#"><i class="like_btn_icon material-icons">thumb_up</i></a>
+        <a class="like_btn" href="produto.php?produto_id=<?php echo $produto["produto_id"]; ?>&like=<?php echo $produto["produto_id"]; ?>"><i class="like_btn_icon material-icons">thumb_up</i></a>
       </div>
       <div class="prod_container_text">
         <p><?php echo $produto['descricao'] ?></p>
       </div>
     </div>
+
     <!-- ==== FOOTER ==== -->
     <?php include("footer.php") ?>
   </body>

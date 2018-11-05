@@ -19,7 +19,7 @@ class cardMaker extends cadastroProduto
     $data = $info["data"];
     $status_id = $info["status_id"];
     $valor = $info["valor"];
-    echo '<div class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url(' . $imagem . ');"><div class="main_card_info"><p>' . $nome . '</p><p>R$ ' . $valor . '</p></div><a class="like_btn" href=" #"><i class="like_btn_icon material-icons">thumb_up</i></a><a class="main_card_link" href="produto.php?produto_id=' . $produto_id . '"></a></div>';
+    echo '<div class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url(' . $imagem . ');"><div class="main_card_info"><p>' . $nome . '</p><p>R$ ' . $valor . '</p></div><a class="like_btn" href="#?like=' . $produto_id . '"><i class="like_btn_icon material-icons">thumb_up</i></a><a class="main_card_link" href="produto.php?produto_id=' . $produto_id . '"></a></div>';
   }
 
   public function pageInfo($id){
