@@ -1,0 +1,111 @@
+.prod_container {
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 600px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 75% auto;
+}
+
+.prod_container_img {
+    position: relative;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+.prod_container_text {
+    text-align: justify;
+    padding: 10px;
+}
+
+/* Section Cards */
+.main_banner {
+    height: 400px;
+    background: url(../imagens/bg.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.main_grid {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    max-width: 90vw;
+    margin: 0 auto 30px;
+    padding: 20px 0 0;
+}
+
+.main_card {
+    min-height: 25vh;
+    background-size: cover !important;
+    background-position: center !important;
+    position: relative;
+}
+
+.main_card_info {
+    font-size: 1.5em;
+    font-weight: 700;
+    /* text-transform: uppercase; */
+    text-shadow: 0px 0px 3px var(--cor_sub);
+    color: var(--cor_fundo);
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.like_btn {
+    background: var(--cor_fundo);
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    display: grid;
+    text-decoration: none;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    box-shadow: 0px 0px 3px var(--cor_sub);
+    z-index: 50;
+}
+
+.like_btn_icon {
+    color: var(--cor_sub);
+    font-size: 30px;
+    justify-self: center;
+    align-self: center;
+}
+
+.main_card_link {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-decoration: none;
+    opacity: 0;
+    z-index: 49;
+}
+
+.main_card_blank {
+    border: 3px dashed var(--cor_sub);
+    display: grid;
+}
+
+.main_card_blank>a {
+    justify-self: center;
+    align-self: center;
+}
+
+.main_card_blank .material-icons {
+    font-size: 70px;
+}
+
+.main_card:hover {
+    opacity: 0.8;
+}
+
+@media (max-width:900px) {
+    .main_card {
+        min-height: 25vh;
+    }
+}
