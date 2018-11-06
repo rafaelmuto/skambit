@@ -251,7 +251,7 @@ footer {
 @media (max-width:1460px) {
   .header_container {
     grid-gap: 5px;
-    grid-template-columns: 278px auto 70px 60px 100px 60px;
+    grid-template-columns: 278px auto 70px 60px 160px;
   }
 }
 
