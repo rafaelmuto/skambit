@@ -9,15 +9,11 @@
     </form>
     <a class="header_link" href="main.php">home</a>
     <a class="header_link" href="faq.php">faqs</a>
-    <div class="header_link">
+    <div class="header_user">
       <input type="checkbox" id="login_window" style="display:none;" />
       <label for="login_window"> <?php echo (isset($_SESSION["login"])?$_SESSION["login"]:"login") ?></label>
+      <label for="login_window"><img class="header_avatar_img" src="<?php echo (isset($_SESSION["avatar"])?$_SESSION["avatar"]:"avatares/none.png" )?>"></label>
       <?php include("login_window.php") ?>
     </div>
-    <!-- DROP MENU  -->
-    <div class="header_user dropdown"><label for="login_window"><img class="header_avatar_img" src="<?php echo (isset($_SESSION["avatar"])?$_SESSION["avatar"]:"avatares/none.png" )?>"></label>
-      <?php include("login_window.php") ?>
-     </div>
-
   </div>
 </header>
