@@ -20,16 +20,8 @@
     <!-- ==== MAIN ==== -->
       <section class="main_banner efx_drop_shadow"></section>
       <section class="main_grid">
+        
         <?php
-          // include("classes/prodCard.class.php");
-          // for($j=0;$j<5;$j++){
-          //   for($i=1;$i<=12;$i++){
-          //     $produto = new CardProd();
-          //     $produto->setCard("produto".$i,7*$i,"imagens/produto".$i.".jpg","descricao do produto...");
-          //     $produto->drawCard();
-          //     unset($produto);
-          //   }
-          // }
           include_once "classes/cardMaker.class.php";
           include_once "classes/cadastroProduto.class.php";
           $lista = (new cadastroProduto)->getlista();

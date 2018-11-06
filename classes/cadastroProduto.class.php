@@ -5,6 +5,7 @@ include_once "Dbh.class.php";
  * Classe extente de dbh e cuida do registro dos produtos:
  * - listar() retorna lista completa da tabela
  * - listarUsuario($id) lista produtos do usuario_id = $id retorna array numerada com os produto_id
+ * - getlista() retorna array com os produto_ids q tenham status_id==1
  * - getInfo($produto_id) retorna info do produto com $produto_id
  * - add($array) retorna bool e add info a tabela cad_produto, $array eh array asssoc com os nomes dos campos da tabela => valores
  * - getImage() retorna FALSE ou o path da imagem salva
@@ -13,19 +14,18 @@ class cadastroProduto extends Dbh
 {
   protected $pdo;
 
-
   public function listar(){
     return $this->pdo->query('SELECT * FROM cad_produto')->fetchall(PDO::FETCH_ASSOC);
   }
 
   public function listarUsuario($usuario_id){
-    $lista = $this->pdo->prepare('SELECT produto_id FROM cad_produto WHERE usuario_id=? ');
+    $lista = $this->pdo->prepare('SELECT produto_id FROM cad_produto WHERE usuario_id=?');
     $lista->execute([$usuario_id]);
     return $lista->fetchall(PDO::FETCH_COLUMN);
   }
 
   public function getlista(){
-    return $this->pdo->query('SELECT produto_id FROM cad_produto')->fetchall(PDO::FETCH_COLUMN);
+    return $this->pdo->query('SELECT produto_id FROM cad_produto WHERE status_id=1')->fetchall(PDO::FETCH_COLUMN);
   }
 
   public function getInfo($id){
