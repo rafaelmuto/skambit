@@ -12,3 +12,7 @@
 */
 
 Route::get('/', 'mainController@main');
+Route::Post('/login', 'cadastroUsuario@login');
+
+
+Route::get('/teste/{id}', 'cadastroUsuario@getInfo');
