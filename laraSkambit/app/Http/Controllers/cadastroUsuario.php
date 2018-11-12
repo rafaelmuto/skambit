@@ -39,4 +39,9 @@ class cadastroUsuario extends Controller
     return FALSE;
   }
 
+  public function logout(Request $req){
+    $req->session()->flush();
+    return view('skambit');
+  }
+
 }

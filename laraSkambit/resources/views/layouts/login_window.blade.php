@@ -5,7 +5,7 @@
     <p class="drop_menu_text_log">{{ Session::get('login') }}</p>
     <a class="drop_menu_item" href="userpage.php"> pagina do usuario </a>
     <a class="drop_menu_item" href="cadproduto.php"> cadastrar produto </a>
-    <button class="drop_menu_item" type="submit" name="acao" value="logout" style="background-color: #e74c3c; color: white;">Logout</button>
+    <a class="drop_menu_item" href="logoff" style="background-color: #e74c3c; color: white;">Logout</a>
   </form>
 </div>
 

@@ -11,8 +11,10 @@
 |
 */
 
-Route::get('/', 'mainController@main');
+Route::Get('/', 'mainController@main');
 Route::Post('/login', 'cadastroUsuario@login');
+Route::Get('/logout', 'cadastroUsuario@logoff');
 
 
-Route::get('/teste/{id}', 'cadastroUsuario@getInfo');
+
+Route::Get('/teste/{id}', 'cadastroUsuario@getInfo');
