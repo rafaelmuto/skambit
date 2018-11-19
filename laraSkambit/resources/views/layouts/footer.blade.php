@@ -8,11 +8,11 @@
 </footer>
 
 <div class="footer_nav">
-  <a class="footer_nav--logo" href="index.php">Skambit</a>
-  <a class="footer_nav--item" href="faq.php">faqs</a>
+  <a class="footer_nav--logo" href="home">Skambit</a>
+  <a class="footer_nav--item" href="faqs">faqs</a>
   <div class="footer_nav--item">
     <input type="checkbox" id="login_window__mobile" style="display:none;" />
-    <label for="login_window__mobile"> <?php echo (isset($_SESSION["login"])?$_SESSION["login"]:"login") ?></label>
+    <label for="login_window__mobile">  @if(Session::has('login')) {{ Session::get('login') }} @else login @endif </label>
     @include('layouts.login_window')
   </div>
 </div>

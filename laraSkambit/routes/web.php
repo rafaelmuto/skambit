@@ -12,8 +12,19 @@
 */
 
 Route::Get('/', 'mainController@main');
+Route::Get('/home', 'mainController@main');
+Route::Get('/faqs', 'mainController@faqs');
+
+
 Route::Post('/login', 'cadastroUsuario@login');
-Route::Get('/logout', 'cadastroUsuario@logoff');
+Route::Get('/logout', 'cadastroUsuario@logout');
+Route::Get('/cadUsuario', 'cadastroUsuario@add');
+Route::Post('/cadUsuario', 'cadastroUsuario@add');
+
+
+Route::Get('/cadProduto', function(){
+  return view('cadProduto');
+});
 
 
 

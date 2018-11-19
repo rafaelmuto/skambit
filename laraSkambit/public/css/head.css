@@ -60,6 +60,7 @@ header {
     grid-gap: 15px;
     grid-template-columns: 278px auto 100px 100px 160px;
     grid-template-rows: 60px;
+    background-color: var(--cor_principal);
 }
 
 .header_logo {
@@ -108,7 +109,7 @@ header {
 
 input[type="checkbox"]:checked~.drop_container {
     pointer-events: auto;
-    display: block;
+    top: 60px;
 }
 
 .header_user {
@@ -139,15 +140,16 @@ input[type="checkbox"]:checked~.drop_container {
 }
 
 .drop_container {
-    display: none;
+    display: block;
     position: absolute;
     height: auto;
     width: 300px;
-    z-index: 10;
     right: 5%;
-    top: 60px;
+    top: -500px;
     background-color: var(--cor_principal);
     font-size: 20px;
+    transition: all 1s ease;
+    z-index: -1;
 }
 
 .drop_menu {
@@ -304,17 +306,23 @@ footer {
         text-transform: none !important;
     }
 
+    input[type="checkbox"]:checked~.drop_container {
+        pointer-events: auto;
+        top: -70vh;
+        left: 0;
+    }
+
     .drop_container {
-        display: none;
         position: absolute;
         height: auto;
         width: 300px;
-        z-index: 10;
+        z-index: 50;
         margin: 0 auto;
-        top: -70vh;
+        top: 50px;
         left: 0;
         background-color: var(--cor_principal);
         font-size: 20px;
         text-transform: none;
+        transition: all 0.3s ease;
     }
 }

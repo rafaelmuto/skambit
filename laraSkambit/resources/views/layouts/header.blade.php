@@ -7,8 +7,8 @@
       <input class="header_busca" type="search" placeholder="buscar..." name="busca" value="">
       <button class="header_busca_btn" type="submit"><i class="material-icons md-36">search</i></button>
     </form>
-    <a class="header_link" href="main.php">home</a>
-    <a class="header_link" href="faq.php">faqs</a>
+    <a class="header_link" href="home">home</a>
+    <a class="header_link" href="faqs">faqs</a>
     <div class="header_user">
       <input type="checkbox" id="login_window" style="display:none;" />
       <label for="login_window"> @if(Session::has('login')) {{ Session::get('login') }} @else login @endif</label>
