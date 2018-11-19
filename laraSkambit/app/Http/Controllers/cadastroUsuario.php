@@ -54,9 +54,9 @@ class cadastroUsuario extends Controller
         return redirect('cadUsuario?msg=error_login_ja_existe');
       }
     }
-    $avatar = $this->setAvatar();
+    $avatar = $this->setAvatar($req->input('login'));
     $senha = password_hash($req->input('senha'), PASSWORD_DEFAULT);
-    DB::table('usuarios')->insert(['primeiro_nome'=>$req->input('primeiro_nome'),
+    $id = DB::table('usuarios')->insertGetId(['primeiro_nome'=>$req->input('primeiro_nome'),
                                    'ultimo_nome'=>$req->input('ultimo_nome'),
                                   'cep'=>$req->input('cep'),
                                   'login'=>$req->input('login'),
@@ -64,20 +64,25 @@ class cadastroUsuario extends Controller
                                   'email'=>$req->input('email'),
                                   'status_id'=>1,
                                   'rating'=>5
-                                ]);
-
-
+                                ], 'usuario_id');
+    $req->session()->put('usuario_id', $id);
+    $req->session()->put('primeiro_nome', $req->input('primeiro_nome'));
+    $req->session()->put('ultimo_nome', $req->input('ultimo_nome'));
+    $req->session()->put('cep', $req->input('cep'));
+    $req->session()->put('login', $req->input('login'));
+    $req->session()->put('email', $req->input('email'));
+    $req->session()->put('avatar', $avatar);
     return view('home');
   }
 
-  private function setAvatar(){
+  private function setAvatar($login){
     if(!is_dir("avatares/")){
       mkdir("avatares/");
     }
     if(isset($_FILES["avatar"]) && $_FILES["avatar"]["error"]==UPLOAD_ERR_OK){
       $timestamp = date("YmdHis");
       $file_ext = explode(".", strtolower($_FILES["avatar"]["name"]));
-      $file_name = $timestamp.".". $file_ext[1];
+      $file_name = $timestamp."_".$login.".". $file_ext[1];
       $file = $_FILES["avatar"]["tmp_name"];
       move_uploaded_file($file, "avatares/".$file_name);
       return "avatares/".$file_name;
