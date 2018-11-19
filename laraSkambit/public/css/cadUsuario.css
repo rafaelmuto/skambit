@@ -1,0 +1,91 @@
+/* ==== CONTEINER GRID ==== */
+.container_cadastro {
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 500px;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.headline {
+    background-color: var(--cor_principal);
+    color: var(--cor_base);
+    width: 500px;
+    height: 0.84em;
+    font-size: 3.5em;
+    line-height: 1em;
+    font-weight: 700;
+    padding-left: 5px;
+}
+
+.headline>p {
+    align-self: baseline;
+}
+
+/* ==== FORM GRID ==== */
+.form_grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    background: var(--cor_base);
+}
+
+.form_grid_item {
+    align-self: center;
+    justify-self: center;
+    width: 90%;
+}
+
+/* ==== FORM EFFECT ==== */
+.cad_form_label {
+    display: block;
+    position: relative;
+    top: -20px;
+    left: 0;
+    color: var(--cor_principal);
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.cad_form_input {
+    display: block;
+    position: relative;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--cor_sub);
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    z-index: 2;
+}
+
+input.cad_form_input:focus,
+input.cad_form_input:valid {
+    outline: none;
+    border-bottom: 1px solid var(--cor_sub);
+}
+
+input.cad_form_input:focus+label.cad_form_label,
+input.cad_form_input:valid+label.cad_form_label {
+    top: -40px;
+    font-size: 11px;
+    color: var(--cor_sub);
+}
+
+.reg_button {
+    border: 0;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 20px;
+    width: auto;
+    height: auto;
+    background-color: var(--cor_principal);
+    color: var(--cor_fundo);
+    text-align: center;
+}
