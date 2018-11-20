@@ -26,6 +26,10 @@ Route::Get('/cadProduto', function(){
   return view('cadProduto');
 });
 
+Route::Get('/upUsuario', function(){
+  return view('upUsuario');
+});
+
 
 
 Route::Get('/teste/{id}', 'cadastroUsuario@getInfo');
