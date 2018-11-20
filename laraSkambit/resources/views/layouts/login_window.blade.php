@@ -3,8 +3,8 @@
   <form class="drop_menu_log" action="funcoes.php" method="post">
     <img class="drop_menu_log_avatar efx_border_radius" src="{{ Session::get('avatar') }}" alt="avatar do usuario">
     <p class="drop_menu_text_log">{{ Session::get('login') }}</p>
-    <a class="drop_menu_item" href="userpage.php"> pagina do usuario </a>
-    <a class="drop_menu_item" href="cadproduto.php"> cadastrar produto </a>
+    <a class="drop_menu_item" href="upUsuario"> pagina do usuario </a>
+    <a class="drop_menu_item" href="cadProduto"> cadastrar produto </a>
     <a class="drop_menu_item" href="logout" style="background-color: #e74c3c; color: white;">Logout</a>
   </form>
 </div>
