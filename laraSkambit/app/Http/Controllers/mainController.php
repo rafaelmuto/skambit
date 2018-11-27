@@ -9,10 +9,10 @@ class mainController extends Controller
 {
     public function main(Request $req){
       if($req->session() !== null){
-        $lista = DB::table('cad_produto')->select()->where('usuario_id','!=', $req->session()->get('usuario_id'))->get();
+        $lista = DB::table('cad_produto')->select()->where('usuario_id','!=', $req->session()->get('usuario_id'))->where('status_id',1)->get();
       }
       else {
-        $lista = DB::table('cad_produto')->select()->get();
+        $lista = DB::table('cad_produto')->select()->where('status_id',1)->get();
       }
       return view('home',["produtos"=>$lista]);
     }
