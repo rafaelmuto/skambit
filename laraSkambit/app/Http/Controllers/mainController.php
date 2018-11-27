@@ -22,7 +22,10 @@ class mainController extends Controller
     }
 
     public function like($produto_id,Request $req){
-      DB::table('ligacao_likes')->insert(["usuario_id"=>$req->session()->get('usuario_id'),"produto_id"=>$produto_id, "status_id"=>1]);
+      if($req->session()->get('usuario_id') !== null){
+        DB::table('ligacao_likes')->insert(["usuario_id"=>$req->session()->get('usuario_id'),"produto_id"=>$produto_id, "status_id"=>1]);
+        return redirect('home');
+      }
       return redirect('home');
     }
 }
