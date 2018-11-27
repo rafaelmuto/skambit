@@ -85,10 +85,18 @@
   </div>
 
   <div class="main_grid">
-
-    <article class="main_card main_card_blank efx_border_radius">
-        <a href="#?msg=new_prod"><i class="material-icons">add_circle_outline</i></a>
-    </article>
+    @isset($meusLikes)
+      @foreach($meusLikes as $produto)
+        <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url({{ $produto->imagem}});">
+          <div class="main_card_info">
+            <p>{{ $produto->nome }}</p>
+            <p>R$ {{ $produto->valor }}</p>
+          </div>
+          <!-- <a class="like_btn" href="#"><i class="like_btn_icon material-icons">thumb_up</i></a> -->
+          <a class="main_card_link" href="produto/{{ $produto->produto_id }}"></a>
+        </article>
+      @endforeach
+    @endisset
 
   </div>
 
