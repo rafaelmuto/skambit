@@ -98,6 +98,10 @@ class cadUsuario extends Controller
   }
 
   public function update(Request $req){
+    if($req->session()->get('usuario_id') == null){
+      return redirect('home');
+    }
+
     $meusProdutos = DB::table('cad_produto')->select()->where('usuario_id', $req->session()->get('usuario_id'))->get();
     // $meusLikes = DB::table('cad_produto')->join()
     if($req->isMethod('GET')){
