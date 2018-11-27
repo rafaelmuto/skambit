@@ -56,15 +56,15 @@ class cadUsuario extends Controller
     }
     $avatar = $this->setAvatar($req->input('login'));
     $senha = password_hash($req->input('senha'), PASSWORD_DEFAULT);
-    $id = DB::table('usuarios')->insertGetId(['primeiro_nome'=>$req->input('primeiro_nome'),
-                                   'ultimo_nome'=>$req->input('ultimo_nome'),
-                                  'cep'=>$req->input('cep'),
-                                  'login'=>$req->input('login'),
-                                  'senha'=>$senha, 'avatar'=>$avatar,
-                                  'email'=>$req->input('email'),
-                                  'status_id'=>1,
-                                  'rating'=>5
-                                ], 'usuario_id');
+    $id = DB::table('usuarios')->insertGetId(["primeiro_nome"=>$req->input('primeiro_nome'),
+                                   "ultimo_nome"=>$req->input('ultimo_nome'),
+                                  "cep"=>$req->input('cep'),
+                                  "login"=>$req->input('login'),
+                                  "senha"=>$senha, 'avatar'=>$avatar,
+                                  "email"=>$req->input('email'),
+                                  "status_id"=>1,
+                                  "rating"=>5
+                                ]);
     $req->session()->put('usuario_id', $id);
     $req->session()->put('primeiro_nome', $req->input('primeiro_nome'));
     $req->session()->put('ultimo_nome', $req->input('ultimo_nome'));
