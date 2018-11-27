@@ -12,24 +12,23 @@
 */
 
 Route::Get('/', 'mainController@main');
-Route::Get('/home', 'mainController@main');
-Route::Get('/faqs', 'mainController@faqs');
+Route::Get('home', 'mainController@main');
+Route::Get('faqs', 'mainController@faqs');
 
 
-Route::Post('/login', 'cadastroUsuario@login');
-Route::Get('/logout', 'cadastroUsuario@logout');
-Route::Get('/cadUsuario', 'cadastroUsuario@add');
-Route::Post('/cadUsuario', 'cadastroUsuario@add');
+Route::Post('/login', 'cadUsuario@login');
+Route::Get('/logout', 'cadUsuario@logout');
+Route::Get('/cadUsuario', 'cadUsuario@add');
+Route::Post('/cadUsuario', 'cadUsuario@add');
+Route::Get('/upUsuario', function(){
+  return view('upUsuario');
+});
+Route::Post('/upUsuario', 'cadUsuario@update');
+
 
 
 Route::Get('/cadProduto', function(){
   return view('cadProduto');
 });
 
-Route::Get('/upUsuario', function(){
-  return view('upUsuario');
-});
-
-
-
-Route::Get('/teste/{id}', 'cadastroUsuario@getInfo');
+Route::Get('/teste/{id}', 'cadUsuario@getInfo');

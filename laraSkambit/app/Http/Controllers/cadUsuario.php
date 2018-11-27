@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
-class cadastroUsuario extends Controller
+class cadUsuario extends Controller
 {
 
   public function getInfo($id){
@@ -88,8 +88,42 @@ class cadastroUsuario extends Controller
       return "avatares/".$file_name;
     }
     else{
-      return FALSE;
+      return false;
     }
+  }
+
+  public function update(Request $req){
+    if($req->input('nova_senha')!=$req->input('conf_nova_senha')){
+      return redirect('upUsuario?msg=error_senhas_nao_conferem');
+    }
+
+    $id = $req->session()->get('usuario_id');
+    $senha_usuario = DB::table('usuarios')->select('senha')->where('usuario_id',$id)->first()->senha;
+    if(!password_verify($req->input('senha'),$senha_usuario)){
+      return redirect('upUsuario?msg=error_senha_errada');
+    }
+    $avatar = $this->setAvatar($req->input('login'));
+    if($avatar==false){
+      $avatar = $req->session()->get('avatar');
+    }
+
+    DB::table('usuarios')->where('usuario_id', $req->session()->get('usuario_id'))->update(["primeiro_nome"=>$req->input('primeiro_nome'),
+                                                                                            "ultimo_nome"=>$req->input('ultimo_nome'),
+                                                                                            "cep"=>$req->input('cep'),
+                                                                                            "login"=>$req->input('login'),
+                                                                                            "avatar"=>$avatar,
+                                                                                            "email"=>$req->input('email')
+                                                                                          ]);
+    if($req->input('nova_senha')!=''){
+      DB::table('usuarios')->where('usuario_id', $req->session()->get('usuario_id'))->update(["senha"=>password_hash($req->input('nova_senha'),PASSWORD_DEFAULT)]);
+    }
+    $req->session()->put('primeiro_nome', $req->input('primeiro_nome'));
+    $req->session()->put('ultimo_nome', $req->input('ultimo_nome'));
+    $req->session()->put('cep', $req->input('cep'));
+    $req->session()->put('login', $req->input('login'));
+    $req->session()->put('email', $req->input('email'));
+    $req->session()->put('avatar', $avatar);
+    return view('upUsuario');
   }
 
 
