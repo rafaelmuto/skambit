@@ -16,10 +16,10 @@ Route::Get('home', 'mainController@main');
 Route::Get('faqs', 'mainController@faqs');
 
 
-Route::Post('/login', 'cadastroUsuario@login');
-Route::Get('/logout', 'cadastroUsuario@logout');
-Route::Get('/cadUsuario', 'cadastroUsuario@add');
-Route::Post('/cadUsuario', 'cadastroUsuario@add');
+Route::Post('/login', 'cadUsuario@login');
+Route::Get('/logout', 'cadUsuario@logout');
+Route::Get('/cadUsuario', 'cadUsuario@add');
+Route::Post('/cadUsuario', 'cadUsuario@add');
 
 
 Route::Get('/cadProduto', function(){
@@ -32,4 +32,4 @@ Route::Get('/upUsuario', function(){
 
 
 
-Route::Get('/teste/{id}', 'cadastroUsuario@getInfo');
+Route::Get('/teste/{id}', 'cadUsuario@getInfo');

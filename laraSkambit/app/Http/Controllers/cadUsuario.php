@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
-class cadastroUsuario extends Controller
+class cadUsuario extends Controller
 {
 
   public function getInfo($id){

@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class mainController extends Controller
 {
     public function main(){
-      return view('home');
+      $lista = DB::table('cad_produto')->select()->get();
+
+      return view('home',["produtos"=>$lista]);
     }
 
     public function faqs(){
