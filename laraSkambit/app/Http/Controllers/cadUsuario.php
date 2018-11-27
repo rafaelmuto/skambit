@@ -98,6 +98,12 @@ class cadUsuario extends Controller
   }
 
   public function update(Request $req){
+    $meusProdutos = DB::table('cad_produto')->select()->where('usuario_id', $req->session()->get('usuario_id'))->get();
+    // $meusLikes = DB::table('cad_produto')->join()
+    if($req->isMethod('GET')){
+      return view('upUsuario',["meusProdutos"=>$meusProdutos]);
+    }
+
     if($req->input('nova_senha')!=$req->input('conf_nova_senha')){
       return redirect('upUsuario?msg=error_senhas_nao_conferem');
     }
@@ -128,7 +134,7 @@ class cadUsuario extends Controller
     $req->session()->put('login', $req->input('login'));
     $req->session()->put('email', $req->input('email'));
     $req->session()->put('avatar', $avatar);
-    return view('upUsuario');
+    return view('upUsuario',["meusProdutos"=>$meusProdutos]);
   }
 
 

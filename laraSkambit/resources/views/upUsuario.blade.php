@@ -14,10 +14,10 @@
     <img class="user_info_avatar efx_border_radius" src="{{ Session::get('avatar') }}">
       <form class="form_grid" action="upUsuario" method="post" enctype="multipart/form-data">
         @csrf
-        <div class="form_grid_item">
+        <!-- <div class="form_grid_item"> -->
           <!-- <label class="user_form_label" for="usuario">Usuario</label> -->
           <input class="user_form_input" type="hidden" name="login" value="{{ Session::get('login') }}">
-        </div>
+        <!-- </div> -->
         <div class="form_grid_item">
           <label class="user_form_label" for="primeiro_nome">Nome</label>
           <input class="user_form_input" type="text" name="primeiro_nome" value="{{ Session::get('primeiro_nome') }}">
@@ -62,10 +62,21 @@
   </div>
 
   <div class="main_grid">
-
+    @isset($meusProdutos)
+      @foreach($meusProdutos as $produto)
+        <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url({{ $produto->imagem}});">
+          <div class="main_card_info">
+            <p>{{ $produto->nome }}</p>
+            <p>R$ {{ $produto->valor }}</p>
+          </div>
+          <!-- <a class="like_btn" href="#"><i class="like_btn_icon material-icons">thumb_up</i></a> -->
+          <a class="main_card_link" href="produto/{{ $produto->produto_id }}"></a>
+        </article>
+      @endforeach
+    @endisset
 
     <article class="main_card main_card_blank efx_border_radius">
-        <a href="#?msg=new_prod"><i class="material-icons">add_circle_outline</i></a>
+        <a href="cadProduto"><i class="material-icons">add_circle_outline</i></a>
     </article>
   </div>
 
@@ -74,7 +85,7 @@
   </div>
 
   <div class="main_grid">
-    
+
     <article class="main_card main_card_blank efx_border_radius">
         <a href="#?msg=new_prod"><i class="material-icons">add_circle_outline</i></a>
     </article>

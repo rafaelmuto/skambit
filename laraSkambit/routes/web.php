@@ -20,11 +20,11 @@ Route::Post('/login', 'cadUsuario@login');
 Route::Get('/logout', 'cadUsuario@logout');
 Route::Get('/cadUsuario', 'cadUsuario@add');
 Route::Post('/cadUsuario', 'cadUsuario@add');
-Route::Get('/upUsuario', function(){
-  return view('upUsuario');
-});
+Route::Get('/upUsuario', 'cadUsuario@update');
 Route::Post('/upUsuario', 'cadUsuario@update');
 
+
+Route::Get('like/{produto_id}', 'mainController@like');
 
 
 Route::Get('/cadProduto', function(){
