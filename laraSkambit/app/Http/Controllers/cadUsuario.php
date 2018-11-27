@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\QueryException; //testar depois
 
 class cadUsuario extends Controller
 {
@@ -29,7 +30,7 @@ class cadUsuario extends Controller
           $req->session()->put('email', $item->email);
           $req->session()->put('cep', $item->cep);
           $req->session()->put('avatar', $item->avatar);
-          return view('home',["login"=>$req->session()->get('login')]);
+          return redirect('home');
         }
       }
     }
@@ -53,7 +54,11 @@ class cadUsuario extends Controller
       if($usuario->login == $req->input('login')){
         return redirect('cadUsuario?msg=error_login_ja_existe');
       }
+      if($usuario->email == $req->input('email')){
+        return redirect('cadUsuario?msg=error_email_ja_existe');
+      }
     }
+
     $avatar = $this->setAvatar($req->input('login'));
     $senha = password_hash($req->input('senha'), PASSWORD_DEFAULT);
     $id = DB::table('usuarios')->insertGetId(["primeiro_nome"=>$req->input('primeiro_nome'),
