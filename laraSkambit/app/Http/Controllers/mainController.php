@@ -9,7 +9,9 @@ class mainController extends Controller
 {
     public function main(Request $req){
       if($req->session() !== null){
-        $lista = DB::table('cad_produto')->select()->where('usuario_id','!=', $req->session()->get('usuario_id'))->where('status_id',1)->get();
+        // ->leftJoin('ligacao_likes','cad_produto.usuario_id','=','ligacao_likes.usuario_id')->where('ligacao_likes.usuario_id', null)
+        // $lista = DB::table('cad_produto')->where('cad_produto.usuario_id','!=', $req->session()->get('usuario_id'))->where('cad_produto.status_id',1)->get(); original
+        $lista = DB::table('cad_produto')->where('cad_produto.usuario_id','!=', $req->session()->get('usuario_id'))->where('cad_produto.status_id',1)->get();
       }
       else {
         $lista = DB::table('cad_produto')->select()->where('status_id',1)->get();
