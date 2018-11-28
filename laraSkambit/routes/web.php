@@ -30,5 +30,7 @@ Route::Get('like/{produto_id}', 'mainController@like');
 Route::Get('/cadProduto', function(){
   return view('cadProduto');
 });
-
-Route::Get('/teste/{id}', 'cadUsuario@getInfo');
+//Route::Post('/cadProduto', 'cadProduto@listar');
+//Route::Post('/cadProduto/{usuario_id}', 'cadProduto@listarUsuario');
+Route::Get('/cadProduto', 'cadProduto@add');
+Route::Post('/cadProduto', 'cadProduto@add');

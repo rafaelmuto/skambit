@@ -5,6 +5,9 @@ avatares/.*
 avatares/*
 prod_images/
 prod_images/.*
+imagem/
+imagem/.*
+imagem/*
 
 
 # Created by https://www.gitignore.io/api/macos
