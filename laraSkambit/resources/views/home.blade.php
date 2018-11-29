@@ -10,20 +10,17 @@
 
   @isset($produtos)
     @foreach($produtos as $produto)
-      <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url({{ $produto->imagem}});">
+      <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url({{ $produto->imagem }});">
         <div class="main_card_info">
           <p>{{ $produto->nome }}</p>
-          <p>{{ $produto->valor }}</p>
+          <p>R$ {{ $produto->valor }}</p>
         </div>
-        <a class="like_btn" href="#"><i class="like_btn_icon material-icons">thumb_up</i></a>
+        <a class="like_btn" href="like/{{ $produto->produto_id }}"><i class="like_btn_icon material-icons">thumb_up</i></a>
         <a class="main_card_link" href="produto/{{ $produto->produto_id }}"></a>
       </article>
     @endforeach
   @endisset
 
-  <article class="main_card main_card_blank efx_border_radius">
-      <a href="cadProduto"><i class="material-icons">add_circle_outline</i></a>
-  </article>
 
 </section>
 

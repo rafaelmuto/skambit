@@ -148,7 +148,7 @@ input[type="checkbox"]:checked~.drop_container {
     top: -500px;
     background-color: var(--cor_principal);
     font-size: 20px;
-    transition: all 1s ease;
+    transition: all .5s ease;
     z-index: -1;
 }
 

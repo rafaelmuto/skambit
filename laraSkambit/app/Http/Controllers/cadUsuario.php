@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\QueryException; //testar depois
 
 class cadUsuario extends Controller
 {
@@ -29,7 +30,7 @@ class cadUsuario extends Controller
           $req->session()->put('email', $item->email);
           $req->session()->put('cep', $item->cep);
           $req->session()->put('avatar', $item->avatar);
-          return view('home',["login"=>$req->session()->get('login')]);
+          return redirect('home');
         }
       }
     }
@@ -53,7 +54,11 @@ class cadUsuario extends Controller
       if($usuario->login == $req->input('login')){
         return redirect('cadUsuario?msg=error_login_ja_existe');
       }
+      if($usuario->email == $req->input('email')){
+        return redirect('cadUsuario?msg=error_email_ja_existe');
+      }
     }
+
     $avatar = $this->setAvatar($req->input('login'));
     $senha = password_hash($req->input('senha'), PASSWORD_DEFAULT);
     $id = DB::table('usuarios')->insertGetId(["primeiro_nome"=>$req->input('primeiro_nome'),
@@ -93,6 +98,17 @@ class cadUsuario extends Controller
   }
 
   public function update(Request $req){
+    if($req->session()->get('usuario_id') == null){
+      return redirect('home');
+    }
+
+    $meusProdutos = DB::table('cad_produto')->where('usuario_id', $req->session()->get('usuario_id'))->where('status_id',1)->get();
+    // $meusLikes = DB::select('SELECT cad_produto.* FROM ligacao_likes INNER JOIN cad_produto ON cad_produto.produto_id = ligacao_likes.produto_id WHERE ligacao_likes.usuario_id=2 AND ligacao_likes.status_id=1');
+    $meusLikes = DB::table('cad_produto')->join('ligacao_likes', 'cad_produto.produto_id', '=', 'ligacao_likes.produto_id')->where('ligacao_likes.usuario_id', $req->session()->get('usuario_id'))->where('ligacao_likes.status_id', 1)->get();
+    if($req->isMethod('GET')){
+      return view('upUsuario',["meusProdutos"=>$meusProdutos, "meusLikes"=>$meusLikes]);
+    }
+
     if($req->input('nova_senha')!=$req->input('conf_nova_senha')){
       return redirect('upUsuario?msg=error_senhas_nao_conferem');
     }
@@ -123,7 +139,7 @@ class cadUsuario extends Controller
     $req->session()->put('login', $req->input('login'));
     $req->session()->put('email', $req->input('email'));
     $req->session()->put('avatar', $avatar);
-    return view('upUsuario');
+    return view('upUsuario',["meusProdutos"=>$meusProdutos, "meusLikes"=>$meusLikes]);
   }
 
 
