@@ -1,5 +1,5 @@
 @extends('layouts.main')
-<link rel="stylesheet" href="css/cadUsuario.css">
+<link rel="stylesheet" href="{{ asset('css/cadUsuario.css') }}">
 
 @section('title', 'Novo Usuario')
 

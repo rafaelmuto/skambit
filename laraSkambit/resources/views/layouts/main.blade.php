@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title>Skambit - @yield('title')</title>
 
-    <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/head.css') }}" >
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/head.css') }}" >
 
   </head>
   <body>

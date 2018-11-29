@@ -1,5 +1,5 @@
 @extends('layouts.main')
-<link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
+<link rel="stylesheet" href="{{ asset('css/main.css') }}">
 
 @section('title', 'pagina principal')
 
