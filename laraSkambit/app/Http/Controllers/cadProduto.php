@@ -26,7 +26,7 @@ class cadProduto extends Controller{
                                                    "usuario_id"=>$usuario_id,
                                                    "status_id"=>1
                                                   ]);
-      return view('cadProduto');
+      return redirect('upUsuario');
       }
 
      private function setImagem(){

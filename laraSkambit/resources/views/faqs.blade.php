@@ -1,5 +1,5 @@
 @extends('layouts.main')
-<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/faqs.css') }}" >
+<link rel="stylesheet" type="text/css" href="{{ asset('css/faqs.css') }}" >
 
 @section('title', 'FAQS')
 

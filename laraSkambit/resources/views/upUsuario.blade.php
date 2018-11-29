@@ -1,6 +1,6 @@
 @extends('layouts.main')
-<link rel="stylesheet" href="css/upUsuario.css">
-<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="{{ URL::asset('css/upUsuario.css') }}">
+<link rel="stylesheet" href="{{ asset('css/main.css') }}">
 
 @section('title', 'pagina principal')
 
@@ -70,7 +70,7 @@
             <p>R$ {{ $produto->valor }}</p>
           </div>
           <!-- <a class="like_btn" href="#"><i class="like_btn_icon material-icons">thumb_up</i></a> -->
-          <a class="main_card_link" href="produto/{{ $produto->produto_id }}"></a>
+          <a class="main_card_link" href="upProduto/{{ $produto->produto_id }}"></a>
         </article>
       @endforeach
     @endisset

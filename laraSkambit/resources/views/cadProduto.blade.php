@@ -1,5 +1,5 @@
 @extends('layouts.main')
-<link rel="stylesheet" href="css/cadProduto.css">
+<link rel="stylesheet" href="{{ asset('css/cadProduto.css') }}">
 
 @section('title', 'Cadastro de produto')
 
@@ -10,14 +10,14 @@
   </div>
     <form class="product_info" action="cadProduto" method="post" enctype="multipart/form-data">
     @csrf
-  
+
       <!-- No futuro incluir o imagem preview
 
         <div class="main_card main_card_blank efx_border_radius">
         <input type="file" name="imagefile" onchange="previewImage(this,[256],4);"/>
-        <div class="imagePreview"></div> 
+        <div class="imagePreview"></div>
       </div> -->
-      
+
       <div class="form_grid">
         <div class="form_grid_item">
           <label class="product_form_label" for="nome">Nome do produto</label>
