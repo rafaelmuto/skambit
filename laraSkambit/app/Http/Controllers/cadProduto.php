@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 class cadProduto extends Controller{
         
     public function add(Request $req){
+
           if($req->isMethod('GET')){
           return view('cadProduto');
         }
