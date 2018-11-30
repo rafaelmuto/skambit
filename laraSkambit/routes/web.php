@@ -30,7 +30,12 @@ Route::Get('like/{produto_id}', 'mainController@like');
 Route::Get('/cadProduto', function(){
   return view('cadProduto');
 });
-//Route::Post('/cadProduto', 'cadProduto@listar');
-//Route::Post('/cadProduto/{usuario_id}', 'cadProduto@listarUsuario');
+
 Route::Get('/cadProduto', 'cadProduto@add');
 Route::Post('/cadProduto', 'cadProduto@add');
+
+Route::Get('/upProduto/{prod_id}', 'cadProduto@update');
+Route::Post('/upProduto/{prod_id}', 'cadProduto@update');
+
+Route::Get('/delProduto/{prod_id}', 'cadProduto@delete');
+Route::Post('/delProduto/{prod_id}', 'cadProduto@delete');
