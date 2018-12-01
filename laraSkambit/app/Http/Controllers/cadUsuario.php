@@ -105,8 +105,10 @@ class cadUsuario extends Controller
     $meusProdutos = DB::table('cad_produto')->where('usuario_id', $req->session()->get('usuario_id'))->where('status_id',1)->get();
     // $meusLikes = DB::select('SELECT cad_produto.* FROM ligacao_likes INNER JOIN cad_produto ON cad_produto.produto_id = ligacao_likes.produto_id WHERE ligacao_likes.usuario_id=2 AND ligacao_likes.status_id=1');
     $meusLikes = DB::table('cad_produto')->join('ligacao_likes', 'cad_produto.produto_id', '=', 'ligacao_likes.produto_id')->where('ligacao_likes.usuario_id', $req->session()->get('usuario_id'))->where('ligacao_likes.status_id', 1)->get();
+
+    $meusMatchs = 0;
     if($req->isMethod('GET')){
-      return view('upUsuario',["meusProdutos"=>$meusProdutos, "meusLikes"=>$meusLikes]);
+      return view('upUsuario',["meusProdutos"=>$meusProdutos, "meusLikes"=>$meusLikes, "meusMatchs"=>$meusMatchs]);
     }
 
     if($req->input('nova_senha')!=$req->input('conf_nova_senha')){
@@ -139,7 +141,7 @@ class cadUsuario extends Controller
     $req->session()->put('login', $req->input('login'));
     $req->session()->put('email', $req->input('email'));
     $req->session()->put('avatar', $avatar);
-    return view('upUsuario',["meusProdutos"=>$meusProdutos, "meusLikes"=>$meusLikes]);
+    return view('upUsuario',["meusProdutos"=>$meusProdutos, "meusLikes"=>$meusLikes, "meusMatchs"=>$meusMatchs]);
   }
 
 

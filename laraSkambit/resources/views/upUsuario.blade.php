@@ -97,9 +97,26 @@
         </article>
       @endforeach
     @endisset
-
   </div>
 
+  <div class="headline_sub">
+    Meus Matchs
+  </div>
+
+  <div class="main_grid">
+    @isset($meusMatch)
+      @foreach($meusLikes as $produto)
+        <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url({{ $produto->imagem}});">
+          <div class="main_card_info">
+            <p>{{ $produto->nome }}</p>
+            <p>R$ {{ $produto->valor }}</p>
+          </div>
+          <!-- <a class="like_btn" href="#"><i class="like_btn_icon material-icons">thumb_up</i></a> -->
+          <a class="main_card_link" href="produto/{{ $produto->produto_id }}"></a>
+        </article>
+      @endforeach
+    @endisset
+  </div>
 
 
 </div>
