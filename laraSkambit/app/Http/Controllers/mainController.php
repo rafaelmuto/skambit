@@ -36,4 +36,9 @@ class mainController extends Controller
       }
       return redirect('home');
     }
+
+    public function produto($produto_id){
+      $produto = DB::table('cad_produto')->where('produto_id',$produto_id)->get();
+      return view('produto',["produto"=>$produto]);
+    }
 }
