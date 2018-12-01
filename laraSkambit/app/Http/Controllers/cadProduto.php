@@ -66,7 +66,7 @@ class cadProduto extends Controller{
                                                                      "valor"=>$req->input('valor'),
                                                                      "imagem"=>$imagem
                                                                     ]);
-    return redirect('home');
+    return redirect('upUsuario');
   }
 
   public function delete($prod_id, Request $req){
@@ -92,7 +92,7 @@ class cadProduto extends Controller{
                                                                    "usuario_id"=>$usuario_id,
                                                                    "status_id"=>2
                                                                  ]);
-  return redirect('home');
+  return redirect('upUsuario');
   }
 
 }

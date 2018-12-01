@@ -1,9 +1,10 @@
 @extends('layouts.main')
-<link rel="stylesheet" href="../css/upProduto.css">
+<link rel="stylesheet" href="{{ asset('css/upProduto.css')}}">
 
 @section('title', 'Alteração de produto')
 
 @section('conteudo')
+
 <div class="productpage_container efx_drop_shadow efx_border_radius">
   <div class="headline efx_border_radius--top">
     <p>Alteração de produto</p>
@@ -11,13 +12,13 @@
     <form class="product_info" action="{{ $upproduto[0]->produto_id }}" method="post" enctype="multipart/form-data">
     @csrf
     <img class="user_info_imagem efx_border_radius" src="../{{ $upproduto[0]->imagem }}">
-      <!-- No futuro incluir o imagem preview
 
+      <!-- No futuro incluir o imagem preview
         <div class="main_card main_card_blank efx_border_radius">
         <input type="file" name="imagefile" onchange="previewImage(this,[256],4);"/>
-        <div class="imagePreview"></div> 
+        <div class="imagePreview"></div>
       </div> -->
-      
+
       <div class="form_grid">
         <div class="form_grid_item">
           <label class="product_form_label" for="nome">Nome do produto</label>
@@ -41,4 +42,5 @@
       </div>
     </form>
 </div>
+
 @endsection

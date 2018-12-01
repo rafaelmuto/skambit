@@ -12,8 +12,8 @@
 */
 
 Route::Get('/', 'mainController@main');
-Route::Get('home', 'mainController@main');
-Route::Get('faqs', 'mainController@faqs');
+Route::Get('/home', 'mainController@main');
+Route::Get('/faqs', 'mainController@faqs');
 
 
 Route::Post('/login', 'cadUsuario@login');

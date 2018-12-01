@@ -106,7 +106,7 @@ class cadUsuario extends Controller
     // $meusLikes = DB::select('SELECT cad_produto.* FROM ligacao_likes INNER JOIN cad_produto ON cad_produto.produto_id = ligacao_likes.produto_id WHERE ligacao_likes.usuario_id=2 AND ligacao_likes.status_id=1');
     $meusLikes = DB::table('cad_produto')->join('ligacao_likes', 'cad_produto.produto_id', '=', 'ligacao_likes.produto_id')->where('ligacao_likes.usuario_id', $req->session()->get('usuario_id'))->where('ligacao_likes.status_id', 1)->get();
 
-    $meusMatchs = 
+    $meusMatchs = 0;
     if($req->isMethod('GET')){
       return view('upUsuario',["meusProdutos"=>$meusProdutos, "meusLikes"=>$meusLikes, "meusMatchs"=>$meusMatchs]);
     }

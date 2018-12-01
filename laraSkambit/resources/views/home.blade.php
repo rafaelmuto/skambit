@@ -4,6 +4,7 @@
 @section('title', 'pagina principal')
 
 @section('conteudo')
+
 <section class="main_banner efx_drop_shadow"> banner </section>
 <section class="main_grid">
 
