@@ -48,51 +48,29 @@ class cadProduto extends Controller{
   public function update($prod_id, Request $req){
     if($req->session()->get('usuario_id') == null){
       return redirect('home');
-  }
+    }
 
     $upproduto = DB::table('cad_produto')->where('produto_id', '=', $prod_id)->get();
-     if($req->isMethod('GET')){
+    if($req->isMethod('GET')){
       return view('upProduto',["upproduto"=>$upproduto,]);
-      //return var_dump($upproduto);
     }
 
     $imagem = $this->setImagem($req->input('usuario_id'));
     if($imagem==false){
-    $imagem = $upproduto[0]->imagem;
+      $imagem = $upproduto[0]->imagem;
     }
 
-    DB::table('cad_produto')->where('produto_id', $prod_id)->update(["nome"=>$req->input('nome'),
-                                                                     "descricao"=>$req->input('descricao'),
-                                                                     "valor"=>$req->input('valor'),
-                                                                     "imagem"=>$imagem
-                                                                    ]);
+    if($req->input('delete')){
+      DB::table('cad_produto')->where('produto_id', $prod_id)->update(["status_id"=>2]);
+    }
+    else{
+      DB::table('cad_produto')->where('produto_id', $prod_id)->update(["nome"=>$req->input('nome'),
+                                                                      "descricao"=>$req->input('descricao'),
+                                                                      "valor"=>$req->input('valor'),
+                                                                      "imagem"=>$imagem
+                                                                      ]);
+    }
     return redirect('upUsuario');
-  }
-
-  public function delete($prod_id, Request $req){
-    if($req->session()->get('usuario_id') == null){
-      return redirect('home');
-  }
-
-  $delproduto = DB::table('cad_produto')->where('produto_id', '=', $prod_id)->get();
-  if($req->isMethod('GET')){
-    return view('delProduto',["delproduto"=>$delproduto,]);
-  }
-
-  $imagem = $this->setImagem($req->input('usuario_id'));
-  if($imagem==false){
-    $imagem = $delproduto[0]->imagem;
-  }
-
-  $usuario_id = $req->session()->get('usuario_id');
-  DB::table('cad_produto')->where('produto_id', $prod_id)->update(["nome"=>$req->input('nome'),
-                                                                   "descricao"=>$req->input('descricao'),
-                                                                   "valor"=>$req->input('valor'),
-                                                                   "imagem"=>$imagem,
-                                                                   "usuario_id"=>$usuario_id,
-                                                                   "status_id"=>2
-                                                                 ]);
-  return redirect('upUsuario');
   }
 
 }
