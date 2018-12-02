@@ -5,7 +5,8 @@
 
 @section('conteudo')
 
-<section class="main_banner efx_drop_shadow"> banner </section>
+<!-- <section class="main_banner efx_drop_shadow"> banner </section> -->
+
 <section class="main_grid">
 
 
@@ -25,4 +26,14 @@
 
 </section>
 
+<div id="modalProduto" class="modalProduto modalOff efx_drop_shadow efx_border_radius">
+  modal produto
+  <button id="modalClose" type="button" name="button"> fechar </button>
+</div>
+
 @endsection
+
+
+
+
+<script type="text/javascript" src="{{ asset('js/modal.js') }}"></script>

@@ -104,6 +104,25 @@
     opacity: 0.8;
 }
 
+.modalProduto {
+    position: absolute;
+    background-color: var(--cor_fundo);
+    width: 500px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 51;
+}
+
+.modalOn {
+    display: block;
+}
+
+.modalOff {
+    display: none;
+}
+
 @media (max-width:900px) {
     .main_card {
         min-height: 25vh;
