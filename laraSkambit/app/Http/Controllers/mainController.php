@@ -37,8 +37,12 @@ class mainController extends Controller
       return redirect('home');
     }
 
-    public function produto($produto_id){
-      $produto = DB::table('cad_produto')->where('produto_id',$produto_id)->get();
-      return view('produto',["produto"=>$produto]);
+    public function getProduto(Request $req){
+      $prod_id = $req->get('produto_id');
+      // $prod_id = 3;
+      $produto = DB::table('cad_produto')->where('produto_id', $prod_id)->get();
+
+      return response()->json($produto);
     }
+
 }

@@ -1,26 +1,4 @@
-.prod_container {
-    margin: 0 auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    width: 600px;
-    height: 600px;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 75% auto;
-}
-
-.prod_container_img {
-    position: relative;
-    background-size: cover !important;
-    background-position: center !important;
-}
-
-.prod_container_text {
-    text-align: justify;
-    padding: 10px;
-}
-
-/* Section Cards */
+/* GRID PRODUTOS */
 .main_banner {
     height: 400px;
     background: url(../imagens/bg.jpg) center no-repeat;
@@ -70,7 +48,7 @@
 
 .like_btn_icon {
     color: var(--cor_sub);
-    font-size: 30px;
+    /* font-size: 30px; */
     justify-self: center;
     align-self: center;
 }
@@ -104,11 +82,9 @@
     opacity: 0.8;
 }
 
+/* MODAL PRODUTO  */
 .modalProduto {
-    position: absolute;
-    background-color: var(--cor_fundo);
-    width: 500px;
-    height: 500px;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
@@ -121,6 +97,45 @@
 
 .modalOff {
     display: none;
+}
+
+.close_btn {
+    display: grid;
+    background: var(--cor_fundo);
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    box-shadow: 0px 0px 3px var(--cor_sub);
+    z-index: 55;
+    place-items: center;
+}
+
+.close_btn_icon {
+    color: var(--cor_sub);
+    /* font-size: 36px; */
+}
+
+.prod_container {
+    background-color: var(--cor_fundo);
+    width: 600px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 75% auto;
+}
+
+.prod_container_img {
+    position: relative;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+.prod_container_text {
+    text-align: justify;
+    padding: 10px;
 }
 
 @media (max-width:900px) {
