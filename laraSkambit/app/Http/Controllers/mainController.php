@@ -41,4 +41,9 @@ class mainController extends Controller
       return response()->json($produto);
     }
 
+    public function busca(Request $req){
+      $busca = DB::table('cad_produto')->where('nome', 'like', '%'.$req->input('busca').'%')->orWhere('descricao', 'like', '%'.$req->input('busca').'%')->get();
+      return view('home', ["produtos"=>$busca]);
+    }
+
 }

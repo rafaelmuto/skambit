@@ -23,6 +23,9 @@
     @endforeach
   @endisset
 
+  @empty($produtos)
+    <p> nenhum produto encontrado</p>
+  @endempty
 
 </section>
 
