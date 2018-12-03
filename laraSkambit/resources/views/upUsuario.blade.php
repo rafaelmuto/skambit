@@ -64,7 +64,7 @@
   <div class="main_grid">
     @isset($meusProdutos)
       @foreach($meusProdutos as $produto)
-        <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url({{ $produto->imagem}});">
+        <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url({{ $produto->imagem }});">
           <div class="main_card_info">
             <p>{{ $produto->nome }}</p>
             <p>R$ {{ $produto->valor }}</p>

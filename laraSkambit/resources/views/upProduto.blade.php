@@ -37,6 +37,10 @@
           <input class="product_form_input" type="file" name="imagem">
         </div>
         <div class="form_grid_item">
+          <label for="delete">Deletar: </label>
+          <input type="checkbox" name="delete" value="true">
+        </div>
+        <div class="form_grid_item">
           <button class="reg_button" alt="modificar" type="submit" name="modificar" value="modificar">modificar</button>
         </div>
       </div>
