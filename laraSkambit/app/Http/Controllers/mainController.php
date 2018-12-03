@@ -21,7 +21,6 @@ class mainController extends Controller
       }
       return view('home',["produtos"=>$lista]);
     }
-
     public function faqs(){
       return view('faqs');
     }
@@ -37,11 +36,8 @@ class mainController extends Controller
       return redirect('home');
     }
 
-    public function getProduto(Request $req){
-      $prod_id = $req->get('produto_id');
-      // $prod_id = 3;
-      $produto = DB::table('cad_produto')->where('produto_id', $prod_id)->get();
-
+    public function getProduto(Request $req, $id){
+      $produto = DB::table('cad_produto')->where('produto_id', $id)->get();
       return response()->json($produto);
     }
 

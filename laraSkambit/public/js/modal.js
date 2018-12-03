@@ -19,9 +19,11 @@ window.onload = function(){
       modalProduto.classList.remove('modalOff');
       modalProduto.classList.add('modalOn');
 
-      ajax.open('get', 'getProduto?produto_id='+produto_id , true);
+      ajax.open('get', 'getProduto/'+produto_id , true);
       ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       ajax.send();
+
+
 
       ajax.onreadystatechange = function(){
         if(ajax.readyState == 4 && ajax.status == 200){
