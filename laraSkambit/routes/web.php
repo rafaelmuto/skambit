@@ -14,6 +14,7 @@
 Route::Get('/', 'mainController@main');
 Route::Get('/home', 'mainController@main');
 Route::Get('/faqs', 'mainController@faqs');
+Route::Post('/busca', 'mainController@busca');
 
 
 Route::Get('like/{produto_id}', 'mainController@like');
