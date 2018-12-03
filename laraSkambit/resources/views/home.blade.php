@@ -18,7 +18,7 @@
           <p>R$ {{ $produto->valor }}</p>
         </div>
         <a class="like_btn" href="like/{{ $produto->produto_id }}"><i class="like_btn_icon material-icons">thumb_up</i></a>
-        <a id="{{ $produto->produto_id }}" class="main_card_link" href="{{ url($produto->produto_id) }}"></a>
+        <a id="{{ $produto->produto_id }}" class="main_card_link main_card_link_AJAX" href="{{ url($produto->produto_id) }}"></a>
       </article>
     @endforeach
   @endisset
