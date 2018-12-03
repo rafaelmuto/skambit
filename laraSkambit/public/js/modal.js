@@ -23,8 +23,6 @@ window.onload = function(){
       ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       ajax.send();
 
-
-
       ajax.onreadystatechange = function(){
         if(ajax.readyState == 4 && ajax.status == 200){
           // console.log('readyState ', ajax.readyState);
