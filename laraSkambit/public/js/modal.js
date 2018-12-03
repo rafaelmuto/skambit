@@ -5,8 +5,10 @@ window.onload = function(){
   var ajax = new XMLHttpRequest();
 
   var modalProduto = document.getElementById('modalProduto');
-  var links = document.getElementsByClassName('main_card_link');
+  var links = document.getElementsByClassName('main_card_link_AJAX');
   var modalCloseBtn = document.getElementById('modalClose');
+
+  console.log(links);
 
   for(var i = 0; i < links.length; i++){
     links[i].addEventListener('click', function(event){
@@ -17,9 +19,9 @@ window.onload = function(){
       modalProduto.classList.remove('modalOff');
       modalProduto.classList.add('modalOn');
 
-      ajax.open('get', 'getProduto?produto_id='+produto_id , true);
+      ajax.open('get', 'getProduto/'+produto_id , true);
       ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      ajax.send('produto_id=1');
+      ajax.send();
 
       ajax.onreadystatechange = function(){
         if(ajax.readyState == 4 && ajax.status == 200){
