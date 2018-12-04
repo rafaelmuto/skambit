@@ -101,12 +101,15 @@ class cadUsuario extends Controller
     if($req->session()->get('usuario_id') == null){
       return redirect('home');
     }
+    $usuario_id = $req->session()->get('usuario_id');
 
-    $meusProdutos = DB::table('cad_produto')->where('usuario_id', $req->session()->get('usuario_id'))->where('status_id',1)->get();
+    $meusProdutos = DB::table('cad_produto')->where('usuario_id', $usuario_id)->where('status_id',1)->get();
     // $meusLikes = DB::select('SELECT cad_produto.* FROM ligacao_likes INNER JOIN cad_produto ON cad_produto.produto_id = ligacao_likes.produto_id WHERE ligacao_likes.usuario_id=2 AND ligacao_likes.status_id=1');
-    $meusLikes = DB::table('cad_produto')->join('ligacao_likes', 'cad_produto.produto_id', '=', 'ligacao_likes.produto_id')->where('ligacao_likes.usuario_id', $req->session()->get('usuario_id'))->where('ligacao_likes.status_id', 1)->get();
+    $meusLikes = DB::table('cad_produto')->join('ligacao_likes', 'cad_produto.produto_id', '=', 'ligacao_likes.produto_id')->where('ligacao_likes.usuario_id', $usuario_id)->where('ligacao_likes.status_id', 1)->get();
 
-    $meusMatchs = 0;
+    $meusMatchs = DB::select('SELECT cad_produto.* FROM ligacao_likes INNER JOIN cad_produto ON ligacao_likes.produto_id = cad_produto.produto_id WHERE cad_produto.status_id = 1 AND ligacao_likes.status_id =1 AND ligacao_likes.usuario_id = '.$usuario_id.' AND EXISTS(SELECT * FROM ligacao_likes INNER JOIN cad_produto ON ligacao_likes.produto_id = cad_produto.produto_id WHERE cad_produto.status_id = 1 AND ligacao_likes.status_id =1 AND cad_produto.usuario_id = '.$usuario_id.')');
+
+
     if($req->isMethod('GET')){
       return view('upUsuario',["meusProdutos"=>$meusProdutos, "meusLikes"=>$meusLikes, "meusMatchs"=>$meusMatchs]);
     }

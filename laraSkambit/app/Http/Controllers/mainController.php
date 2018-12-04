@@ -13,7 +13,7 @@ class mainController extends Controller
 
         // QUERY DO VINI: SELECT * FROM cad_produto WHERE cad_produto.usuario_id != 3 and cad_produto.produto_id not in (SELECT ligacao_likes.produto_id from ligacao_likes WHERE ligacao_likes.produto_id = cad_produto.produto_id)
 
-        $lista = DB::select('SELECT * FROM cad_produto WHERE cad_produto.usuario_id != '. $req->session()->get('usuario_id') .' and cad_produto.produto_id not in (SELECT ligacao_likes.produto_id from ligacao_likes WHERE ligacao_likes.produto_id = cad_produto.produto_id) AND cad_produto.status_id = 1');
+        $lista = DB::select('SELECT * FROM cad_produto WHERE cad_produto.usuario_id != '.$req->session()->get('usuario_id').' AND cad_produto.produto_id not in (SELECT ligacao_likes.produto_id FROM ligacao_likes WHERE ligacao_likes.usuario_id = '.$req->session()->get('usuario_id').') AND cad_produto.status_id = 1');
         shuffle($lista);
       }
       else {
@@ -30,8 +30,7 @@ class mainController extends Controller
       if($req->session()->get('usuario_id') !== null){
         DB::table('ligacao_likes')->insert(["usuario_id"=>$req->session()->get('usuario_id'),"produto_id"=>$produto_id, "status_id"=>1]);
         $matches = DB::select('SELECT * from ligacao_likes WHERE usuario_id = (SELECT cad_produto.usuario_id FROM cad_produto WHERE cad_produto.produto_id ='. $produto_id .') and EXISTS (SELECT * from cad_produto WHERE cad_produto.usuario_id = '. $req->session()->get('usuario_id') .') and ligacao_likes.status_id = 1');
-        // return redirect('home',["matches"=>$matches]);
-        return var_dump($matches);
+        return redirect('home');
       }
       return redirect('home');
     }
