@@ -19,4 +19,5 @@
     @include('layouts.footer')
 
   </body>
+  <script type="text/javascript" src="{{ asset('js/theme.js') }}"></script>
 </html>

@@ -32,7 +32,7 @@
         </div>
         <div class="form_grid_item">
           <label class="user_form_label" for="cep">CEP</label>
-          <input class="user_form_input" type="text" name="cep" value="{{ Session::get('cep') }}">
+          <input class="user_form_input" type="text" name="cep" onblur="pesquisacep(this.value);" value="{{ Session::get('cep') }}">
         </div>
         <div class="form_grid_item">
           <label class="user_form_label" for="nova_senha">Nova senha</label>
@@ -53,7 +53,6 @@
         <div class="form_grid_item">
           <input class="reg_button" alt="modificar" type='submit' name='acao' value='modificar'/>
         </div>
-
       </form>
   </div>
 
@@ -64,7 +63,7 @@
   <div class="main_grid">
     @isset($meusProdutos)
       @foreach($meusProdutos as $produto)
-        <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url({{ $produto->imagem}});">
+        <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url({{ $produto->imagem }});">
           <div class="main_card_info">
             <p>{{ $produto->nome }}</p>
             <p>R$ {{ $produto->valor }}</p>
@@ -93,14 +92,15 @@
             <p>R$ {{ $produto->valor }}</p>
           </div>
           <!-- <a class="like_btn" href="#"><i class="like_btn_icon material-icons">thumb_up</i></a> -->
-          <a class="main_card_link" href="produto/{{ $produto->produto_id }}"></a>
+          <a id="{{ $produto->produto_id }}" class="main_card_link main_card_link_AJAX" href="produto/{{ $produto->produto_id }}"></a>
         </article>
       @endforeach
     @endisset
-
   </div>
 
-
-
 </div>
-@endsection
+
+@extends('layouts.modal')
+
+<script type="text/javascript" src="{{ asset('js/modal.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/verCEP.js') }}"></script>
