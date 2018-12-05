@@ -15,6 +15,7 @@
       <div class="prod_container_userText">
         <p id="modalNome"> Nome do usuario</p>
         <p id="modalEnd"> endereco do usuario</p>
+        <p id="modalEnd2"> endereco do usuario linha 2</p>
         <p id="modalEmail"> email </p>
       </div>
     </div>
