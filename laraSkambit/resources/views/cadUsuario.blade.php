@@ -55,6 +55,4 @@
 </div>
 @endsection
 
-<script type="text/javascript" src="{{ asset('js/verCEP.js') }}">
-
-</script>
+<script type="text/javascript" src="{{ asset('js/verCEP.js') }}"></script>

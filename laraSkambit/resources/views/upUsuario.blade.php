@@ -32,7 +32,7 @@
         </div>
         <div class="form_grid_item">
           <label class="user_form_label" for="cep">CEP</label>
-          <input class="user_form_input" type="text" name="cep" value="{{ Session::get('cep') }}">
+          <input class="user_form_input" type="text" name="cep" onblur="pesquisacep(this.value);" value="{{ Session::get('cep') }}">
         </div>
         <div class="form_grid_item">
           <label class="user_form_label" for="nova_senha">Nova senha</label>
@@ -103,3 +103,4 @@
 @extends('layouts.modal')
 
 <script type="text/javascript" src="{{ asset('js/modal.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/verCEP.js') }}"></script>

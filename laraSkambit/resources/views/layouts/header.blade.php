@@ -1,6 +1,6 @@
 <header class="efx_drop_shadow">
   <div class="header_container">
-    <div class="header_logo">
+    <div id="logo_btn" class="header_logo">
       <p>Skambit</p>
     </div>
     <form class="header_form" action="{{ url('busca') }}" method="post">

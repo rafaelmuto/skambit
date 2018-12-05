@@ -31,8 +31,7 @@ window.onload = function(){
           console.log(JSON.parse(ajax.responseText));
           let produto = JSON.parse(ajax.responseText)[0];
 
-          let cep = parseInt(produto.cep);
-          console.log(produto.cep);
+          let cep = produto.cep;
           console.log(cep);
           viaCEP.open('get', 'http://viacep.com.br/ws/'+ cep +'/json/', true);
           viaCEP.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -40,24 +39,19 @@ window.onload = function(){
 
           viaCEP.onreadystatechange = function(){
             if(viaCEP.readyState == 4 && viaCEP.status == 200){
-              console.log(viaCEP.responseText);
+              console.log(JSON.parse(viaCEP.responseText));
+              let end = JSON.parse(viaCEP.responseText);
               document.getElementById('modalImg').style.backgroundImage = 'url(' + produto.imagem + ')';
               document.getElementById('modalTitle').innerHTML = produto.nome;
               document.getElementById('modalPreco').innerHTML = produto.valor;
               document.getElementById('modalDescricao').innerHTML = produto.descricao;
               document.getElementById('modalAvatar').src = produto.avatar;
               document.getElementById('modalNome').innerHTML = produto.primeiro_nome + ' ' + produto.ultimo_nome;
-              document.getElementById('modalEnd').innerHTML = produto.cep;
+              document.getElementById('modalEnd').innerHTML = end.logradouro;
+              document.getElementById('modalEnd2').innerHTML = 'CEP: '+end.cep+'  '+end.localidade+' - '+end.uf;
               document.getElementById('modalEmail').innerHTML = produto.email;
             }
-            else{
-              console.log('erro API viaCEP');
-            }
           }
-
-        }
-        else{
-          console.log('erro API Laravel');
         }
       }
     });
