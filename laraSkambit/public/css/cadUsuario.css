@@ -89,3 +89,16 @@ input.cad_form_input:valid+label.cad_form_label {
     color: var(--cor_fundo);
     text-align: center;
 }
+
+@media (max-width:576px) {
+     
+}
+
+@media (max-width:900px) {
+     
+}
+
+@media (max-width:1460px) {
+     
+}
+}

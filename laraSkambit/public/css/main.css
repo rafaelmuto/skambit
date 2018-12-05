@@ -82,6 +82,12 @@
     opacity: 0.8;
 }
 
+
+@media (max-width:576px) {
+    .main_card {
+        min-height: 25vh;
+    }
+
 /* MODAL PRODUTO  */
 .modalProduto {
     position: fixed;
@@ -153,9 +159,16 @@
 .prod_container_userText {
     padding-top: 5px;
     padding-left: 10px;
+
 }
 
 @media (max-width:900px) {
+    .main_card {
+        min-height: 25vh;
+    }
+}
+
+@media (max-width:1460px) {
     .main_card {
         min-height: 25vh;
     }
