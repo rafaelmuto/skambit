@@ -53,7 +53,6 @@
         <div class="form_grid_item">
           <input class="reg_button" alt="modificar" type='submit' name='acao' value='modificar'/>
         </div>
-
       </form>
   </div>
 
@@ -99,38 +98,8 @@
     @endisset
   </div>
 
-  <div class="headline_sub">
-    Meus Matchs
-  </div>
-
-  <div class="main_grid">
-    @isset($meusMatch)
-      @foreach($meusMatchs as $produto)
-        <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url({{ $produto->imagem }});">
-          <div class="main_card_info">
-            <p>{{ $produto->nome }}</p>
-            <p>R$ {{ $produto->valor }}</p>
-          </div>
-          <!-- <a class="like_btn" href="#"><i class="like_btn_icon material-icons">thumb_up</i></a> -->
-          <a id="{{ $produto->produto_id }}" class="main_card_link main_card_link_AJAX" href="produto/{{ $produto->produto_id }}"></a>
-        </article>
-      @endforeach
-    @endisset
-
-  </div>
-
 </div>
 
 @extends('layouts.modal')
-
-
-    <pre>
-    @isset($meusMatchs)
-    @php
-      var_dump($meusMatchs);
-    @endphp
-    @endisset
-
-@endsection
 
 <script type="text/javascript" src="{{ asset('js/modal.js') }}"></script>

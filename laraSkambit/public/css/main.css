@@ -124,7 +124,7 @@
     height: 600px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 75% auto;
+    grid-template-rows: 75% auto auto;
 }
 
 .prod_container_img {
@@ -136,6 +136,23 @@
 .prod_container_text {
     text-align: justify;
     padding: 10px;
+}
+
+.prod_container_userInfo {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 70px auto;
+}
+
+.prod_container_userAvatar {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+}
+
+.prod_container_userText {
+    padding-top: 5px;
+    padding-left: 10px;
 }
 
 @media (max-width:900px) {

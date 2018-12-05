@@ -32,7 +32,7 @@
         <label class="cad_form_label" for="email">E-mail</label>
       </div>
       <div class="form_grid_item">
-        <input class="cad_form_input" type="text" name="cep" value="" required autocomplete="off">
+        <input class="cad_form_input" type="text" name="cep" value="" onblur="pesquisacep(this.value);" required autocomplete="off">
         <label class="cad_form_label" for="cep">CEP</label>
       </div>
       <div class="form_grid_item">
@@ -54,3 +54,7 @@
 
 </div>
 @endsection
+
+<script type="text/javascript" src="{{ asset('js/verCEP.js') }}">
+
+</script>

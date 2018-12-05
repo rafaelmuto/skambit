@@ -3,7 +3,7 @@
     <div class="header_logo">
       <p>Skambit</p>
     </div>
-    <form class="header_form" action="busca" method="post">
+    <form class="header_form" action="{{ url('busca') }}" method="post">
       @csrf
       <input class="header_busca" type="search" placeholder="buscar..." name="busca" value="">
       <button class="header_busca_btn" type="submit"><i class="material-icons md-36">search</i></button>

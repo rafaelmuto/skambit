@@ -6,7 +6,6 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Database\QueryException; //testar depois
 
 class cadUsuario extends Controller
 {
@@ -77,7 +76,7 @@ class cadUsuario extends Controller
     $req->session()->put('login', $req->input('login'));
     $req->session()->put('email', $req->input('email'));
     $req->session()->put('avatar', $avatar);
-    return view('home');
+    return redirect('home');
   }
 
   private function setAvatar($login){
@@ -101,14 +100,17 @@ class cadUsuario extends Controller
     if($req->session()->get('usuario_id') == null){
       return redirect('home');
     }
+    $usuario_id = $req->session()->get('usuario_id');
 
-    $meusProdutos = DB::table('cad_produto')->where('usuario_id', $req->session()->get('usuario_id'))->where('status_id',1)->get();
-    // $meusLikes = DB::select('SELECT cad_produto.* FROM ligacao_likes INNER JOIN cad_produto ON cad_produto.produto_id = ligacao_likes.produto_id WHERE ligacao_likes.usuario_id=2 AND ligacao_likes.status_id=1');
-    $meusLikes = DB::table('cad_produto')->join('ligacao_likes', 'cad_produto.produto_id', '=', 'ligacao_likes.produto_id')->where('ligacao_likes.usuario_id', $req->session()->get('usuario_id'))->where('ligacao_likes.status_id', 1)->get();
+    $meusProdutos = DB::table('cad_produto')->where('usuario_id', $usuario_id)->where('status_id',1)->get();
 
-    $meusMatchs = 0;
+    $meusLikes = DB::table('cad_produto')->join('ligacao_likes', 'cad_produto.produto_id', '=', 'ligacao_likes.produto_id')->where('ligacao_likes.usuario_id', $usuario_id)->where('ligacao_likes.status_id', 1)->get();
+
+    // $meusMatchs = DB::select('SELECT cad_produto.* FROM ligacao_likes INNER JOIN cad_produto ON ligacao_likes.produto_id = cad_produto.produto_id WHERE cad_produto.usuario_id = '.$usuario_id.' AND EXISTS(SELECT cad_produto.* FROM ligacao_likes INNER JOIN cad_produto ON ligacao_likes.produto_id = cad_produto.produto_id WHERE ligacao_likes.usuario_id= '.$usuario_id.')');
+
+
     if($req->isMethod('GET')){
-      return view('upUsuario',["meusProdutos"=>$meusProdutos, "meusLikes"=>$meusLikes, "meusMatchs"=>$meusMatchs]);
+      return view('upUsuario',["meusProdutos"=>$meusProdutos, "meusLikes"=>$meusLikes]);
     }
 
     if($req->input('nova_senha')!=$req->input('conf_nova_senha')){
@@ -141,7 +143,7 @@ class cadUsuario extends Controller
     $req->session()->put('login', $req->input('login'));
     $req->session()->put('email', $req->input('email'));
     $req->session()->put('avatar', $avatar);
-    return view('upUsuario',["meusProdutos"=>$meusProdutos, "meusLikes"=>$meusLikes, "meusMatchs"=>$meusMatchs]);
+    return view('upUsuario',["meusProdutos"=>$meusProdutos, "meusLikes"=>$meusLikes]);
   }
 
 
