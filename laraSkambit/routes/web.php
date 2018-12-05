@@ -18,7 +18,7 @@ Route::Post('/busca', 'mainController@busca');
 
 
 Route::Get('like/{produto_id}', 'mainController@like');
-Route::Get('/getProduto/{id}', 'mainController@getProduto');
+Route::Get('getProduto/{id}', 'mainController@getProduto');
 
 
 Route::Post('/login', 'cadUsuario@login');
