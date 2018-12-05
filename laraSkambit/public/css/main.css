@@ -104,7 +104,19 @@
     opacity: 0.8;
 }
 
+@media (max-width:576px) {
+    .main_card {
+        min-height: 25vh;
+    }
+}
+
 @media (max-width:900px) {
+    .main_card {
+        min-height: 25vh;
+    }
+}
+
+@media (max-width:1460px) {
     .main_card {
         min-height: 25vh;
     }
