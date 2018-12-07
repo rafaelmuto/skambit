@@ -23,7 +23,7 @@ else {
 
 logo_btn.addEventListener('click', function(event){
   themeID++;
-  if(themeID>themeList.length){
+  if(themeID>=themeList.length){
     themeID=0;
   }
   console.log(themeID);
