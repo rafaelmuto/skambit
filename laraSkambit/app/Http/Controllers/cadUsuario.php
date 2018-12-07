@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+// use Illuminate\Support\Facades\Cookie;
 
 class cadUsuario extends Controller
 {
@@ -29,6 +30,7 @@ class cadUsuario extends Controller
           $req->session()->put('email', $item->email);
           $req->session()->put('cep', $item->cep);
           $req->session()->put('avatar', $item->avatar);
+          // Cookie::make('login','true');
           return redirect('home');
         }
       }
@@ -38,6 +40,7 @@ class cadUsuario extends Controller
 
   public function logout(Request $req){
     $req->session()->flush();
+    // Cookie::forget('login');
     return redirect('home');
   }
 

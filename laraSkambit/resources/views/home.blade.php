@@ -12,13 +12,13 @@
 
   @isset($produtos)
     @foreach($produtos as $produto)
-      <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url({{ url($produto->imagem) }});">
+      <article id="produto_{{ $produto->produto_id }}" class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url({{ url($produto->imagem) }});">
         <div class="main_card_info">
           <p>{{ $produto->nome }}</p>
           <p>R$ {{ $produto->valor }}</p>
         </div>
-        <a class="like_btn" href="like/{{ $produto->produto_id }}"><i class="like_btn_icon material-icons">thumb_up</i></a>
-        <a id="{{ $produto->produto_id }}" class="main_card_link main_card_link_AJAX" href="{{ url($produto->produto_id) }}"></a>
+        <a id="like_{{ $produto->produto_id }}" class="like_btn" href="like/{{ $produto->produto_id }}"><i class="like_btn_icon material-icons">thumb_up</i></a>
+        <a id="card_{{ $produto->produto_id }}" class="main_card_link main_card_link_AJAX" href="{{ url($produto->produto_id) }}"></a>
       </article>
     @endforeach
   @endisset
