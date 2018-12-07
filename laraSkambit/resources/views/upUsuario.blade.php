@@ -119,7 +119,7 @@
 
 </div>
 
-@extends('layouts.modal')
+@extends('layouts.modal_like')
 
 <script type="text/javascript" src="{{ asset('js/modal.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/verCEP.js') }}"></script>

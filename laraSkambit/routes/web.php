@@ -18,6 +18,7 @@ Route::Post('/busca', 'mainController@busca');
 
 
 Route::Get('like/{produto_id}', 'mainController@like');
+Route::Get('dislike/{produto_id}', 'mainController@dislike');
 Route::Get('getProduto/{id}', 'mainController@getProduto');
 
 

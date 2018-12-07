@@ -46,6 +46,20 @@
     z-index: 50;
 }
 
+.dislike_btn {
+    background: var(--cor_fundo);
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    display: grid;
+    text-decoration: none;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    box-shadow: 0px 0px 3px var(--cor_sub);
+    z-index: 50;
+}
+
 .like_btn_icon {
     color: var(--cor_sub);
     /* font-size: 30px; */
