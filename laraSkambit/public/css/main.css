@@ -175,6 +175,12 @@
     }
 }
 
+@media (max-width:576px) {
+    .main_card {
+        min-height: 25vh;
+    }
+}
+
 @media (max-width:900px) {
     .main_card {
         min-height: 25vh;
