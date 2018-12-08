@@ -84,3 +84,15 @@
   margin: 0 auto;
   color: var(cor_sub);
 }
+
+@media (max-width:576px) {
+.headline {
+  font-size: 1.4em;
+  }
+}
+
+@media (max-width:900px) {
+.headline {
+  font-size: 1.7em;
+  }
+}

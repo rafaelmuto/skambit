@@ -12,7 +12,7 @@
 
 .headline_faq {
   margin: 0 auto;
-  width: 500px;
+  width: 52vw;
   height: 50px;
   background-color: var(--cor_principal);
   border-radius: 10px 10px 0 0;
@@ -31,7 +31,7 @@
 
 .cont_faq_body {
   margin: 0 auto;
-  width: 500px;
+  width: 52vw;
   height: auto;
 }
 
@@ -99,4 +99,23 @@ input[type='checkbox'] {
 .toggle:checked+.lbl-toggle {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+}
+
+@media (max-width:576px) {
+  .headline_faq a {
+    font-size: 0.7em;
+  }
+}
+
+@media (max-width:900px) {
+  .headline_faq a {
+    font-size: 0.9em;
+  }
+  .headline_faq {
+    height: 30px;
+  }
+}
+
+@media (max-width:1460px) {
+     
 }

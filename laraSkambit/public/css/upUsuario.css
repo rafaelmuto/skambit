@@ -82,3 +82,17 @@
   color: var(--cor_fundo);
   text-align: center;
 }
+
+@media (max-width:576px) {
+  .user_info_avatar {
+    display: none;
+  }
+}
+
+@media (max-width:900px) {
+  
+}
+
+@media (max-width:1460px) {
+  
+}
