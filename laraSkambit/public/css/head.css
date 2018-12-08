@@ -50,6 +50,7 @@ header {
     top: 0;
     left: 0;
     z-index: 100;
+    transition: background .5s ease;
 }
 
 .header_container {
@@ -61,6 +62,7 @@ header {
     grid-template-columns: 278px auto 100px 100px 160px;
     grid-template-rows: 60px;
     background-color: var(--cor_principal);
+    transition: background .5s ease;
 }
 
 .header_logo {
@@ -270,7 +272,7 @@ footer {
     .header_logo, .header_link, .header_user, .main_banner {
         display: none;
     }
-  
+
     footer {
         display: none;
     }
@@ -329,7 +331,7 @@ footer {
         text-transform: none;
         transition: all 0.3s ease;
     }
-    
+
     .drop_menu_log_avatar {
         height: 270px;
         width: 90%;

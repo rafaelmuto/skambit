@@ -1,5 +1,5 @@
 @if(Session::has('login'))
-<div class="drop_container efx_drop_shadow efx_border_radius">
+<div id="login" class="drop_container efx_drop_shadow efx_border_radius">
   <form class="drop_menu_log" action="funcoes.php" method="post">
     <img class="drop_menu_log_avatar efx_border_radius" src="{{ url(Session::get('avatar')) }}" alt="avatar do usuario">
     <p class="drop_menu_text_log">{{ Session::get('login') }}</p>

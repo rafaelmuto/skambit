@@ -30,6 +30,11 @@ class mainController extends Controller
       return redirect('home');
     }
 
+    public function dislike($produto_id,Request $req){
+      DB::table('ligacao_likes')->where('usuario_id', $req->session()->get('usuario_id'))->where('produto_id', $produto_id)->update(["status_id"=>2]);
+      return redirect('upUsuario');
+    }
+
     public function getProduto($id){
       // $produto = DB::table('cad_produto')->where('produto_id', $id)->get();
       $produto = DB::select('SELECT * FROM cad_produto INNER JOIN usuarios ON cad_produto.usuario_id = usuarios.usuario_id WHERE cad_produto.produto_id ='.$id);
