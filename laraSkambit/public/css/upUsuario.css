@@ -7,7 +7,7 @@
     width: 70vw;
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 10px;
+    grid-gap: 20px;
 }
 
 .userpage_container>div {
@@ -72,28 +72,23 @@
 }
 
 .reg_button {
-  border: 0;
-  border-radius: 5px;
-  padding: 10px;
-  font-size: 20px;
-  width: auto;
-  height: auto;
-  background-color: var(--cor_principal);
-  color: var(--cor_fundo);
-  text-align: center;
+    border: 0;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 20px;
+    width: auto;
+    height: auto;
+    background-color: var(--cor_principal);
+    color: var(--cor_fundo);
+    text-align: center;
 }
 
 @media (max-width:576px) {
-  .user_info_avatar {
-    display: none;
-  }
+    .user_info_avatar {
+        display: none;
+    }
 }
 
-@media (max-width:900px) {
-  
-}
+@media (max-width:900px) {}
 
-@media (max-width:1460px) {
-  
-
-}
+@media (max-width:1460px) {}

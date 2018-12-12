@@ -56,12 +56,12 @@
       </form>
   </div>
 
-  <div class="headline_sub">
-    Meus Produtos
-  </div>
+    <div class="headline_sub">
+      Meus Produtos
+    </div>
 
-  <div class="main_grid">
-    @isset($meusProdutos)
+    <div class="main_grid efx_drop_shadow efx_border_radius">
+      @isset($meusProdutos)
       @foreach($meusProdutos as $produto)
         <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url({{ $produto->imagem }});">
           <div class="main_card_info">
@@ -72,19 +72,19 @@
           <a class="main_card_link" href="upProduto/{{ $produto->produto_id }}"></a>
         </article>
       @endforeach
-    @endisset
+      @endisset
 
     <article class="main_card main_card_blank efx_border_radius">
         <a href="cadProduto"><i class="material-icons">add_circle_outline</i></a>
     </article>
   </div>
 
-  <div class="headline_sub">
-    Meus Likes
-  </div>
+  @isset($meusLikes)
+    <div class="headline_sub">
+      Meus Likes
+    </div>
 
-  <div class="main_grid">
-    @isset($meusLikes)
+    <div class="main_grid  efx_drop_shadow efx_border_radius">
       @foreach($meusLikes as $produto)
         <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url({{ $produto->imagem}});">
           <div class="main_card_info">
@@ -95,27 +95,52 @@
           <a id="card_{{ $produto->produto_id }}" class="main_card_link main_card_link_AJAX" href="produto/{{ $produto->produto_id }}"></a>
         </article>
       @endforeach
-    @endisset
-  </div>
+    </div>
+  @endisset
 
-  <!-- <div class="headline_sub">
-    Meus Matchs
-  </div>
 
-  <div class="main_grid">
-    @isset($meusMatchs)
-      @foreach($meusMatchs as $produto)
-        <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url({{ $produto->imagem}});">
-          <div class="main_card_info">
-            <p>{{ $produto->nome }}</p>
-            <p>R$ {{ $produto->valor }}</p>
-          </div>
-          <!-- <a class="like_btn" href="#"><i class="like_btn_icon material-icons">thumb_up</i></a> -->
-          <a id="{{ $produto->produto_id }}" class="main_card_link main_card_link_AJAX" href="produto/{{ $produto->produto_id }}"></a>
+  @isset($meusMatchs)
+    <div class="headline_sub">
+      Meus Matchs
+    </div>
+    <div class="main_grid_match">
+      @foreach($meusMatchs as $match)
+      <div class="mini_grid_container efx_drop_shadow efx_border_radius">
+        <article class="mini_grid efx_drop_shadow efx_border_radius">
+          @foreach($match['meusProdutos'] as $produto)
+            <div class="mini_card efx_drop_shadow efx_border_radius" style="background: url({{ $produto->imagem }});">
+
+            </div>
+          @endforeach
         </article>
+
+        <article class="mini_grid_info efx_drop_shadow efx_border_radius">
+          <div class="match_info">
+            <p>{{ $match['usuario']->primeiro_nome }} {{ $match['usuario']->ultimo_nome }} deu like nos seus produtos acima.</p>
+            <p>E-Mail: {{ $match['usuario']->email }}</p>
+            <p>CEP: {{ $match['usuario']->cep }}</p>
+          </div>
+          <img class="match_avatar" src="{{ $match['usuario']->avatar }}" alt="">
+          <img class="match_avatar" src="{{ Session::get('avatar') }}" alt="">
+          <div class="match_info">
+            <p>Voce deu like nos produtos abaixo:</p>
+            <p>Entre em contado e troquem seus produtos!</p>
+          </div>
+        </article>
+
+        <article class="mini_grid efx_drop_shadow efx_border_radius">
+          @foreach($match['meusLikes'] as $produto)
+            <div class="mini_card efx_drop_shadow efx_border_radius" style="background: url({{ $produto->imagem }});">
+
+            </div>
+          @endforeach
+        </article>
+      </div>
       @endforeach
-    @endisset
-  </div> -->
+
+    </div>
+  @endisset
+
 
 </div>
 

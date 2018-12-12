@@ -109,11 +109,10 @@ class cadUsuario extends Controller
 
     $meusLikes = DB::table('cad_produto')->join('ligacao_likes', 'cad_produto.produto_id', '=', 'ligacao_likes.produto_id')->where('ligacao_likes.usuario_id', $usuario_id)->where('ligacao_likes.status_id', 1)->get();
 
-    // $meusMatchs = DB::select('SELECT cad_produto.* FROM ligacao_likes INNER JOIN cad_produto ON ligacao_likes.produto_id = cad_produto.produto_id WHERE cad_produto.usuario_id = '.$usuario_id.' AND EXISTS(SELECT cad_produto.* FROM ligacao_likes INNER JOIN cad_produto ON ligacao_likes.produto_id = cad_produto.produto_id WHERE ligacao_likes.usuario_id= '.$usuario_id.')');
-
+    $meusMatchs = $this->meusMatchs($usuario_id);
 
     if($req->isMethod('GET')){
-      return view('upUsuario',["meusProdutos"=>$meusProdutos, "meusLikes"=>$meusLikes]);
+      return view('upUsuario',["meusProdutos"=>$meusProdutos, "meusLikes"=>$meusLikes, "meusMatchs"=>$meusMatchs]);
     }
 
     if($req->input('nova_senha')!=$req->input('conf_nova_senha')){
@@ -146,9 +145,40 @@ class cadUsuario extends Controller
     $req->session()->put('login', $req->input('login'));
     $req->session()->put('email', $req->input('email'));
     $req->session()->put('avatar', $avatar);
-    return view('upUsuario',["meusProdutos"=>$meusProdutos, "meusLikes"=>$meusLikes]);
+
+    return view('upUsuario',["meusProdutos"=>$meusProdutos, "meusLikes"=>$meusLikes, "meusMatchs"=>$meusMatchs]);
   }
 
+  // FUNCAO RETORNA ARRAY ORGANIZADA POR USUARIO_ID E OS PRODUTOS QUE FORAM ENVOLVIDOS NO MATCH.... wtf funcionou.... o______o
+  public function meusMatchs($usuario_id){
+    $matchUsers = DB::table('ligacao_matches')->where('usuario_id',$usuario_id)->get()[0]->match_list;
+    $matchUsers = explode(',',$matchUsers);
+    foreach ($matchUsers as $matchUser) {
+      $produtos[$matchUser]['usuario'] = $this->getInfo($matchUser)[0];
+      $produtos[$matchUser]['meusProdutos'] = $this->getMatchlist($usuario_id, $matchUser);
+      $produtos[$matchUser]['meusLikes'] = $this->getMatchlist($matchUser, $usuario_id);
+    }
+    // var_dump('<pre>', $produtos);
+    return $produtos;
+  }
+
+  // FUNCAO DEVOLVE OS PRODUTOS MATCHEADOS DO USUARIO_A PELO USUARIO_B (o B deu like no A!!)
+  public function getMatchlist($user_A, $user_B){
+    $produtos = DB::select('SELECT ligacao_likes.like_id, ligacao_likes.usuario_id AS userL_id, cad_produto.* FROM ligacao_likes JOIN cad_produto ON ligacao_likes.produto_id = cad_produto.produto_id WHERE ligacao_likes.usuario_id = '.$user_B.' AND ligacao_likes.status_id = 1 AND cad_produto.usuario_id = '.$user_A.' AND cad_produto.status_id = 1');
+    return $produtos;
+  }
+
+  public function match($user_a,$user_b){
+    // LIKES AB = likes do usuario A nos produtos do usuario B
+    $likesAB = DB::select('SELECT ligacao_likes.like_id, ligacao_likes.usuario_id AS userL_id, cad_produto.* FROM ligacao_likes JOIN cad_produto ON ligacao_likes.produto_id = cad_produto.produto_id WHERE ligacao_likes.usuario_id = '.$user_a.' AND ligacao_likes.status_id = 1 AND cad_produto.usuario_id = '.$user_b.' AND cad_produto.status_id = 1');
+    // LIKES BA = likes do usuario B nos produtos do usuario A
+    $likesBA = DB::select('SELECT ligacao_likes.like_id, ligacao_likes.usuario_id AS userL_id, cad_produto.* FROM ligacao_likes JOIN cad_produto ON ligacao_likes.produto_id = cad_produto.produto_id WHERE ligacao_likes.usuario_id = '.$user_b.' AND ligacao_likes.status_id = 1 AND cad_produto.usuario_id = '.$user_a.' AND cad_produto.status_id = 1');
+    if( sizeof($likesAB)>0 && sizeof($likesBA)>0){
+      $matchList = ["meusLikes"=>$likesAB, "meusProdutos"=>$likesBA];
+      return $matchList;
+    }
+    return false;
+  }
 
 
 }

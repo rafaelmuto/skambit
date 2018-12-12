@@ -93,14 +93,19 @@ function modal(){
               document.getElementById('modalEnd').innerHTML = end.logradouro;
               document.getElementById('modalEnd2').innerHTML = 'CEP: '+end.cep+'  '+end.localidade+' - '+end.uf;
               document.getElementById('modalEmail').innerHTML = produto.email;
-              document.getElementById('modalLike').addEventListener('click', function(event){
-                event.preventDefault();
-                likeIt(produto_id);
-                modalProduto.classList.remove('modalOn');
-                modalProduto.classList.add('modalOff');
-                document.getElementById('produto_'+produto_id).style.display = 'none';
-              });
-
+              if(document.getElementById('modalLike')!= null){
+                document.getElementById('modalLike').addEventListener('click', function(event){
+                  event.preventDefault();
+                  likeIt(produto_id);
+                  modalProduto.classList.remove('modalOn');
+                  modalProduto.classList.add('modalOff');
+                  document.getElementById('produto_'+produto_id).style.display = 'none';
+                });
+              }
+              if(document.getElementById('modaldisLike') != null){
+                document.getElementById('modaldisLike').href = 'dislike/'+produto.produto_id;
+                console.log(document.getElementById('modaldisLike').href);
+              }
             }
           }
         }

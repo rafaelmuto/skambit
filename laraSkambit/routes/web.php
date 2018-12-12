@@ -34,3 +34,6 @@ Route::Get('/cadProduto', 'cadProduto@add');
 Route::Post('/cadProduto', 'cadProduto@add');
 Route::Get('/upProduto/{prod_id}', 'cadProduto@update');
 Route::Post('/upProduto/{prod_id}', 'cadProduto@update');
+
+
+route::get('teste/{usuario_id}', 'cadUsuario@meusMatchs');
