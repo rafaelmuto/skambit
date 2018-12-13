@@ -104,15 +104,19 @@ class cadUsuario extends Controller
       return redirect('home');
     }
     $usuario_id = $req->session()->get('usuario_id');
+    $returnArray = [];
 
     $meusProdutos = DB::table('cad_produto')->where('usuario_id', $usuario_id)->where('status_id',1)->get();
+    if(sizeof($meusProdutos)>0) $returnArray["meusProdutos"] = $meusProdutos;
 
     $meusLikes = DB::table('cad_produto')->join('ligacao_likes', 'cad_produto.produto_id', '=', 'ligacao_likes.produto_id')->where('ligacao_likes.usuario_id', $usuario_id)->where('ligacao_likes.status_id', 1)->get();
+    if(sizeof($meusLikes)>0) $returnArray["meusLikes"] = $meusLikes;
 
     $meusMatchs = $this->meusMatchs($usuario_id);
+    if(sizeof($meusMatchs>0)) $returnArray["meusMatchs"] = $meusMatchs;
 
     if($req->isMethod('GET')){
-      return view('upUsuario',["meusProdutos"=>$meusProdutos, "meusLikes"=>$meusLikes, "meusMatchs"=>$meusMatchs]);
+      return view('upUsuario',$returnArray);
     }
 
     if($req->input('nova_senha')!=$req->input('conf_nova_senha')){
@@ -146,13 +150,16 @@ class cadUsuario extends Controller
     $req->session()->put('email', $req->input('email'));
     $req->session()->put('avatar', $avatar);
 
-    return view('upUsuario',["meusProdutos"=>$meusProdutos, "meusLikes"=>$meusLikes, "meusMatchs"=>$meusMatchs]);
+    return view('upUsuario',$returnArray);
   }
 
   // FUNCAO RETORNA ARRAY ORGANIZADA POR USUARIO_ID E OS PRODUTOS QUE FORAM ENVOLVIDOS NO MATCH.... wtf funcionou.... o______o
   public function meusMatchs($usuario_id){
-    $matchUsers = DB::table('ligacao_matches')->where('usuario_id',$usuario_id)->get()[0]->match_list;
-    $matchUsers = explode(',',$matchUsers);
+    if(DB::table('ligacao_matches')->where('usuario_id',$usuario_id)->doesntExist()){
+      return null;
+    }
+    $matchUsers = DB::table('ligacao_matches')->where('usuario_id',$usuario_id)->get();
+    $matchUsers = explode(',',$matchUsers[0]->match_list);
     foreach ($matchUsers as $matchUser) {
       $produtos[$matchUser]['usuario'] = $this->getInfo($matchUser)[0];
       $produtos[$matchUser]['meusProdutos'] = $this->getMatchlist($usuario_id, $matchUser);

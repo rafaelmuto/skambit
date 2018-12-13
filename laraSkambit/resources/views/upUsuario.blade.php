@@ -60,7 +60,7 @@
       Meus Produtos
     </div>
 
-    <div class="main_grid efx_drop_shadow efx_border_radius">
+    <div class="main_grid backColor efx_drop_shadow efx_border_radius">
       @isset($meusProdutos)
       @foreach($meusProdutos as $produto)
         <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url({{ $produto->imagem }});">
@@ -84,7 +84,7 @@
       Meus Likes
     </div>
 
-    <div class="main_grid  efx_drop_shadow efx_border_radius">
+    <div class="main_grid backColor efx_drop_shadow efx_border_radius">
       @foreach($meusLikes as $produto)
         <article class="main_card hover-opacity efx_drop_shadow efx_border_radius" style="background: url({{ $produto->imagem}});">
           <div class="main_card_info">
