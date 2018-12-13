@@ -3,11 +3,10 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 27, 2018 at 03:38 PM
+-- Generation Time: Dec 13, 2018 at 03:33 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.1.22
 
-SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
@@ -22,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `skambitdb`
 --
-CREATE DATABASE IF NOT EXISTS `skambitdb` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `skambitdb`;
 
 -- --------------------------------------------------------
 
@@ -31,19 +28,15 @@ USE `skambitdb`;
 -- Table structure for table `cad_produto`
 --
 
-DROP TABLE IF EXISTS `cad_produto`;
-CREATE TABLE IF NOT EXISTS `cad_produto` (
-  `produto_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `cad_produto` (
+  `produto_id` int(11) NOT NULL,
   `usuario_id` int(11) NOT NULL,
   `nome` varchar(45) NOT NULL,
   `descricao` varchar(250) NOT NULL,
   `imagem` varchar(45) NOT NULL,
   `data` datetime DEFAULT CURRENT_TIMESTAMP,
   `status_id` tinyint(4) NOT NULL,
-  `valor` decimal(10,0) NOT NULL,
-  PRIMARY KEY (`produto_id`),
-  KEY `usuario_id_produto` (`usuario_id`),
-  KEY `status_id_produto` (`status_id`)
+  `valor` decimal(10,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -52,11 +45,9 @@ CREATE TABLE IF NOT EXISTS `cad_produto` (
 -- Table structure for table `categoria`
 --
 
-DROP TABLE IF EXISTS `categoria`;
-CREATE TABLE IF NOT EXISTS `categoria` (
-  `categoria_id` int(11) NOT NULL AUTO_INCREMENT,
-  `descricao` varchar(20) NOT NULL,
-  PRIMARY KEY (`categoria_id`)
+CREATE TABLE `categoria` (
+  `categoria_id` int(11) NOT NULL,
+  `descricao` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -65,16 +56,12 @@ CREATE TABLE IF NOT EXISTS `categoria` (
 -- Table structure for table `foto_prod`
 --
 
-DROP TABLE IF EXISTS `foto_prod`;
-CREATE TABLE IF NOT EXISTS `foto_prod` (
-  `foto_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `foto_prod` (
+  `foto_id` int(11) NOT NULL,
   `produto_id` int(11) NOT NULL,
   `imagem` varchar(45) NOT NULL,
   `data_upload` datetime NOT NULL,
-  `status_id` tinyint(4) NOT NULL,
-  PRIMARY KEY (`foto_id`),
-  KEY `produto_id_foto` (`produto_id`),
-  KEY `status_id_foto_prod` (`status_id`)
+  `status_id` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -83,14 +70,10 @@ CREATE TABLE IF NOT EXISTS `foto_prod` (
 -- Table structure for table `ligacao_cat_prod`
 --
 
-DROP TABLE IF EXISTS `ligacao_cat_prod`;
-CREATE TABLE IF NOT EXISTS `ligacao_cat_prod` (
-  `cat_prod_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ligacao_cat_prod` (
+  `cat_prod_id` int(11) NOT NULL,
   `categoria_id` int(11) NOT NULL,
-  `produto_id` int(11) NOT NULL,
-  PRIMARY KEY (`cat_prod_id`),
-  KEY `categoria_id_produto` (`categoria_id`),
-  KEY `produto_id_categoria` (`produto_id`)
+  `produto_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -99,17 +82,12 @@ CREATE TABLE IF NOT EXISTS `ligacao_cat_prod` (
 -- Table structure for table `ligacao_likes`
 --
 
-DROP TABLE IF EXISTS `ligacao_likes`;
-CREATE TABLE IF NOT EXISTS `ligacao_likes` (
-  `like_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ligacao_likes` (
+  `like_id` int(11) NOT NULL,
   `usuario_id` int(11) NOT NULL,
   `produto_id` int(11) NOT NULL,
   `data` datetime DEFAULT CURRENT_TIMESTAMP,
-  `status_id` tinyint(4) NOT NULL,
-  PRIMARY KEY (`like_id`),
-  KEY `usuario_id_likes` (`usuario_id`),
-  KEY `produto_id_likes` (`produto_id`),
-  KEY `status_id_likes` (`status_id`)
+  `status_id` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -118,17 +96,12 @@ CREATE TABLE IF NOT EXISTS `ligacao_likes` (
 -- Table structure for table `ligacao_matches`
 --
 
-DROP TABLE IF EXISTS `ligacao_matches`;
-CREATE TABLE IF NOT EXISTS `ligacao_matches` (
-  `match_id` int(11) NOT NULL AUTO_INCREMENT,
-  `produto_id_a` int(11) NOT NULL,
-  `produto_id_b` int(11) NOT NULL,
+CREATE TABLE `ligacao_matches` (
+  `match_id` int(11) NOT NULL,
+  `usuario_id` int(11) NOT NULL,
+  `match_list` mediumtext,
   `data` datetime DEFAULT CURRENT_TIMESTAMP,
-  `status_id` tinyint(4) NOT NULL,
-  PRIMARY KEY (`match_id`),
-  KEY `produto_id_a` (`produto_id_a`),
-  KEY `produto_id_b` (`produto_id_b`),
-  KEY `status_id_match` (`status_id`)
+  `status_id` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -137,12 +110,19 @@ CREATE TABLE IF NOT EXISTS `ligacao_matches` (
 -- Table structure for table `status`
 --
 
-DROP TABLE IF EXISTS `status`;
-CREATE TABLE IF NOT EXISTS `status` (
-  `status_id` tinyint(4) NOT NULL AUTO_INCREMENT,
-  `status` varchar(25) NOT NULL,
-  PRIMARY KEY (`status_id`)
+CREATE TABLE `status` (
+  `status_id` tinyint(4) NOT NULL,
+  `status` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `status`
+--
+
+INSERT INTO `status` (`status_id`, `status`) VALUES
+(0, 'INATIVO'),
+(1, 'ATIVO'),
+(2, 'DELETADO');
 
 -- --------------------------------------------------------
 
@@ -150,9 +130,8 @@ CREATE TABLE IF NOT EXISTS `status` (
 -- Table structure for table `usuarios`
 --
 
-DROP TABLE IF EXISTS `usuarios`;
-CREATE TABLE IF NOT EXISTS `usuarios` (
-  `usuario_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `usuarios` (
+  `usuario_id` int(11) NOT NULL,
   `primeiro_nome` varchar(10) NOT NULL,
   `ultimo_nome` varchar(45) NOT NULL,
   `cep` varchar(45) NOT NULL,
@@ -162,13 +141,127 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `email` varchar(45) NOT NULL,
   `data` datetime DEFAULT CURRENT_TIMESTAMP,
   `status_id` tinyint(4) NOT NULL,
-  `rating` decimal(10,0) NOT NULL,
-  PRIMARY KEY (`usuario_id`),
-  UNIQUE KEY `login_unique` (`login`),
-  UNIQUE KEY `email_unique` (`email`),
-  KEY `ultimo_nome` (`ultimo_nome`),
-  KEY `status_id_usuarios` (`status_id`)
+  `rating` decimal(10,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `cad_produto`
+--
+ALTER TABLE `cad_produto`
+  ADD PRIMARY KEY (`produto_id`),
+  ADD KEY `usuario_id_produto` (`usuario_id`),
+  ADD KEY `status_id_produto` (`status_id`);
+
+--
+-- Indexes for table `categoria`
+--
+ALTER TABLE `categoria`
+  ADD PRIMARY KEY (`categoria_id`);
+
+--
+-- Indexes for table `foto_prod`
+--
+ALTER TABLE `foto_prod`
+  ADD PRIMARY KEY (`foto_id`),
+  ADD KEY `produto_id_foto` (`produto_id`),
+  ADD KEY `status_id_foto_prod` (`status_id`);
+
+--
+-- Indexes for table `ligacao_cat_prod`
+--
+ALTER TABLE `ligacao_cat_prod`
+  ADD PRIMARY KEY (`cat_prod_id`),
+  ADD KEY `categoria_id_produto` (`categoria_id`),
+  ADD KEY `produto_id_categoria` (`produto_id`);
+
+--
+-- Indexes for table `ligacao_likes`
+--
+ALTER TABLE `ligacao_likes`
+  ADD PRIMARY KEY (`like_id`),
+  ADD KEY `usuario_id_likes` (`usuario_id`),
+  ADD KEY `produto_id_likes` (`produto_id`),
+  ADD KEY `status_id_likes` (`status_id`);
+
+--
+-- Indexes for table `ligacao_matches`
+--
+ALTER TABLE `ligacao_matches`
+  ADD PRIMARY KEY (`match_id`),
+  ADD KEY `status_id_match` (`status_id`),
+  ADD KEY `usuario_id` (`usuario_id`) USING BTREE;
+
+--
+-- Indexes for table `status`
+--
+ALTER TABLE `status`
+  ADD PRIMARY KEY (`status_id`);
+
+--
+-- Indexes for table `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`usuario_id`),
+  ADD UNIQUE KEY `login_unique` (`login`),
+  ADD UNIQUE KEY `email_unique` (`email`),
+  ADD KEY `ultimo_nome` (`ultimo_nome`),
+  ADD KEY `status_id_usuarios` (`status_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `cad_produto`
+--
+ALTER TABLE `cad_produto`
+  MODIFY `produto_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `categoria`
+--
+ALTER TABLE `categoria`
+  MODIFY `categoria_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `foto_prod`
+--
+ALTER TABLE `foto_prod`
+  MODIFY `foto_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `ligacao_cat_prod`
+--
+ALTER TABLE `ligacao_cat_prod`
+  MODIFY `cat_prod_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `ligacao_likes`
+--
+ALTER TABLE `ligacao_likes`
+  MODIFY `like_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `ligacao_matches`
+--
+ALTER TABLE `ligacao_matches`
+  MODIFY `match_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `status`
+--
+ALTER TABLE `status`
+  MODIFY `status_id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -204,19 +297,10 @@ ALTER TABLE `ligacao_likes`
   ADD CONSTRAINT `fk_usuario_id_likes` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`usuario_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Constraints for table `ligacao_matches`
---
-ALTER TABLE `ligacao_matches`
-  ADD CONSTRAINT `fk_produto_id_a` FOREIGN KEY (`produto_id_a`) REFERENCES `cad_produto` (`produto_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_produto_id_b` FOREIGN KEY (`produto_id_b`) REFERENCES `cad_produto` (`produto_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_status_id_match` FOREIGN KEY (`status_id`) REFERENCES `status` (`status_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
 -- Constraints for table `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD CONSTRAINT `fk_status_id_usuarios` FOREIGN KEY (`status_id`) REFERENCES `status` (`status_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-SET FOREIGN_KEY_CHECKS=1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
