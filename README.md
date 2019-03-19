@@ -3,8 +3,14 @@ Skambit é uma plataforma de trocas digital. Os usuários registrados adicionam 
 
 O projeto foi criado como prova de conceito, um MVP, e foi desenvolvido em PHP utilizando Laravel.
 
+#### Conteudo:
+- laraSkambit: instalação completa da implementação do skambit em laravel.
+- mysql: arquivos .sql para instalação dos bancos de dados SQL utilizados.
+- phpSkambit: versão descontinuada do projeto em php.
+- screens: screenshots do projeto rodando.
+
 ### Descrição:
-Este é repositorio do projeto integrador do curso de Fullstack da Digital House - Villa Olimpia.
+Este é o repositorio do projeto integrador do curso de Fullstack da Digital House - Villa Olimpia.
 
 
 Os integrantes do grupo são:
