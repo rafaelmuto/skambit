@@ -1,18 +1,21 @@
-﻿# Projeto_int
-Projeto Integrador Digital House -T05
+﻿# Skambit
+Skambit é uma plataforma de trocas digital. Os usuários registrados adicionam produtos e dão "like" em produtos de outros usuarios. Quando o sistema detecta um interesse reciproco ele avisa ambas as partes para que elas troquem seus produtos.
+
+O projeto foi criado como prova de conceito, um MVP, e foi desenvolvido em PHP utilizando Laravel.
 
 ### Descrição:
-Este é repositorio do projeto integrador do curso de Fullstack da Digital House - Villa Olimpia. Os integrantes do grupo são:
+Este é repositorio do projeto integrador do curso de Fullstack da Digital House - Villa Olimpia.
 
+
+Os integrantes do grupo são:
 - ~Aline Silva~
 - Rafael Muto
 - Thiago Pereira
 - ~~Tonico Dias~~
 - ~Tulio Almeida~
 
-Esse README sera atualizado...
 
-### Instruções:
+### Instruções para o trabalho:
 Trabalharemos no projeto em branches separadas que serão testadas antes de commitarmos ao git. Quando a tarefa estiver concluida e aprovada daremos o merge da branch para o master. Lembrando que para que o trabalho flua sem problemas é necessario mantermos as nossa braches atualizadas!
 
 #### Para clonar o repositorio:
